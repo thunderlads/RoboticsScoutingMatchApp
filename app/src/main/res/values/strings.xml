@@ -1,3 +1,24 @@
 <resources>
     <string name="app_name">RoboticsScoutingMatchApp</string>
+
+<!--    Auto -->
+    <string name="header1">Autonomous</string>
+
+    <string name="prompt_scout_name">Scout Name</string>
+    <string name="text_edit_scout_name">Scout</string>
+
+    <string name="prompt_match_number">Match Number</string>
+    <string name="text_edit_match_number">Match</string>
+
+    <string name="prompt_team_number">Team number</string>
+    <string name="text_edit_team_number">Team</string>
+
+    <string name="prompt_team_color">Team color</string>
+    <string name="text_edit_team_color">color</string>
+
+    <string name="color_red">Red</string>
+    <string name="color_blue">Blue</string>
+
+    <string name="button_next">Next</string>
+
 </resources>
