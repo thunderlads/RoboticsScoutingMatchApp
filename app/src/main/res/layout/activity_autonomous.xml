@@ -7,12 +7,13 @@
     android:layout_height="match_parent"
     tools:context=".activityAutonomous">
 <ScrollView
+    android:id="@+id/scroll_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintTop_toTopOf="parent"
     app:layout_constraintLeft_toLeftOf="parent"
-    app:layout_contraintRight_toRightof="parent"
+    app:layout_contraintRight_toRightOf="parent"
     >
     <LinearLayout
         android:layout_width="match_parent"
@@ -20,81 +21,116 @@
         android:orientation="vertical"
         android:gravity="center"
         android:showDividers="middle"
-        android:paddingTop="20dp"
-        android:paddingHorizontal="20dp"
-        >
+        android:layout_gravity="start"
+        app:layout_constraintWidth_percent="0.5">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/header2"
             android:textSize="24sp"
             android:textColor="@color/black"
-            android:gravity="center"
+            android:layout_gravity="center"
             />
+
+        <LinearLayout
+            android:layout_width="372dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:paddingTop="8sp"
+                android:text="@string/prompt_starting_position"
+                android:textSize="16sp" />
+
+            <RadioGroup
+                android:id="@+id/staring_position_radio_group1"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:showDividers="middle">
+
+                <RadioButton
+                    android:id="@+id/Position_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/position1" />
+
+                <RadioButton
+                    android:id="@+id/Position_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/position2" />
+
+                <RadioButton
+                    android:id="@+id/Position_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/position3" />
+
+            </RadioGroup>
+
+            <RadioGroup
+                android:id="@+id/staring_position_radio_group2"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:showDividers="middle">
+
+            <RadioButton
+                android:id="@+id/position_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/position4" />
+
+            <RadioButton
+                android:id="@+id/position_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/position5" />
+
+            <RadioButton
+                android:id="@+id/position_6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/position6" />
+            </RadioGroup>
+        </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            />
+            android:orientation="horizontal"
+            app:layout_constraintWidth_percent="0.5">
+
             <TextView
+                android:layout_width="117dp"
+                android:layout_height="wrap_content"
+                android:text="@string/attempted_coral" />
+
+            <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="32sp"
-                android:text="@string/prompt_starting_position"
+                android:autofillHints="username"
+                android:hint="hint"
+                android:minWidth="32dp"
+                android:minHeight="48dp"
+                android:inputType="number"
                 />
-            <RadioGroup
-                android:id="@+id/staring_position_radio_group"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:layout_gravity="center_horizontal"
-                android:orientation="horizontal"
-                android:showDividers="middle"
-                >
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/Position_1"
-                    android:text="@string/position1"
-
-                    />
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/Position_2"
-                    android:text="@string/position2"
-                    />
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/Position_3"
-                    android:text="@string/position3"
-                    />
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/position_4"
-                    android:text="@string/position4"
-                    />
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/position_5"
-                    android:text="@string/position5"
-                    />
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/position6"
-                    android:id="@+id/position_6"
-                    />
-            </RadioGroup>
-
-
-
+        </LinearLayout>
 
 
     </LinearLayout>
+
 </ScrollView>
+
+
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
