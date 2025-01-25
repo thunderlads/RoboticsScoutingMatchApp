@@ -95,7 +95,7 @@
                 android:autofillHints="username"
                 android:gravity="center"
                 android:inputType="number"
-                android:hint="@string/text_edit_team_number"
+                android:hint="@string/text_edit_team_number"/>
         </LinearLayout>
 
         <LinearLayout
