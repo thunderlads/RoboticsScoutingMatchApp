@@ -1,8 +1,10 @@
 <resources>
     <string name="app_name">RoboticsScoutingMatchApp</string>
 
-<!--    Auto -->
-    <string name="header1">Autonomous</string>
+    <string name="is_empty_identifier"> is empty</string>
+
+<!--    Prematch  -->
+    <string name="header1">Pre-Match</string>
 
     <string name="prompt_scout_name">Scout Name</string>
     <string name="text_edit_scout_name">Scout</string>
@@ -20,5 +22,18 @@
     <string name="color_blue">Blue</string>
 
     <string name="button_next">Next</string>
+
+
+<!--Auto -->
+    <string name="header2">Autonomous</string>
+
+    <string name="prompt_starting_position">Starting Position</string>
+
+    <string name="position1">Position 1</string>
+    <string name="position2">Position 2</string>
+    <string name="position3">Position 3</string>
+    <string name="position4">Position 4</string>
+    <string name="position5">Position 5</string>
+    <string name="position6">Position 6</string>
 
 </resources>
