@@ -9,6 +9,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 
 public class U extends AppCompatActivity{
+
+    public final int DATA_VERSION = 1;
+    // Characters to remove in input fields
+    public final String [] DELIMITER = {",", ";", ":", "|"};
+    public final String [] WHITESPACE = {" "};
+    public final String [] DELIMITER_AND_WHITESPACE = {",", ";", ":", "|", " "};
+
+    // Returning data pulled from fields
     public String getData(EditText field){
         return field.getText().toString();
     }
@@ -20,6 +28,41 @@ public class U extends AppCompatActivity{
             RadioButton checkedButton = findViewById(field.getCheckedRadioButtonId());
             response = checkedButton.getText().toString();
         }
+        return response;
+    }
+
+
+
+    public String stripText(String text, int stripType){
+        String response = text;
+        String[] chars = DELIMITER_AND_WHITESPACE;
+
+        if(stripType == 0){ // delimiter only
+            chars = DELIMITER.clone();
+        } else if (stripType == 1) {
+            chars = WHITESPACE.clone();
+        }else if (stripType == 2){
+            chars = DELIMITER_AND_WHITESPACE.clone();
+        }
+
+        for(String s : chars){
+            while(response.contains(s)){
+                response = response.substring(0, response.indexOf(s)) + response.substring(response.indexOf(s)+1);
+            }
+        }
+
+        return response;
+    }
+
+    public String stripText(String text){
+        String response = text;
+
+        for(String s : DELIMITER_AND_WHITESPACE){
+            while(response.contains(s)){
+                response = response.substring(0, response.indexOf(s)) + response.substring(response.indexOf(s)+1);
+            }
+        }
+
         return response;
     }
 }

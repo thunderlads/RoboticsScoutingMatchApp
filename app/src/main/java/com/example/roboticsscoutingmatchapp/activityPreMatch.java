@@ -2,14 +2,10 @@ package com.example.roboticsscoutingmatchapp;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.ScrollView;
 import android.widget.Toast;
-import com.example.roboticsscoutingmatchapp.U;
 
 
 import androidx.activity.EdgeToEdge;
@@ -18,26 +14,33 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import com.google.android.material.snackbar.Snackbar;
-
 public class activityPreMatch extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        // Defines an object for the utility file because of weird compat with static methods
         U u = new U();
-        String preMatchSaveString, autoSaveString, teleOpSaveString, postMatchSaveString;
+
+        /*
+         Checks for if there is any data sent over with the intent when switching to current
+         activity, save strings will be compiled and saved as csv in final activity page
+         */
+        String preMatchSaveString, autoSaveString,
+                teleOpSaveString, postMatchSaveString;
         Bundle extras = getIntent().getExtras();
         if(extras != null){
-            if(extras.containsKey("preMatch")){
-                preMatchSaveString = extras.getString("preMatch", "");
-            }
-            if(extras.containsKey("auto")){
-                autoSaveString = extras.getString("auto", "");
-            }
-            // TODO: Add savestrings for teleop and post match
+            preMatchSaveString = extras.getString("preMatch", "");
+            autoSaveString = extras.getString("auto", "");
+            teleOpSaveString = extras.getString("teleOp", "");
+            postMatchSaveString = extras.getString("postMatch", "");
+        } else {
+            preMatchSaveString = "";
+            autoSaveString = "";
+            teleOpSaveString = "";
+            postMatchSaveString = "";
         }
 
-
+        // Checks for insets changing (screen rotation) -- Auto-generated
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_pre_match);
@@ -47,20 +50,24 @@ public class activityPreMatch extends AppCompatActivity {
             return insets;
         });
 
+        // Defining all the relevant components in the activity
         EditText scoutName = findViewById(R.id.scout_name);
         EditText matchNumber = findViewById(R.id.match_number);
         EditText teamNumber = findViewById(R.id.team_number);
         RadioGroup teamColorRadioGroup = findViewById(R.id.team_color_radio_group);
-        RadioButton teamColorRed = findViewById(R.id.team_color_red);
-        RadioButton teamColorBlue = findViewById(R.id.team_color_blue);
+        findViewById(R.id.team_color_red);
+        findViewById(R.id.team_color_blue);
         Button saveButton = findViewById(R.id.save_button);
 
+        // TODO: If save string exists for current activity, fill in fields automatically
+
+        // Defines a toast (pop-up) to be used when a field is left unfilled
         Toast unfilledMessage = new Toast(this);
         unfilledMessage.setDuration(Toast.LENGTH_SHORT);
 
         saveButton.setOnClickListener((l) -> {
             // Check if all fields are full
-            ScrollView mainView = findViewById(R.id.scroll_view);
+            findViewById(R.id.scroll_view);
             String response = "";
 
             if(u.getData(scoutName).isEmpty()){
@@ -74,11 +81,20 @@ public class activityPreMatch extends AppCompatActivity {
             }else{
                 // TODO: Add some form of save system
                 Intent i = new Intent(this, activityAutonomous.class);
-                String valueToPass = "";
-                valueToPass += "data entry #,"; // TODO: Add data entry numbering system
+                // TODO: Add data stripping to get rid of unnecessary whitespace/delimiters
+                String preMatchInfo = "";
+                preMatchInfo += "data entry #,"; // TODO: Add data entry numbering system
+                preMatchInfo += u.DATA_VERSION + ",";
+                preMatchInfo += u.getData(scoutName) + ",";
+                preMatchInfo += u.getData(teamNumber) + ",";
+                preMatchInfo += u.getData(matchNumber) + ",";
+//                preMatchInfo += u.getData(coralNumber);
 
+                i.putExtra("preMatch", preMatchInfo);
+                i.putExtra("auto", autoSaveString);
+                i.putExtra("teleOp", teleOpSaveString);
+                i.putExtra("postMatch", postMatchSaveString);
 
-//                i.putExtra();
                 this.startActivity(i);
             }
 
