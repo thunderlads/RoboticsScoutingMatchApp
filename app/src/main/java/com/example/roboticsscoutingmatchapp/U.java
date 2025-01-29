@@ -4,6 +4,7 @@ package com.example.roboticsscoutingmatchapp;
 import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.RadioButton;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -29,6 +30,9 @@ public class U extends AppCompatActivity{
             response = checkedButton.getText().toString();
         }
         return response;
+    }
+    public String getData(TextView field){
+        return field.getText().toString();
     }
 
 

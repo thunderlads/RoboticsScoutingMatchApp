@@ -85,10 +85,10 @@ public class activityPreMatch extends AppCompatActivity {
                 String preMatchInfo = "";
                 preMatchInfo += "data entry #,"; // TODO: Add data entry numbering system
                 preMatchInfo += u.DATA_VERSION + ",";
-                preMatchInfo += u.getData(scoutName) + ",";
-                preMatchInfo += u.getData(teamNumber) + ",";
-                preMatchInfo += u.getData(matchNumber) + ",";
-//                preMatchInfo += u.getData(coralNumber);
+                preMatchInfo += u.stripText(u.getData(scoutName), 0) + ",";
+                preMatchInfo += u.stripText(u.getData(teamNumber)) + ",";
+                preMatchInfo += u.stripText(u.getData(matchNumber)) + ",";
+//                preMatchInfo += u.stripText(u.getData(coralNumber));
 
                 i.putExtra("preMatch", preMatchInfo);
                 i.putExtra("auto", autoSaveString);
