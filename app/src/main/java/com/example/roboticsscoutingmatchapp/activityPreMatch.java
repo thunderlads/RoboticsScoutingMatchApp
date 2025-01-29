@@ -9,6 +9,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.ScrollView;
 import android.widget.Toast;
+import com.example.roboticsscoutingmatchapp.U;
 
 
 import androidx.activity.EdgeToEdge;
@@ -23,6 +24,20 @@ public class activityPreMatch extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        U u = new U();
+        String preMatchSaveString, autoSaveString, teleOpSaveString, postMatchSaveString;
+        Bundle extras = getIntent().getExtras();
+        if(extras != null){
+            if(extras.containsKey("preMatch")){
+                preMatchSaveString = extras.getString("preMatch", "");
+            }
+            if(extras.containsKey("auto")){
+                autoSaveString = extras.getString("auto", "");
+            }
+            // TODO: Add savestrings for teleop and post match
+        }
+
+
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_pre_match);
@@ -45,22 +60,26 @@ public class activityPreMatch extends AppCompatActivity {
 
         saveButton.setOnClickListener((l) -> {
             // Check if all fields are full
-            boolean teamColorEmpty = teamColorRadioGroup.getCheckedRadioButtonId() == -1;
             ScrollView mainView = findViewById(R.id.scroll_view);
             String response = "";
 
-            if(scoutName.getText().toString().isEmpty()){
+            if(u.getData(scoutName).isEmpty()){
                 response = getResources().getString(R.string.prompt_scout_name) + " " + getResources().getString(R.string.is_empty_identifier);
-            }else if(matchNumber.getText().toString().isEmpty()){
+            }else if(u.getData(matchNumber).isEmpty()){
                 response = getResources().getString(R.string.prompt_match_number) + " " + getResources().getString(R.string.is_empty_identifier);
-            }else if(teamNumber.getText().toString().isEmpty()){
+            }else if(u.getData(teamNumber).isEmpty()){
                 response = getResources().getString(R.string.prompt_team_number) + " " + getResources().getString(R.string.is_empty_identifier);
-            }else if(teamColorEmpty){
+            }else if(u.getData(teamColorRadioGroup).isEmpty()){
                 response = "Please choose a team color";
             }else{
-                //TODO: Add some form of save system
+                // TODO: Add some form of save system
+                Intent i = new Intent(this, activityAutonomous.class);
+                String valueToPass = "";
+                valueToPass += "data entry #,"; // TODO: Add data entry numbering system
 
-                this.startActivity(new Intent(this, activityAutonomous.class));
+
+//                i.putExtra();
+                this.startActivity(i);
             }
 
             if(!response.isBlank()){
