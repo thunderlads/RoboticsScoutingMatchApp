@@ -57,7 +57,6 @@ public class U extends AppCompatActivity{
 
         return response;
     }
-
     public String stripText(String text){
         String response = text;
 
@@ -68,5 +67,12 @@ public class U extends AppCompatActivity{
         }
 
         return response;
+    }
+
+    public String nextCommaOn(String text){
+        return text.substring(text.indexOf(",")+1);
+    }
+    public String untilNextComma(String text){
+        return text.substring(0, text.indexOf(","));
     }
 }

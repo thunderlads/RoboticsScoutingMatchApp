@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
@@ -55,11 +56,28 @@ public class activityPreMatch extends AppCompatActivity {
         EditText matchNumber = findViewById(R.id.match_number);
         EditText teamNumber = findViewById(R.id.team_number);
         RadioGroup teamColorRadioGroup = findViewById(R.id.team_color_radio_group);
-        findViewById(R.id.team_color_red);
-        findViewById(R.id.team_color_blue);
+        RadioButton redButton = findViewById(R.id.team_color_red);
+        RadioButton blueButton = findViewById(R.id.team_color_blue);
         Button saveButton = findViewById(R.id.save_button);
 
         // TODO: If save string exists for current activity, fill in fields automatically
+        if(!preMatchSaveString.isEmpty()){
+            preMatchSaveString = u.nextCommaOn(preMatchSaveString); // remove data entry number
+            preMatchSaveString = u.nextCommaOn(preMatchSaveString); // remove data version
+            scoutName.setText(u.untilNextComma(preMatchSaveString));
+            preMatchSaveString = u.nextCommaOn(preMatchSaveString); // remove scout name
+            teamNumber.setText(u.untilNextComma(preMatchSaveString));
+            preMatchSaveString = u.nextCommaOn(preMatchSaveString); // remove team number
+            if(u.untilNextComma(preMatchSaveString).equalsIgnoreCase("red")){
+                teamColorRadioGroup.check(R.id.team_color_red);
+            }else{
+                teamColorRadioGroup.check(R.id.team_color_blue);
+            }
+            preMatchSaveString = u.nextCommaOn(preMatchSaveString); // remove team color
+            matchNumber.setText(u.untilNextComma(preMatchSaveString));
+            preMatchSaveString = u.nextCommaOn(preMatchSaveString); // remove match number
+
+        }
 
         // Defines a toast (pop-up) to be used when a field is left unfilled
         Toast unfilledMessage = new Toast(this);
@@ -87,8 +105,9 @@ public class activityPreMatch extends AppCompatActivity {
                 preMatchInfo += u.DATA_VERSION + ",";
                 preMatchInfo += u.stripText(u.getData(scoutName), 0) + ",";
                 preMatchInfo += u.stripText(u.getData(teamNumber)) + ",";
+                preMatchInfo += u.stripText(u.getData(teamColorRadioGroup));
                 preMatchInfo += u.stripText(u.getData(matchNumber)) + ",";
-//                preMatchInfo += u.stripText(u.getData(coralNumber));
+//                preMatchInfo += u.stripText(u.getData(coralNumber)) +",";
 
                 i.putExtra("preMatch", preMatchInfo);
                 i.putExtra("auto", autoSaveString);
