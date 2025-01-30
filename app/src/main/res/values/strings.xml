@@ -37,4 +37,12 @@
     <string name="position6">Position 6</string>
 
     <string name="attempted_coral">Attempted Coral</string>
+
+<!--    tele op -->
+
+
+<!--    Post Match -->
+    <String name="header4">Post Match</String>
+    <String name="button_save">Save</String>
+
 </resources>
