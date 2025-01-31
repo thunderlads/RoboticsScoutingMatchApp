@@ -38,12 +38,19 @@
     <string name="position6">Position 6</string>
 
     <string name="attempted_coral">Attempted Coral</string>
+    <string name="scored_coral">Scored Coral</string>
+    <string name="attempted_algae">Attempted Algae</string>
+    <string name="scored_algae">Scored Algae</string>
+    <string name="removed_algae">Removed Algae</string>
+    <string name="number_tried">Number</string>
+    <string name="counter_up">Add</string>
+    <string name="counter_down">Subtract</string>
 
 <!--    tele op -->
 
 
 <!--    Post Match -->
-    <String name="header4">Post Match</String>
-    <String name="button_save">Save</String>
+    <string name="header4">Post Match</string>
+    <string name="button_save">Save</string>
 
 </resources>
