@@ -2,6 +2,7 @@ package com.example.roboticsscoutingmatchapp;
 
 
 import android.util.Log;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.RadioButton;
@@ -34,6 +35,13 @@ public class U extends AppCompatActivity{
     }
     public String getData(TextView field){
         return field.getText().toString();
+    }
+    public String getData(CheckBox field){
+        if(field.isChecked()){
+            return "True";
+        } else{
+            return "False";
+        }
     }
 
 

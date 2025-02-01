@@ -3,7 +3,10 @@ package com.example.roboticsscoutingmatchapp;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -46,6 +49,17 @@ public class activityAutonomous extends AppCompatActivity {
             return insets;
         });
 
+        RadioGroup positionGroup1 = findViewById(R.id.staring_position_radio_group1);
+        RadioGroup positionGroup2 = findViewById(R.id.staring_position_radio_group2);
+        RadioButton position1Button = findViewById(R.id.Position_1);
+        RadioButton position2Button = findViewById(R.id.Position_2);
+        RadioButton position3Button = findViewById(R.id.Position_3);
+        RadioButton position4Button = findViewById(R.id.position_4);
+        RadioButton position5Button = findViewById(R.id.position_5);
+        RadioButton position6Button = findViewById(R.id.position_6);
+
+        CheckBox leftStarting = findViewById(R.id.left_starting_area);
+
         Button incrementAC1 = findViewById(R.id.up_count_button_ac1);
         Button decrementAC1 = findViewById(R.id.down_count_button_ac1);
         EditText AC1Field = findViewById(R.id.edit_text_ac1);
@@ -78,10 +92,43 @@ public class activityAutonomous extends AppCompatActivity {
         Button decrementRC4 = findViewById(R.id.down_count_button_rc4);
         EditText RC4Field = findViewById(R.id.edit_text_rc4);
 
+        Button incrementAA = findViewById(R.id.up_count_button_aa); // AA = Attempted Algae
+        Button decrementAA = findViewById(R.id.down_count_button_aa);
+        EditText AAField = findViewById(R.id.edit_text_aa);
+
+        Button incrementRA = findViewById(R.id.up_count_button_ra); // RA = Real Algae (scored)
+        Button decrementRA = findViewById(R.id.down_count_button_ra);
+        EditText RAField = findViewById(R.id.edit_text_ra);
+
+        Button incrementREA = findViewById(R.id.up_count_button_rea); // REA = Algae Removed
+        Button decrementREA = findViewById(R.id.down_count_button_rea);
+        EditText REAField = findViewById(R.id.edit_text_rea);
+
         Button backButton = findViewById(R.id.back_button);
         Button saveButton = findViewById(R.id.save_button);
 
-
+        incrementAC1.setOnClickListener((l)->u.incrementText(AC1Field));
+        decrementAC1.setOnClickListener((l)->u.incrementText(AC1Field, -1));
+        incrementRC1.setOnClickListener((l)->u.incrementText(RC1Field));
+        decrementRC1.setOnClickListener((l)->u.incrementText(RC1Field, -1));
+        incrementAC2.setOnClickListener((l)->u.incrementText(AC2Field));
+        decrementAC2.setOnClickListener((l)->u.incrementText(AC2Field, -1));
+        incrementRC2.setOnClickListener((l)->u.incrementText(RC2Field));
+        decrementRC2.setOnClickListener((l)->u.incrementText(RC2Field, -1));
+        incrementAC3.setOnClickListener((l)->u.incrementText(AC3Field));
+        decrementAC3.setOnClickListener((l)->u.incrementText(AC3Field, -1));
+        incrementRC3.setOnClickListener((l)->u.incrementText(RC3Field));
+        decrementRC3.setOnClickListener((l)->u.incrementText(RC3Field, -1));
+        incrementAC4.setOnClickListener((l)->u.incrementText(AC4Field));
+        decrementAC4.setOnClickListener((l)->u.incrementText(AC4Field, -1));
+        incrementRC4.setOnClickListener((l)->u.incrementText(RC4Field));
+        decrementRC4.setOnClickListener((l)->u.incrementText(RC4Field, -1));
+        incrementAA.setOnClickListener((l)->u.incrementText(AAField));
+        decrementAA.setOnClickListener((l)->u.incrementText(AAField, -1));
+        incrementRA.setOnClickListener((l)->u.incrementText(RAField));
+        decrementRA.setOnClickListener((l)->u.incrementText(RAField, -1));
+        incrementREA.setOnClickListener((l)->u.incrementText(REAField));
+        decrementREA.setOnClickListener((l)->u.incrementText(REAField, -1));
 
         backButton.setOnClickListener((l)-> {
             //TODO: Add info getter for auto page. NOT ALL FIELDS NEED TO BE FILLED
