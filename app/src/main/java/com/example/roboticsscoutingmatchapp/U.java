@@ -25,7 +25,6 @@ public class U extends AppCompatActivity{
     public String getData(RadioGroup field){
         String response;
         if(field.getCheckedRadioButtonId() == -1){
-//            Log.d("dffikjasdhiokusdhoafwieuah", "fshodifhoeirhodjfbho9sayuid");
             response = "";
         }else{
             RadioButton checkedButton = field.findViewById(field.getCheckedRadioButtonId());
@@ -76,5 +75,38 @@ public class U extends AppCompatActivity{
     }
     public String untilNextComma(String text){
         return text.substring(0, text.indexOf(","));
+    }
+
+    public void incrementText(TextView field){
+        if(field.getText().toString().isEmpty()){
+            field.setText("1");
+        }else{
+            int currentNum = Integer.parseInt(field.getText().toString());
+            currentNum++;
+            field.setText(Integer.toString(currentNum));
+        }
+    }
+    public void incrementText(TextView field, int incrementBy){
+        if(field.getText().toString().isEmpty()){
+            field.setText(Integer.toString(incrementBy));
+        }else{
+            field.setText(Integer.toString(Integer.parseInt(field.getText().toString())+incrementBy));
+        }
+    }
+    public void incrementText(EditText field){
+        if(field.getText().toString().isEmpty()){
+            field.setText("1");
+        }else{
+            int currentNum = Integer.parseInt(field.getText().toString());
+            field.setText(Integer.toString(currentNum+1));
+        }
+    }
+    public void incrementText(EditText field, int incrementBy){
+        if(field.getText().toString().isEmpty()){
+            field.setText(Integer.toString(incrementBy));
+        }else{
+            int currentNum = Integer.parseInt(field.getText().toString());
+            field.setText(Integer.toString(currentNum+incrementBy));
+        }
     }
 }

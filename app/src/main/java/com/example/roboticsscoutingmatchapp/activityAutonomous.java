@@ -3,6 +3,7 @@ package com.example.roboticsscoutingmatchapp;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -44,6 +45,38 @@ public class activityAutonomous extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        Button incrementAC1 = findViewById(R.id.up_count_button_ac1);
+        Button decrementAC1 = findViewById(R.id.down_count_button_ac1);
+        EditText AC1Field = findViewById(R.id.edit_text_ac1);
+
+        Button incrementRC1 = findViewById(R.id.up_count_button_rc1);
+        Button decrementRC1 = findViewById(R.id.down_count_button_rc1);
+        EditText RC1Field = findViewById(R.id.edit_text_rc1);
+
+        Button incrementAC2 = findViewById(R.id.up_count_button_ac2);
+        Button decrementAC2 = findViewById(R.id.down_count_button_ac2);
+        EditText AC2Field = findViewById(R.id.edit_text_ac2);
+
+        Button incrementRC2 = findViewById(R.id.up_count_button_rc2);
+        Button decrementRC2 = findViewById(R.id.down_count_button_rc2);
+        EditText RC2Field = findViewById(R.id.edit_text_rc2);
+
+        Button incrementAC3 = findViewById(R.id.up_count_button_ac3);
+        Button decrementAC3 = findViewById(R.id.down_count_button_ac3);
+        EditText AC3Field = findViewById(R.id.edit_text_ac3);
+
+        Button incrementRC3 = findViewById(R.id.up_count_button_rc3);
+        Button decrementRC3 = findViewById(R.id.down_count_button_rc3);
+        EditText RC3Field = findViewById(R.id.edit_text_rc3);
+
+        Button incrementAC4 = findViewById(R.id.up_count_button_ac4);
+        Button decrementAC4 = findViewById(R.id.down_count_button_ac4);
+        EditText AC4Field = findViewById(R.id.edit_text_ac4);
+
+        Button incrementRC4 = findViewById(R.id.up_count_button_rc4);
+        Button decrementRC4 = findViewById(R.id.down_count_button_rc4);
+        EditText RC4Field = findViewById(R.id.edit_text_rc4);
 
         Button backButton = findViewById(R.id.back_button);
         Button saveButton = findViewById(R.id.save_button);

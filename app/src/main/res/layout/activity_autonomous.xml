@@ -139,7 +139,7 @@
                 android:id="@+id/down_count_button_ac1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
+                 android:layout_marginStart="5dp"
                 android:text="@string/counter_down"
                  />
 
@@ -149,6 +149,7 @@
                 android:text="@string/attempted_coral_lvl1" />
 
             <EditText
+                android:id="@+id/edit_text_ac1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autofillHints="username"
@@ -189,6 +190,7 @@
                 android:text="@string/scored_coral_lvl1" />
 
             <EditText
+                android:id="@+id/edit_text_rc1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autofillHints="username"
@@ -229,6 +231,7 @@
                 android:text="@string/attempted_coral_lvl2" />
 
             <EditText
+                android:id="@+id/edit_text_ac2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autofillHints="username"
@@ -269,6 +272,7 @@
                 android:text="@string/scored_coral_lvl2" />
 
             <EditText
+                android:id="@+id/edit_text_rc2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autofillHints="username"
@@ -308,6 +312,7 @@
                 android:text="@string/attempted_coral_lvl3" />
 
             <EditText
+                android:id="@+id/edit_text_ac3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autofillHints="username"
@@ -347,6 +352,7 @@
                 android:text="@string/scored_coral_lvl3" />
 
             <EditText
+                android:id="@+id/edit_text_rc3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autofillHints="username"
@@ -386,6 +392,7 @@
                 android:text="@string/attempted_coral_lvl4" />
 
             <EditText
+                android:id="@+id/edit_text_ac4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autofillHints="username"
@@ -425,6 +432,7 @@
                 android:text="@string/scored_coral_lvl4" />
 
             <EditText
+                android:id="@+id/edit_text_rc4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autofillHints="username"

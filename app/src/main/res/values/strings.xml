@@ -61,8 +61,8 @@
     <string name="scored_algae">Scored Algae</string>
     <string name="removed_algae">Removed Algae</string>
     <string name="number_tried">Number</string>
-    <string name="counter_up">Add</string>
-    <string name="counter_down">Subtract</string>
+    <string name="counter_up">+</string>
+    <string name="counter_down">-</string>
 
 <!--    tele op -->
 
