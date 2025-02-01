@@ -1,6 +1,7 @@
 package com.example.roboticsscoutingmatchapp;
 
 
+import android.util.Log;
 import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.RadioButton;
@@ -24,9 +25,10 @@ public class U extends AppCompatActivity{
     public String getData(RadioGroup field){
         String response;
         if(field.getCheckedRadioButtonId() == -1){
+//            Log.d("dffikjasdhiokusdhoafwieuah", "fshodifhoeirhodjfbho9sayuid");
             response = "";
         }else{
-            RadioButton checkedButton = findViewById(field.getCheckedRadioButtonId());
+            RadioButton checkedButton = field.findViewById(field.getCheckedRadioButtonId());
             response = checkedButton.getText().toString();
         }
         return response;

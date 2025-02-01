@@ -85,7 +85,7 @@ public class activityPreMatch extends AppCompatActivity {
 
         saveButton.setOnClickListener((l) -> {
             // Check if all fields are full
-            findViewById(R.id.scroll_view);
+//            findViewById(R.id.scroll_view);
             String response = "";
 
             if(u.getData(scoutName).isEmpty()){
@@ -105,7 +105,7 @@ public class activityPreMatch extends AppCompatActivity {
                 preMatchInfo += u.DATA_VERSION + ",";
                 preMatchInfo += u.stripText(u.getData(scoutName), 0) + ",";
                 preMatchInfo += u.stripText(u.getData(teamNumber)) + ",";
-                preMatchInfo += u.stripText(u.getData(teamColorRadioGroup));
+                preMatchInfo += u.stripText(u.getData(teamColorRadioGroup))+",";
                 preMatchInfo += u.stripText(u.getData(matchNumber)) + ",";
 //                preMatchInfo += u.stripText(u.getData(coralNumber)) +",";
 
