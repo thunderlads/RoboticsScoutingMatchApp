@@ -3,6 +3,7 @@ package com.example.roboticsscoutingmatchapp;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -59,6 +60,7 @@ public class activityPreMatch extends AppCompatActivity {
         RadioButton redButton = findViewById(R.id.team_color_red);
         RadioButton blueButton = findViewById(R.id.team_color_blue);
         Button saveButton = findViewById(R.id.save_button);
+        CheckBox preloadedCoral = findViewById(R.id.checkBox_preloaded_coral);
 
         // TODO: If save string exists for current activity, fill in fields automatically
         if(!preMatchSaveString.isEmpty()){
@@ -76,6 +78,8 @@ public class activityPreMatch extends AppCompatActivity {
             preMatchSaveString = u.nextCommaOn(preMatchSaveString); // remove team color
             matchNumber.setText(u.untilNextComma(preMatchSaveString));
             preMatchSaveString = u.nextCommaOn(preMatchSaveString); // remove match number
+            preloadedCoral.setChecked(Boolean.parseBoolean(u.untilNextComma(preMatchSaveString)));
+            preMatchSaveString = u.nextCommaOn(preMatchSaveString); // Remove Checked
 
         }
 
@@ -97,17 +101,16 @@ public class activityPreMatch extends AppCompatActivity {
             }else if(u.getData(teamColorRadioGroup).isEmpty()){
                 response = "Please choose a team color";
             }else{
-                // TODO: Add some form of save system
+                // Utilizes "savestrings"
                 Intent i = new Intent(this, activityAutonomous.class);
-                // TODO: Add data stripping to get rid of unnecessary whitespace/delimiters
                 String preMatchInfo = "";
                 preMatchInfo += "data entry #,"; // TODO: Add data entry numbering system
                 preMatchInfo += u.DATA_VERSION + ",";
                 preMatchInfo += u.stripText(u.getData(scoutName), 0) + ",";
                 preMatchInfo += u.stripText(u.getData(teamNumber)) + ",";
-                preMatchInfo += u.stripText(u.getData(teamColorRadioGroup))+",";
+                preMatchInfo += u.stripText(u.getData(teamColorRadioGroup)) + ",";
                 preMatchInfo += u.stripText(u.getData(matchNumber)) + ",";
-//                preMatchInfo += u.stripText(u.getData(coralNumber)) +",";
+                preMatchInfo += u.stripText(u.getData(preloadedCoral)) + ",";
 
                 i.putExtra("preMatch", preMatchInfo);
                 i.putExtra("auto", autoSaveString);
