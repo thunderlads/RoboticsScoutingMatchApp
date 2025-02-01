@@ -103,9 +103,23 @@
         </LinearLayout>
 
 <!--        left starting position button -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
+        <CheckBox
+            android:id="@+id/checkBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/leave_start_position"
+            android:layout_marginTop="16dp"
+            android:textSize="16sp" />
 
-<!--attempted coral counter-->
+        <!--        took from right human player station -->
+
+        <!--        took from left human player station -->
+
+<!--attempted coral counter 1-->
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -113,7 +127,7 @@
             app:layout_constraintWidth_percent="0.5">
 
             <Button
-                android:id="@+id/up_count_button_ac"
+                android:id="@+id/up_count_button_ac1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/counter_up"
@@ -121,7 +135,7 @@
                 />
 
             <Button
-                android:id="@+id/down_count_button_ac"
+                android:id="@+id/down_count_button_ac1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
@@ -131,7 +145,7 @@
             <TextView
                 android:layout_width="117dp"
                 android:layout_height="wrap_content"
-                android:text="@string/attempted_coral" />
+                android:text="@string/attempted_coral_lvl1" />
 
             <EditText
                 android:layout_width="match_parent"
@@ -144,7 +158,8 @@
 
         </LinearLayout>
 
-<!--        real coral counter -->
+
+        <!--        real coral counter lvl 1 -->
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -152,7 +167,7 @@
             app:layout_constraintWidth_percent="0.5">
 
             <Button
-                android:id="@+id/up_count_button_rc"
+                android:id="@+id/up_count_button_rc1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/counter_up"
@@ -160,7 +175,7 @@
                 />
 
             <Button
-                android:id="@+id/down_count_button_rc"
+                android:id="@+id/down_count_button_rc1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
@@ -170,7 +185,7 @@
             <TextView
                 android:layout_width="117dp"
                 android:layout_height="wrap_content"
-                android:text="@string/scored_coral" />
+                android:text="@string/scored_coral_lvl1" />
 
             <EditText
                 android:layout_width="match_parent"
@@ -182,6 +197,243 @@
                 android:minHeight="48dp" />
 
         </LinearLayout>
+
+<!--        lvl 2 a -->
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintWidth_percent="0.5">
+
+            <Button
+                android:id="@+id/up_count_button_ac2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/counter_up"
+
+                />
+
+            <Button
+                android:id="@+id/down_count_button_ac2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:text="@string/counter_down"
+                />
+
+            <TextView
+                android:layout_width="117dp"
+                android:layout_height="wrap_content"
+                android:text="@string/attempted_coral_lvl2" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="username"
+                android:hint="@string/number_tried"
+                android:inputType="number"
+                android:minWidth="32dp"
+                android:minHeight="48dp" />
+
+        </LinearLayout>
+
+
+        <!--        lvl 2 s -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintWidth_percent="0.5">
+
+            <Button
+                android:id="@+id/up_count_button_rc2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/counter_up"
+
+                />
+
+            <Button
+                android:id="@+id/down_count_button_rc2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:text="@string/counter_down"
+                />
+
+            <TextView
+                android:layout_width="117dp"
+                android:layout_height="wrap_content"
+                android:text="@string/scored_coral_lvl2" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="username"
+                android:hint="@string/number_tried"
+                android:inputType="number"
+                android:minWidth="32dp"
+                android:minHeight="48dp" />
+
+        </LinearLayout>
+
+        <!--        lvl 3 a -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintWidth_percent="0.5">
+
+            <Button
+                android:id="@+id/up_count_button_ac3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/counter_up"
+
+                />
+
+            <Button
+                android:id="@+id/down_count_button_ac3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:text="@string/counter_down"
+                />
+
+            <TextView
+                android:layout_width="117dp"
+                android:layout_height="wrap_content"
+                android:text="@string/attempted_coral_lvl3" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="username"
+                android:hint="@string/number_tried"
+                android:inputType="number"
+                android:minWidth="32dp"
+                android:minHeight="48dp" />
+
+        </LinearLayout>
+
+        <!--        lvl 3 s -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintWidth_percent="0.5">
+
+            <Button
+                android:id="@+id/up_count_button_rc3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/counter_up"
+
+                />
+
+            <Button
+                android:id="@+id/down_count_button_rc3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:text="@string/counter_down"
+                />
+
+            <TextView
+                android:layout_width="117dp"
+                android:layout_height="wrap_content"
+                android:text="@string/scored_coral_lvl3" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="username"
+                android:hint="@string/number_tried"
+                android:inputType="number"
+                android:minWidth="32dp"
+                android:minHeight="48dp" />
+
+        </LinearLayout>
+
+        <!--        lvl 4 a -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintWidth_percent="0.5">
+
+            <Button
+                android:id="@+id/up_count_button_ac4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/counter_up"
+
+                />
+
+            <Button
+                android:id="@+id/down_count_button_ac4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:text="@string/counter_down"
+                />
+
+            <TextView
+                android:layout_width="117dp"
+                android:layout_height="wrap_content"
+                android:text="@string/attempted_coral_lvl4" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="username"
+                android:hint="@string/number_tried"
+                android:inputType="number"
+                android:minWidth="32dp"
+                android:minHeight="48dp" />
+
+        </LinearLayout>
+
+        <!--        lvl 4 s-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintWidth_percent="0.5">
+
+            <Button
+                android:id="@+id/up_count_button_rc4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/counter_up"
+
+                />
+
+            <Button
+                android:id="@+id/down_count_button_rc4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:text="@string/counter_down"
+                />
+
+            <TextView
+                android:layout_width="117dp"
+                android:layout_height="wrap_content"
+                android:text="@string/scored_coral_lvl4" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="username"
+                android:hint="@string/number_tried"
+                android:inputType="number"
+                android:minWidth="32dp"
+                android:minHeight="48dp" />
+
+        </LinearLayout>
+
 <!--        attempted algae counter -->
         <LinearLayout
             android:layout_width="wrap_content"
@@ -220,6 +472,9 @@
                 android:minHeight="48dp" />
 
         </LinearLayout>
+
+
+
 <!--        real algae scored  -->
         <LinearLayout
             android:layout_width="wrap_content"
@@ -298,13 +553,9 @@
 
         </LinearLayout>
 
-<!--        SCored co-op point button -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            />
 
-<!--        save buttons (hahahaha but) -->
+
+        <!--        save buttons (hahahaha but) -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

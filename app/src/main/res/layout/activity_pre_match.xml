@@ -134,6 +134,25 @@
                     android:text="@string/color_blue"/>
             </RadioGroup>
         </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <CheckBox
+                android:id="@+id/checkBox_preloaded_coral"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/preloaded_coral"
+                android:layout_marginTop="16dp"
+                android:textSize="16sp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/checkBox_scouting_humanplayer"
+                android:text="@string/scouting_human_player"/>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -148,7 +167,7 @@
                 android:text="@string/button_next"/>
         </LinearLayout>
 
-
+<!-- checkbox "my team is on the processor" -->
 
         </LinearLayout>
 

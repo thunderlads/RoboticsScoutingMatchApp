@@ -24,9 +24,14 @@
     <string name="button_next">Next</string>
     <string name="button_back">Back</string>
 
-
+    <string name="preloaded_coral">Did they have a preloaded coral?</string>
+    <string name="scouting_human_player">Are you scouting the human player?</string>
 <!--Auto -->
     <string name="header2">Autonomous</string>
+
+
+    <string name="leave_start_position">Leave Starting Area</string>
+    <string name="get_auto_coop">Auto Co-op point</string>
 
     <string name="prompt_starting_position">Starting Position</string>
 
@@ -37,8 +42,21 @@
     <string name="position5">Position 5</string>
     <string name="position6">Position 6</string>
 
-    <string name="attempted_coral">Attempted Coral</string>
-    <string name="scored_coral">Scored Coral</string>
+    <string name="took_from_left">Taken from left human player station</string>
+    <string name="took_from_right">Taken from left human player station</string>
+
+    <string name="attempted_coral_lvl1">Attempted Coral Lvl 1</string>
+    <string name="scored_coral_lvl1">Scored Coral Lvl 1</string>
+
+    <string name="attempted_coral_lvl2">Attempted Coral Lvl 2</string>
+    <string name="scored_coral_lvl2">Scored Coral Lvl 2</string>
+
+    <string name="attempted_coral_lvl3">Attempted Coral Lvl 3</string>
+    <string name="scored_coral_lvl3">Scored Coral Lvl 3</string>
+
+    <string name="attempted_coral_lvl4">Attempted Coral Lvl 4</string>
+    <string name="scored_coral_lvl4">Scored Coral Lvl 4</string>
+
     <string name="attempted_algae">Attempted Algae</string>
     <string name="scored_algae">Scored Algae</string>
     <string name="removed_algae">Removed Algae</string>
@@ -52,5 +70,6 @@
 <!--    Post Match -->
     <string name="header4">Post Match</string>
     <string name="button_save">Save</string>
+
 
 </resources>
