@@ -107,6 +107,8 @@ public class activityAutonomous extends AppCompatActivity {
         Button backButton = findViewById(R.id.back_button);
         Button saveButton = findViewById(R.id.save_button);
 
+        // Sets all the buttons to either increment or decrement their respective buttons.
+        // Can be simplified. Not now.
         incrementAC1.setOnClickListener((l)->u.incrementText(AC1Field));
         decrementAC1.setOnClickListener((l)->u.incrementText(AC1Field, -1));
         incrementRC1.setOnClickListener((l)->u.incrementText(RC1Field));
@@ -131,11 +133,37 @@ public class activityAutonomous extends AppCompatActivity {
         decrementREA.setOnClickListener((l)->u.incrementText(REAField, -1));
 
         backButton.setOnClickListener((l)-> {
-            //TODO: Add info getter for auto page. NOT ALL FIELDS NEED TO BE FILLED
+            // Starting Position | Left starting Position | #ACL1 | #ACL2 | #ACL3 | #ACL4 |
+            // #SCL1 | #SCL2 | #SCL3 | #SCL4 | #attempted algae | #scored algae | #algae removed ||
+            String autoInfo = "";
+
+            if (!u.getData(positionGroup1).isEmpty() || !u.getData(positionGroup2).isEmpty()) {
+                if (u.getData(positionGroup1).isEmpty()) {
+                    autoInfo += u.getData(positionGroup2);
+                } else {
+                    autoInfo += u.getData(positionGroup1);
+                }
+            }
+            autoInfo += ","; // Starting position # end
+            autoInfo += u.getData(leftStarting) + ","; // Left starting end
+
+            autoInfo += u.getData(AC1Field) + ",";
+            autoInfo += u.getData(AC2Field) + ",";
+            autoInfo += u.getData(AC3Field) + ",";
+            autoInfo += u.getData(AC4Field) + ","; // Attempted Coral end
+
+            autoInfo += u.getData(RC1Field) + ",";
+            autoInfo += u.getData(RC2Field) + ",";
+            autoInfo += u.getData(RC3Field) + ",";
+            autoInfo += u.getData(RC4Field) + ","; // Scored Coral End
+
+            autoInfo += u.getData(AAField) + ",";
+            autoInfo += u.getData(RAField) + ",";
+            autoInfo += u.getData(REAField) + ",";
 
             Intent i = new Intent(this, activityPreMatch.class);
             i.putExtra("preMatch", preMatchSaveString);
-            i.putExtra("auto", autoSaveString);
+            i.putExtra("auto", autoInfo);
             i.putExtra("teleOp", teleOpSaveString);
             i.putExtra("postMatch", postMatchSaveString);
 
