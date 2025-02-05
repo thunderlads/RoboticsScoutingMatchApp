@@ -65,7 +65,7 @@
     <string name="counter_down">-</string>
 
 <!--    tele op -->
-<string name="header3">Teleop</string>
+    <string name="header3">Teleop</string>
 
     <string name="algae_processor_attempted">Attempted Processor</string>
     <string name="algae_processor_scored">Scored Processor</string>
@@ -77,6 +77,17 @@
     <string name="hang_shallow">Hang Shallow</string>
     <string name="hang_deep">Hang Deep</string>
     <string name="park">Park</string>
+
+    <string name="endgame_time">How much time they park with?</string>
+    <string name="twenty_five">25</string>
+    <string name="twenty">20</string>
+    <string name="fifteen">15</string>
+    <string name="ten">10</string>
+    <string name="five">5</string>
+
+    <string name="pieces_pickup">What pieces could the robot pickup </string>
+    <string name="pickup_coral">Coral</string>/.
+    <string name="pickup_algae">Algae</string>
 
 <!--    Post Match -->
     <string name="header4">Post Match</string>
