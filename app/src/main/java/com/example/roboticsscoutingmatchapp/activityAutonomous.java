@@ -271,7 +271,7 @@ public class activityAutonomous extends AppCompatActivity {
                 AAField.setText("0");
             }
             if(u.getData(RAField).isEmpty()) {
-                AAField.setText("0");
+                RAField.setText("0");
             }
             if(u.getData(REAField).isEmpty()) {
                 REAField.setText("0");

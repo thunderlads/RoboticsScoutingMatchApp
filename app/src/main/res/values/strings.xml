@@ -77,6 +77,7 @@
     <string name="hang_shallow">Hang Shallow</string>
     <string name="hang_deep">Hang Deep</string>
     <string name="park">Park</string>
+    <string name="nothing">None</string>
 
 <!--    Post Match -->
     <string name="header4">Post Match</string>

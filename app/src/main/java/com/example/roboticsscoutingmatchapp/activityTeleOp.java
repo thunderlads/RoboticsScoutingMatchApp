@@ -87,6 +87,7 @@ public class activityTeleOp extends AppCompatActivity {
         RadioButton hangShallowButton = findViewById(R.id.hang_shallow);
         RadioButton hangDeepButton = findViewById(R.id.hang_deep);
         RadioButton parkButton = findViewById(R.id.park);
+        RadioButton noneButton = findViewById(R.id.nothing);
 
         Toast unfilledMessage = new Toast(this);
         unfilledMessage.setDuration(Toast.LENGTH_SHORT);
@@ -133,6 +134,9 @@ public class activityTeleOp extends AppCompatActivity {
                     break;
                 case "Park":
                     parkButton.toggle();
+                    break;
+                case "None":
+                    noneButton.toggle();
                     break;
             }
             teleOpSaveString = u.nextCommaOn(teleOpSaveString);
@@ -203,33 +207,32 @@ public class activityTeleOp extends AppCompatActivity {
             this.startActivity(i);
         });
 
-        // TODO: Add default values for editText instead of toast Message (default: 0)
         saveButton.setOnClickListener((l) -> {
             String response = "";
             if (u.getData(AC1field).isEmpty())
-                response = "Please fill Attempted Coral Level 1\n(Input 0 if none)";
-            else if(u.getData(RC1field).isEmpty())
-                response = "Please fill Scored Coral Level 1\n(Input 0 if none)";
-            else if(u.getData(AC2field).isEmpty())
-                response = "Please fill Attempted Coral Level 2\n(Input 0 if none)";
-            else if(u.getData(RC2field).isEmpty())
-                response = "Please fill Scored Coral Level 2\n(Input 0 if none)";
-            else if(u.getData(AC3field).isEmpty())
-                response = "Please fill Attempted Coral Level 3\n(Input 0 if none)";
-            else if(u.getData(RC3field).isEmpty())
-                response = "Please fill Scored Coral Level 3\n(Input 0 if none)";
-            else if(u.getData(AC4field).isEmpty())
-                response = "Please fill Attempted Coral Level 4\n(Input 0 if none)";
-            else if(u.getData(RC4field).isEmpty())
-                response = "Please fill Scored Coral Level 4\n(Input 0 if none)";
-            else if(u.getData(APfield).isEmpty())
-                response = "Please fill Attempted Processor\n(Input 0 if none)";
-            else if(u.getData(SPfield).isEmpty())
-                response = "Please fill Scored Processor\n(Input 0 if none)";
-            else if(u.getData(ABfield).isEmpty())
-                response = "Please fill Attempted Barge\n(Input 0 if none)";
-            else if(u.getData(SBfield).isEmpty())
-                response = "Please fill Scored Barge\n(Input 0 if none)";
+                AC1field.setText("0");
+            if(u.getData(RC1field).isEmpty())
+                RC1field.setText("0");
+            if(u.getData(AC2field).isEmpty())
+                AC2field.setText("0");
+            if(u.getData(RC2field).isEmpty())
+                RC2field.setText("0");
+            if(u.getData(AC3field).isEmpty())
+                AC3field.setText("0");
+            if(u.getData(RC3field).isEmpty())
+                RC3field.setText("0");
+            if(u.getData(AC4field).isEmpty())
+                AC4field.setText("0");
+            if(u.getData(RC4field).isEmpty())
+                RC4field.setText("0");
+            if(u.getData(APfield).isEmpty())
+                APfield.setText("0");
+            if(u.getData(SPfield).isEmpty())
+                SPfield.setText("0");
+            if(u.getData(ABfield).isEmpty())
+                ABfield.setText("0");
+            if(u.getData(SBfield).isEmpty())
+                SBfield.setText("0");
             else if(u.getData(parkRadioGroup).isEmpty())
                 response = "Please select an endgame position";
             else{

@@ -7,12 +7,17 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import java.io.File;
+import java.util.Calendar;
+import java.util.Date;
 
 public class activityAfterMatch extends AppCompatActivity {
 
@@ -51,6 +56,8 @@ public class activityAfterMatch extends AppCompatActivity {
         EditText finalText = findViewById(R.id.End_of_app_text);
         Button saveButton = findViewById(R.id.save_button);
         Button backButton = findViewById(R.id.back_button);
+        Toast unfilledMessage = new Toast(this);
+        unfilledMessage.setDuration(Toast.LENGTH_SHORT);
 
         String preMatchSaveString, autoSaveString,  // Gets all savestrings from wherever coming in from
                 teleOpSaveString, postMatchSaveString;
@@ -65,6 +72,54 @@ public class activityAfterMatch extends AppCompatActivity {
             autoSaveString = "";
             teleOpSaveString = "";
             postMatchSaveString = "";
+        }
+
+        if(!postMatchSaveString.isEmpty()){
+            // Coral floor pickup able | Coral Source pickup able | Defense received |
+            // Stop reason | team rank among alliance | other comments questions or concerns ||
+            floorIntake.setChecked(Boolean.parseBoolean(u.untilNextComma(postMatchSaveString)));
+            postMatchSaveString = u.nextCommaOn(postMatchSaveString);
+
+            humanPlayerStation.setChecked(Boolean.parseBoolean(u.untilNextComma(postMatchSaveString)));
+            postMatchSaveString = u.nextCommaOn(postMatchSaveString);
+
+            if(u.untilNextComma(postMatchSaveString).equals("No Defense")){
+                noDefenseButton.toggle();
+            }else if(u.untilNextComma(postMatchSaveString).equals("Light Defense")){
+                lightDefenseButton.toggle();
+            }else if(u.untilNextComma(postMatchSaveString).equals("Heavy Defense")){
+                heavyDefenseButton.toggle();
+            }
+            postMatchSaveString = u.nextCommaOn(postMatchSaveString);
+
+            String stopReasonString = u.untilNextComma(postMatchSaveString);
+            if(stopReasonString.equals("Died"))
+                diedButton.toggle();
+            else if(stopReasonString.equals("Tipped"))
+                tippedButton.toggle();
+            else if(stopReasonString.equals("Physically Broke"))
+                physicallyBrokeButton.toggle();
+            else if(stopReasonString.equals("E-stopped")){
+                eStoppedButton.toggle();
+            }
+            postMatchSaveString = u.nextCommaOn(postMatchSaveString);
+
+            String teamRank = u.untilNextComma(postMatchSaveString);
+            switch(teamRank){
+                case "Rank 1":
+                    rank1Button.toggle();
+                    break;
+                case "Rank 2":
+                    rank2Button.toggle();
+                    break;
+                case "Rank 3":
+                    rank3Button.toggle();
+                    break;
+            }
+            postMatchSaveString = u.nextCommaOn(postMatchSaveString);
+
+            finalText.setText(u.untilNextComma(postMatchSaveString));
+            postMatchSaveString = u.nextCommaOn(postMatchSaveString);
         }
 
         backButton.setOnClickListener((l)->{
@@ -86,6 +141,26 @@ public class activityAfterMatch extends AppCompatActivity {
             i.putExtra("postMatch", afterMatchInfo);
 
             this.startActivity(i);
+        });
+
+        saveButton.setOnClickListener((l)->{
+            String response = "";
+            if(u.getData(defenseReceivedGroup).isEmpty())
+                response = "Please fill in defense received";
+            else if(u.getData(rankGroup).isEmpty())
+                response = "Please fill in rank";
+            else{
+                Date now = Calendar.getInstance().getTime();
+                // TODO: Set filename to date + .csv, with some identifier before it
+//                now.getDate();
+//                String fileName;
+//                File file
+            }
+
+            if(!response.isEmpty()){
+                unfilledMessage.setText(response);
+                unfilledMessage.show();
+            }
         });
     }
 }
