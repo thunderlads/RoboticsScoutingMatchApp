@@ -84,7 +84,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:showDividers="middle" >
 
                 <RadioButton
@@ -94,31 +94,31 @@
                     android:text="@string/died"
                     android:textSize="20sp" />
 
+                <RadioButton
+                    android:id="@+id/tipped"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="@string/tipped"
+                    android:textSize="20sp" />
+
+                <RadioButton
+                    android:id="@+id/robot_break"
+                    android:layout_width="134dp"
+                    android:layout_height="match_parent"
+                    android:text="@string/physically_broke"
+                    android:textSize="20sp" />
+
+                <RadioButton
+                    android:id="@+id/e_stopped"
+                    android:layout_width="wrap_content"
+                    android:layout_height="77dp"
+                    android:text="@string/e_stopped"
+                    android:textSize="20sp" />
             </RadioGroup>
         </LinearLayout>
 
-<!--        defense received throughout the match -->
+        <!--        defense received throughout the match -->
 
-        <RadioButton
-            android:id="@+id/tipped"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="@string/tipped"
-            android:textSize="20sp" />
-
-        <RadioButton
-            android:id="@+id/robot_break"
-            android:layout_width="134dp"
-            android:layout_height="match_parent"
-            android:text="@string/physically_broke"
-            android:textSize="20sp" />
-
-        <RadioButton
-            android:id="@+id/e_stopped"
-            android:layout_width="wrap_content"
-            android:layout_height="77dp"
-            android:text="@string/e_stopped"
-            android:textSize="20sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -238,14 +238,23 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:gravity="end">
-        <Button
-            android:id="@+id/save_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="24sp"
-            android:paddingVertical="8dp"
-            android:text="@string/button_save"/>
+        android:gravity="end"
+        android:divider="@drawable/horizontal_padding_small"
+        android:showDividers="middle">
+            <Button
+                android:id="@+id/back_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="24sp"
+                android:paddingVertical="8dp"
+                android:text="@string/button_back"/>
+            <Button
+                android:id="@+id/save_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="24sp"
+                android:paddingVertical="8dp"
+                android:text="@string/button_save"/>
     </LinearLayout>
     </LinearLayout>
 </ScrollView>

@@ -243,31 +243,43 @@ public class activityAutonomous extends AppCompatActivity {
         saveButton.setOnClickListener((l)-> {
             String response = "";
 
+            if(u.getData(AC1Field).isEmpty()) {
+                AC1Field.setText("0");
+            }
+            if(u.getData(RC1Field).isEmpty()) {
+                RC1Field.setText("0");
+            }
+            if(u.getData(AC2Field).isEmpty()) {
+                AC2Field.setText("0");
+            }
+            if(u.getData(RC2Field).isEmpty()) {
+                RC2Field.setText("0");
+            }
+            if(u.getData(AC3Field).isEmpty()) {
+                AC3Field.setText("0");
+            }
+            if(u.getData(RC3Field).isEmpty()) {
+                RC3Field.setText("0");
+            }
+            if(u.getData(AC4Field).isEmpty()) {
+                AC4Field.setText("0");
+            }
+            if(u.getData(RC4Field).isEmpty()) {
+                RC4Field.setText("0");
+            }
+            if(u.getData(AAField).isEmpty()) {
+                AAField.setText("0");
+            }
+            if(u.getData(RAField).isEmpty()) {
+                AAField.setText("0");
+            }
+            if(u.getData(REAField).isEmpty()) {
+                REAField.setText("0");
+            }
             if((u.getData(positionGroup1).isEmpty()) && (u.getData(positionGroup2).isEmpty()))
                 response = "Please fill position";
-            else if(u.getData(AC1Field).isEmpty())
-                response = "Please fill Attempted Coral Level 1\n(Input 0 if none)";
-            else if(u.getData(RC1Field).isEmpty())
-                response = "Please fill Scored Coral Level 1\n(Input 0 if none)";
-            else if(u.getData(AC2Field).isEmpty())
-                response = "Please fill Attempted Coral Level 2\n(Input 0 if none)";
-            else if(u.getData(RC2Field).isEmpty())
-                response = "Please fill Scored Coral Level 2\n(Input 0 if none)";
-            else if(u.getData(AC3Field).isEmpty())
-                response = "Please fill Attempted Coral Level 3\n(Input 0 if none)";
-            else if(u.getData(RC3Field).isEmpty())
-                response = "Please fill Scored Coral Level 3\n(Input 0 if none)";
-            else if(u.getData(AC4Field).isEmpty())
-                response = "Please fill Attempted Coral Level 4\n(Input 0 if none)";
-            else if(u.getData(RC4Field).isEmpty())
-                response = "Please fill Scored Coral Level 4\n(Input 0 if none)";
-            else if(u.getData(AAField).isEmpty())
-                response = "Please fill Attempted Algae\n(Input 0 if none)";
-            else if(u.getData(RAField).isEmpty())
-                response = "Please fill Scored Algae\n(Input 0 if none)";
-            else if(u.getData(REAField).isEmpty())
-                response = "Please fill Removed Algae\n(Input 0 if none)";
             else{
+
                 String autoInfo = "";
 
 

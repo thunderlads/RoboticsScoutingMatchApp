@@ -6,6 +6,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -86,6 +87,9 @@ public class activityTeleOp extends AppCompatActivity {
         RadioButton hangShallowButton = findViewById(R.id.hang_shallow);
         RadioButton hangDeepButton = findViewById(R.id.hang_deep);
         RadioButton parkButton = findViewById(R.id.park);
+
+        Toast unfilledMessage = new Toast(this);
+        unfilledMessage.setDuration(Toast.LENGTH_SHORT);
 
         // Setting all fields which have data
         if(!teleOpSaveString.isEmpty()){
@@ -199,6 +203,67 @@ public class activityTeleOp extends AppCompatActivity {
             this.startActivity(i);
         });
 
-        // TODO: Add savestrings for going to endgame page
+        // TODO: Add default values for editText instead of toast Message (default: 0)
+        saveButton.setOnClickListener((l) -> {
+            String response = "";
+            if (u.getData(AC1field).isEmpty())
+                response = "Please fill Attempted Coral Level 1\n(Input 0 if none)";
+            else if(u.getData(RC1field).isEmpty())
+                response = "Please fill Scored Coral Level 1\n(Input 0 if none)";
+            else if(u.getData(AC2field).isEmpty())
+                response = "Please fill Attempted Coral Level 2\n(Input 0 if none)";
+            else if(u.getData(RC2field).isEmpty())
+                response = "Please fill Scored Coral Level 2\n(Input 0 if none)";
+            else if(u.getData(AC3field).isEmpty())
+                response = "Please fill Attempted Coral Level 3\n(Input 0 if none)";
+            else if(u.getData(RC3field).isEmpty())
+                response = "Please fill Scored Coral Level 3\n(Input 0 if none)";
+            else if(u.getData(AC4field).isEmpty())
+                response = "Please fill Attempted Coral Level 4\n(Input 0 if none)";
+            else if(u.getData(RC4field).isEmpty())
+                response = "Please fill Scored Coral Level 4\n(Input 0 if none)";
+            else if(u.getData(APfield).isEmpty())
+                response = "Please fill Attempted Processor\n(Input 0 if none)";
+            else if(u.getData(SPfield).isEmpty())
+                response = "Please fill Scored Processor\n(Input 0 if none)";
+            else if(u.getData(ABfield).isEmpty())
+                response = "Please fill Attempted Barge\n(Input 0 if none)";
+            else if(u.getData(SBfield).isEmpty())
+                response = "Please fill Scored Barge\n(Input 0 if none)";
+            else if(u.getData(parkRadioGroup).isEmpty())
+                response = "Please select an endgame position";
+            else{
+                String teleOpInfo = "";
+
+                teleOpInfo += u.getData(AC1field) + ",";
+                teleOpInfo += u.getData(AC2field) + ",";
+                teleOpInfo += u.getData(AC3field) + ",";
+                teleOpInfo += u.getData(AC4field) + ","; // Attempted Done
+
+                teleOpInfo += u.getData(RC1field) + ",";
+                teleOpInfo += u.getData(RC2field) + ",";
+                teleOpInfo += u.getData(RC3field) + ",";
+                teleOpInfo += u.getData(RC4field) + ","; // Scored Done
+
+                teleOpInfo += u.getData(APfield) + ",";
+                teleOpInfo += u.getData(SPfield) + ",";
+                teleOpInfo += u.getData(ABfield) + ",";
+                teleOpInfo += u.getData(SBfield) + ","; // Algae Done
+
+                teleOpInfo += u.getData(parkRadioGroup) + ",";
+
+                Intent i = new Intent(this, activityAfterMatch.class);
+                i.putExtra("preMatch", preMatchSaveString);
+                i.putExtra("auto", autoSaveString);
+                i.putExtra("teleOp", teleOpInfo);
+                i.putExtra("postMatch", postMatchSaveString);
+
+                this.startActivity(i);
+            }
+            if(!response.isEmpty()){
+                unfilledMessage.setText(response);
+                unfilledMessage.show();
+            }
+        });
     }
 }
