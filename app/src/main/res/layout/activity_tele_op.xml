@@ -535,7 +535,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
                 <RadioGroup
-                    android:id="@+id/endgame"
+                    android:id="@+id/endgame_location"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
@@ -571,11 +571,90 @@
             </LinearLayout>
 
 <!--            if hang time (5s 10s 15s 20s 25s)-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/endgame_time"
+                    android:textSize="24sp" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <RadioGroup
+                    android:id="@+id/endgame_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:showDividers="middle" >
+
+                    <RadioButton
+                        android:id="@+id/twenty_five"
+                        android:layout_height="match_parent"
+                        android:layout_width="wrap_content"
+                        android:text="@string/twenty_five"
+                        android:textSize="22sp" />
+                    <RadioButton
+                        android:id="@+id/twenty"
+                        android:layout_height="match_parent"
+                        android:layout_width="wrap_content"
+                        android:text="@string/twenty"
+                        android:textSize="22sp"
+                        />
+                    <RadioButton
+                        android:id="@+id/fifteen"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textSize="22sp"
+                        android:text="@string/fifteen"/>
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:id="@+id/ten"
+                        android:textSize="22sp"
+                        android:text="@string/ten"/>
+                </RadioGroup>
+            </LinearLayout>
+
 
 <!--            what pieces could they pick up -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pieces_pickup"
+                    android:textSize="24sp" />
 
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
 
+                <CheckBox
+                    android:id="@+id/pickup_algae"
+                    android:layout_width="138dp"
+                    android:layout_height="match_parent"
+                    android:text="@string/pickup_algae" />
+
+                <CheckBox
+                    android:id="@+id/pickup_coral"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/pickup_coral"
+                    />
+            </LinearLayout>
 <!--            button save and next -->
 
             <LinearLayout
