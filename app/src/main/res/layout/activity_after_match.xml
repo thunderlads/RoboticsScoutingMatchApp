@@ -114,6 +114,12 @@
                     android:layout_height="77dp"
                     android:text="@string/e_stopped"
                     android:textSize="20sp" />
+                <RadioButton
+                    android:id="@+id/never_stopped"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/not_stopped"
+                    android:textSize="20sp"/>
             </RadioGroup>
         </LinearLayout>
 

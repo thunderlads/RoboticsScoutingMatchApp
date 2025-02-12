@@ -94,6 +94,7 @@
     <string name="died">Died</string>
     <string name="tipped">Tipped</string>
     <string name="physically_broke">Physically Broke</string>
+    <string name="not_stopped">Not stopped</string>
 
     <string name="ranking_of_team">Where does your team rank out of the alliance?(talk amongst yourselfs)</string>
     <string name="rank1">Rank 1</string>

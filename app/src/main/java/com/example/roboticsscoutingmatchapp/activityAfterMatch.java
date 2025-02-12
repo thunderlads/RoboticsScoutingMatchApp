@@ -2,6 +2,8 @@ package com.example.roboticsscoutingmatchapp;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Environment;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -15,7 +17,10 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -42,6 +47,7 @@ public class activityAfterMatch extends AppCompatActivity {
         RadioButton tippedButton = findViewById(R.id.tipped);
         RadioButton physicallyBrokeButton = findViewById(R.id.robot_break);
         RadioButton eStoppedButton = findViewById(R.id.e_stopped);
+        RadioButton notStoppedButton = findViewById(R.id.never_stopped);
 
         RadioGroup defenseReceivedGroup = findViewById(R.id.defense_received);
         RadioButton noDefenseButton = findViewById(R.id.defense_none);
@@ -93,14 +99,22 @@ public class activityAfterMatch extends AppCompatActivity {
             postMatchSaveString = u.nextCommaOn(postMatchSaveString);
 
             String stopReasonString = u.untilNextComma(postMatchSaveString);
-            if(stopReasonString.equals("Died"))
-                diedButton.toggle();
-            else if(stopReasonString.equals("Tipped"))
-                tippedButton.toggle();
-            else if(stopReasonString.equals("Physically Broke"))
-                physicallyBrokeButton.toggle();
-            else if(stopReasonString.equals("E-stopped")){
-                eStoppedButton.toggle();
+            switch (stopReasonString) {
+                case "Died":
+                    diedButton.toggle();
+                    break;
+                case "Tipped":
+                    tippedButton.toggle();
+                    break;
+                case "Physically Broke":
+                    physicallyBrokeButton.toggle();
+                    break;
+                case "E-stopped":
+                    eStoppedButton.toggle();
+                    break;
+                case "Not Stopped":
+                    notStoppedButton.toggle();
+                    break;
             }
             postMatchSaveString = u.nextCommaOn(postMatchSaveString);
 
@@ -149,12 +163,54 @@ public class activityAfterMatch extends AppCompatActivity {
                 response = "Please fill in defense received";
             else if(u.getData(rankGroup).isEmpty())
                 response = "Please fill in rank";
+            else if(u.getData(stopReasonGroup).isEmpty())
+                response = "Please fill in stop reason";
             else{
-                Date now = Calendar.getInstance().getTime();
-                // TODO: Set filename to date + .csv, with some identifier before it
-//                now.getDate();
-//                String fileName;
-//                File file
+                // Coral floor pickup able | Coral Source pickup able | Defense received |
+                // Stop reason | team rank among alliance | other comments questions or concerns ||
+                String postMatchInfo = "";
+                postMatchInfo += u.getData(floorIntake) + ",";
+                postMatchInfo += u.getData(humanPlayerStation) + ",";
+                postMatchInfo += u.getData(defenseReceivedGroup) + ",";
+                postMatchInfo += u.getData(stopReasonGroup) + ",";
+                postMatchInfo += u.getData(rankGroup) + ",";
+                postMatchInfo += u.stripText(u.getData(finalText), u.DELIMITER) + ",";
+
+                // Filename format: "match_scouting_" + [team_number] + [match number]
+                String teamNumber = u.untilNextComma(u.nextCommaOn(u.nextCommaOn(u.nextCommaOn(preMatchSaveString))));
+                String matchNumber = u.untilNextComma(u.nextCommaOn(u.nextCommaOn(u.nextCommaOn(u.nextCommaOn(u.nextCommaOn(preMatchSaveString))))));
+                String fileName = "match_scouting_" + teamNumber + "_" + matchNumber + ".csv";
+                Log.d("File Name: ", fileName);
+
+                try {
+                    File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS), fileName);
+                    if (!file.exists()) {
+                        boolean fileCreated = file.createNewFile();
+                        if(!fileCreated) {
+                            Toast.makeText(this, "File " + fileName + " has not been created", Toast.LENGTH_SHORT).show();
+                            Log.d("File written: ", "File not created");
+                        }else {
+                            Toast.makeText(this, "File " + fileName + " has been created", Toast.LENGTH_SHORT).show();
+                            Log.d("File written: ", "File created");
+                        }
+                    }else{
+                        Log.d("File already existed", "File already existed");
+                    }
+
+                    FileWriter fw = new FileWriter(file.getAbsoluteFile());
+                    BufferedWriter bw = new BufferedWriter(fw);
+
+                    bw.write(preMatchSaveString);
+                    bw.write(autoSaveString);
+                    bw.write(teleOpSaveString);
+                    bw.write(postMatchInfo);
+                    bw.flush();
+                    bw.close();
+                } catch (IOException e) {
+                    Log.d("Error thrown:", "+==========+Error Thrown+==========+");
+                    Log.getStackTraceString(e);
+                }
+                this.startActivity(new Intent(this, activityPreMatch.class));
             }
 
             if(!response.isEmpty()){
