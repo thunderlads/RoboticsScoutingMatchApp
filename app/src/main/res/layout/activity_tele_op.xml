@@ -544,14 +544,14 @@
 
                     <RadioButton
                         android:id="@+id/hang_shallow"
-                        android:layout_width="115dp"
+                        android:layout_width="110dp"
                         android:layout_height="match_parent"
                         android:text="@string/hang_shallow"
                         android:textSize="22sp" />
 
                     <RadioButton
                         android:id="@+id/hang_deep"
-                        android:layout_width="137dp"
+                        android:layout_width="85dp"
                         android:layout_height="match_parent"
                         android:text="@string/hang_deep"
                         android:textSize="22sp" />
@@ -561,6 +561,12 @@
                         android:layout_height="match_parent"
                         android:textSize="22sp"
                         android:text="@string/park"/>
+                    <RadioButton
+                        android:id="@+id/nothing"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textSize="22sp"
+                        android:text="@string/nothing"/>
                 </RadioGroup>
             </LinearLayout>
 

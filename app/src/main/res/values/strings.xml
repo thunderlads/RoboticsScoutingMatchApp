@@ -77,6 +77,7 @@
     <string name="hang_shallow">Hang Shallow</string>
     <string name="hang_deep">Hang Deep</string>
     <string name="park">Park</string>
+    <string name="nothing">None</string>
 
     <string name="endgame_time">How much time they park with?</string>
     <string name="twenty_five">25</string>

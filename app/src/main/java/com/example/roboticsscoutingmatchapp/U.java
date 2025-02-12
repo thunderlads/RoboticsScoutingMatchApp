@@ -46,19 +46,10 @@ public class U extends AppCompatActivity{
 
 
 
-    public String stripText(String text, int stripType){
+    public String stripText(String text, String[] stripType){
         String response = text;
-        String[] chars = DELIMITER_AND_WHITESPACE;
 
-        if(stripType == 0){ // delimiter only
-            chars = DELIMITER.clone();
-        } else if (stripType == 1) {
-            chars = WHITESPACE.clone();
-        }else if (stripType == 2){
-            chars = DELIMITER_AND_WHITESPACE.clone();
-        }
-
-        for(String s : chars){
+        for(String s : stripType){
             while(response.contains(s)){
                 response = response.substring(0, response.indexOf(s)) + response.substring(response.indexOf(s)+1);
             }
