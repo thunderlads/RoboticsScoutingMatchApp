@@ -3,7 +3,7 @@
 
     <string name="is_empty_identifier"> is empty</string>
 
-<!--    Prematch  -->
+    <!--    Prematch  -->
     <string name="header1">Pre-Match</string>
 
     <string name="prompt_scout_name">Scout Name</string>
@@ -26,7 +26,7 @@
 
     <string name="preloaded_coral">Did they have a preloaded coral?</string>
     <string name="scouting_human_player">Are you scouting the human player?</string>
-<!--Auto -->
+    <!--Auto -->
     <string name="header2">Autonomous</string>
 
 
@@ -64,7 +64,7 @@
     <string name="counter_up">+</string>
     <string name="counter_down">-</string>
 
-<!--    tele op -->
+    <!--    tele op -->
     <string name="header3">Teleop</string>
 
     <string name="algae_processor_attempted">Attempted Processor</string>
@@ -89,7 +89,7 @@
     <string name="pickup_coral">Coral</string>/.
     <string name="pickup_algae">Algae</string>
 
-<!--    Post Match -->
+    <!--    Post Match -->
     <string name="header4">Post Match</string>
 
     <string name="endText">Comments, questions, and concerns?</string>
@@ -117,5 +117,12 @@
 
     <string name="button_save">Save</string>
 
+<!--  human player  -->
+    <string name="human_player_title">Human Player Page!</string>
+
+
+    <string name="attempted_barge">Attempted Barge</string>
+    <string name="scored_barge">Scored Barge</string>
+    <string name="thrown_back">Thrown Back into Field</string>
 
 </resources>
