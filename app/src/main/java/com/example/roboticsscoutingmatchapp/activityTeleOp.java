@@ -3,6 +3,7 @@ package com.example.roboticsscoutingmatchapp;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -83,11 +84,18 @@ public class activityTeleOp extends AppCompatActivity {
         Button SBplus = findViewById(R.id.up_count_button_bs); // Scored Barge
         Button SBminus = findViewById(R.id.down_count_button_bs);
         EditText SBfield = findViewById(R.id.edit_text_bs);
-        RadioGroup parkRadioGroup = findViewById(R.id.endgame); // Endgame RadioGroup
+        RadioGroup parkRadioGroup = findViewById(R.id.endgame_location); // Endgame RadioGroup
         RadioButton hangShallowButton = findViewById(R.id.hang_shallow);
         RadioButton hangDeepButton = findViewById(R.id.hang_deep);
         RadioButton parkButton = findViewById(R.id.park);
         RadioButton noneButton = findViewById(R.id.nothing);
+        RadioGroup endgameTimeGroup = findViewById(R.id.endgame_time);
+        RadioButton twentyFiveButton = findViewById(R.id.twenty_five);
+        RadioButton twentyButton = findViewById(R.id.twenty);
+        RadioButton fifteenButton = findViewById(R.id.fifteen);
+        RadioButton tenButton = findViewById(R.id.ten);
+        CheckBox algaeBox = findViewById(R.id.pickup_algae);
+        CheckBox coralBox = findViewById(R.id.pickup_coral);
 
         Toast unfilledMessage = new Toast(this);
         unfilledMessage.setDuration(Toast.LENGTH_SHORT);
@@ -96,7 +104,7 @@ public class activityTeleOp extends AppCompatActivity {
         if(!teleOpSaveString.isEmpty()){
             // #ACL1 | #ACL2 | #ACL3 | #ACL4 | # SCL1 | #SCL2 | #SCL3 | #SCL4 |
             // #Attempted processor | #Scored Processor | #Attempted Barge | #Scored Barge |
-            // Park/Shallow/Deep ||
+            // Park/Shallow/Deep | Time to hang | Algae Pickup | Coral Pickup ||
             AC1field.setText(u.untilNextComma(teleOpSaveString));
             teleOpSaveString = u.nextCommaOn(teleOpSaveString);
             AC2field.setText(u.untilNextComma(teleOpSaveString));
@@ -140,6 +148,26 @@ public class activityTeleOp extends AppCompatActivity {
                     break;
             }
             teleOpSaveString = u.nextCommaOn(teleOpSaveString);
+
+            String timeToHang = u.untilNextComma(teleOpSaveString);
+            switch(timeToHang){
+                case "25":
+                    twentyFiveButton.toggle();
+                    break;
+                case "20":
+                    twentyButton.toggle();
+                    break;
+                case "15":
+                    fifteenButton.toggle();
+                case "10":
+                    tenButton.toggle();
+            }
+            teleOpSaveString = u.nextCommaOn(teleOpSaveString);
+
+            algaeBox.setChecked(Boolean.parseBoolean(u.untilNextComma(teleOpSaveString)));
+            teleOpSaveString = u.nextCommaOn(teleOpSaveString);
+            coralBox.setChecked(Boolean.parseBoolean(u.untilNextComma(teleOpSaveString)));
+            teleOpSaveString = u.nextCommaOn(teleOpSaveString);
         }
 
         // Setting increment and decrement listeners for all buttons
@@ -178,8 +206,8 @@ public class activityTeleOp extends AppCompatActivity {
         backButton.setOnClickListener((l)->{
             String teleOpInfo = "";
             // #ACL1 | #ACL2 | #ACL3 | #ACL4 | # SCL1 | #SCL2 | #SCL3 | #SCL4 |
-            // #Attempted processor | #Scored Processor | #Attempted Barge
-            // | #Scored Barge | Park/Shallow/Deep ||
+            // #Attempted processor | #Scored Processor | #Attempted Barge | #Scored Barge |
+            // Park/Shallow/Deep | Time to hang | Algae Pickup | Coral Pickup ||
 
             teleOpInfo += u.getData(AC1field) + ",";
             teleOpInfo += u.getData(AC2field) + ",";
@@ -197,6 +225,10 @@ public class activityTeleOp extends AppCompatActivity {
             teleOpInfo += u.getData(SBfield) + ","; // Algae Done
 
             teleOpInfo += u.getData(parkRadioGroup) + ",";
+            teleOpInfo += u.getData(endgameTimeGroup) + ",";
+
+            teleOpInfo += u.getData(algaeBox) + ",";
+            teleOpInfo += u.getData(coralBox) + ",";
 
             Intent i = new Intent(this, activityAutonomous.class);
             i.putExtra("preMatch", preMatchSaveString);
@@ -233,8 +265,10 @@ public class activityTeleOp extends AppCompatActivity {
                 ABfield.setText("0");
             if(u.getData(SBfield).isEmpty())
                 SBfield.setText("0");
-            else if(u.getData(parkRadioGroup).isEmpty())
+            if(u.getData(parkRadioGroup).isEmpty())
                 response = "Please select an endgame position";
+            else if(u.getData(endgameTimeGroup).isEmpty())
+                response = "Please select park time";
             else{
                 String teleOpInfo = "";
 
@@ -254,6 +288,10 @@ public class activityTeleOp extends AppCompatActivity {
                 teleOpInfo += u.getData(SBfield) + ","; // Algae Done
 
                 teleOpInfo += u.getData(parkRadioGroup) + ",";
+                teleOpInfo += u.getData(endgameTimeGroup) + ",";
+
+                teleOpInfo += u.getData(algaeBox) + ",";
+                teleOpInfo += u.getData(coralBox) + ",";
 
                 Intent i = new Intent(this, activityAfterMatch.class);
                 i.putExtra("preMatch", preMatchSaveString);

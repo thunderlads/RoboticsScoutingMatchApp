@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
@@ -57,12 +56,9 @@ public class activityPreMatch extends AppCompatActivity {
         EditText matchNumber = findViewById(R.id.match_number);
         EditText teamNumber = findViewById(R.id.team_number);
         RadioGroup teamColorRadioGroup = findViewById(R.id.team_color_radio_group);
-        RadioButton redButton = findViewById(R.id.team_color_red);
-        RadioButton blueButton = findViewById(R.id.team_color_blue);
         Button saveButton = findViewById(R.id.save_button);
         CheckBox preloadedCoral = findViewById(R.id.checkBox_preloaded_coral);
 
-        // TODO: If save string exists for current activity, fill in fields automatically
         if(!preMatchSaveString.isEmpty()){
             preMatchSaveString = u.nextCommaOn(preMatchSaveString); // remove data entry number
             preMatchSaveString = u.nextCommaOn(preMatchSaveString); // remove data version
@@ -104,7 +100,6 @@ public class activityPreMatch extends AppCompatActivity {
                 // Utilizes "savestrings"
                 Intent i = new Intent(this, activityAutonomous.class);
                 String preMatchInfo = "";
-                preMatchInfo += "data entry #,"; // TODO: Add data entry numbering system
                 preMatchInfo += u.DATA_VERSION + ",";
                 preMatchInfo += u.stripText(u.getData(scoutName), u.DELIMITER_AND_WHITESPACE) + ",";
                 preMatchInfo += u.stripText(u.getData(teamNumber)) + ",";
