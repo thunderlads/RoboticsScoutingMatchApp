@@ -3,6 +3,22 @@
 
     <string name="is_empty_identifier"> is empty</string>
 
+    <!--    Competition Selection   -->
+    <!-- Competitions
+    WPI
+    UVM
+    District Champs
+    Worlds
+    test
+    -->
+    <string name="competition_header">Please choose current competition</string>
+
+    <string name="comp_wpi">WPI</string>
+    <string name="comp_uvm">UVM</string>
+    <string name="comp_dcmp">District Championships</string>
+    <string name="comp_worlds">Worlds</string>
+    <string name="comp_test">Test</string>
+
     <!--    Prematch  -->
     <string name="header1">Pre-Match</string>
 

@@ -100,6 +100,7 @@ public class activityPreMatch extends AppCompatActivity {
                 // Utilizes "savestrings"
                 Intent i = new Intent(this, activityAutonomous.class);
                 String preMatchInfo = "";
+                preMatchInfo +=  ","; //TODO: Add competition
                 preMatchInfo += u.DATA_VERSION + ",";
                 preMatchInfo += u.stripText(u.getData(scoutName), u.DELIMITER_AND_WHITESPACE) + ",";
                 preMatchInfo += u.stripText(u.getData(teamNumber)) + ",";

@@ -174,10 +174,13 @@ public class activityAfterMatch extends AppCompatActivity {
                 postMatchInfo += u.getData(rankGroup) + ",";
                 postMatchInfo += u.stripText(u.getData(finalText), u.DELIMITER) + ",";
 
+                // Competition Location | Save Version | Scout Name | Team # | Team Color |
+                // Match Number | Preloaded coral ||
                 // Filename format: "match_scouting_" + [team_number] + [match number]
                 String teamNumber = u.untilNextComma(u.nextCommaOn(u.nextCommaOn(u.nextCommaOn(preMatchSaveString))));
                 String matchNumber = u.untilNextComma(u.nextCommaOn(u.nextCommaOn(u.nextCommaOn(u.nextCommaOn(u.nextCommaOn(preMatchSaveString))))));
-                String fileName = "match_scouting_" + teamNumber + "_" + matchNumber + ".csv";
+                String competitionLocation = u.untilNextComma(preMatchSaveString);
+                String fileName = "match_scouting_"+ competitionLocation + "_" + teamNumber + "_" + matchNumber + ".csv";
                 Log.d("File Name: ", fileName);
 
                 try {
