@@ -27,18 +27,20 @@ public class activityPreMatch extends AppCompatActivity {
          activity, save strings will be compiled and saved as csv in final activity page
          */
         String preMatchSaveString, autoSaveString,
-                teleOpSaveString, postMatchSaveString;
+                teleOpSaveString, postMatchSaveString, competitionString;
         Bundle extras = getIntent().getExtras();
         if(extras != null){
             preMatchSaveString = extras.getString("preMatch", "");
             autoSaveString = extras.getString("auto", "");
             teleOpSaveString = extras.getString("teleOp", "");
             postMatchSaveString = extras.getString("postMatch", "");
+            competitionString = extras.getString("competition", "Test");
         } else {
             preMatchSaveString = "";
             autoSaveString = "";
             teleOpSaveString = "";
             postMatchSaveString = "";
+            competitionString = "Test";
         }
 
         // Checks for insets changing (screen rotation) -- Auto-generated
@@ -58,9 +60,11 @@ public class activityPreMatch extends AppCompatActivity {
         RadioGroup teamColorRadioGroup = findViewById(R.id.team_color_radio_group);
         Button saveButton = findViewById(R.id.save_button);
         CheckBox preloadedCoral = findViewById(R.id.checkBox_preloaded_coral);
+        Button backButton = findViewById(R.id.back_button);
 
         if(!preMatchSaveString.isEmpty()){
-            preMatchSaveString = u.nextCommaOn(preMatchSaveString); // remove data entry number
+            competitionString = u.untilNextComma(preMatchSaveString);
+            preMatchSaveString = u.nextCommaOn(preMatchSaveString); // remove competition
             preMatchSaveString = u.nextCommaOn(preMatchSaveString); // remove data version
             scoutName.setText(u.untilNextComma(preMatchSaveString));
             preMatchSaveString = u.nextCommaOn(preMatchSaveString); // remove scout name
@@ -83,6 +87,7 @@ public class activityPreMatch extends AppCompatActivity {
         Toast unfilledMessage = new Toast(this);
         unfilledMessage.setDuration(Toast.LENGTH_SHORT);
 
+        String finalCompetitionString = competitionString;
         saveButton.setOnClickListener((l) -> {
             // Check if all fields are full
 //            findViewById(R.id.scroll_view);
@@ -100,7 +105,7 @@ public class activityPreMatch extends AppCompatActivity {
                 // Utilizes "savestrings"
                 Intent i = new Intent(this, activityAutonomous.class);
                 String preMatchInfo = "";
-                preMatchInfo +=  ","; //TODO: Add competition
+                preMatchInfo += finalCompetitionString + ","; //TODO: Add competition
                 preMatchInfo += u.DATA_VERSION + ",";
                 preMatchInfo += u.stripText(u.getData(scoutName), u.DELIMITER_AND_WHITESPACE) + ",";
                 preMatchInfo += u.stripText(u.getData(teamNumber)) + ",";
@@ -120,6 +125,12 @@ public class activityPreMatch extends AppCompatActivity {
                 unfilledMessage.setText(response);
                 unfilledMessage.show();
             }
+        });
+
+        backButton.setOnClickListener((l)->{
+           Intent i = new Intent(this, ActivityCompetitionSelection.class);
+           i.putExtra("chooseNewCompetition", true);
+           this.startActivity(i);
         });
 
     }

@@ -5,6 +5,9 @@
 
     <!--    Competition Selection   -->
     <!-- Competitions
+    Granite State
+    Waterbury
+    URI
     WPI
     UVM
     District Champs
@@ -13,6 +16,9 @@
     -->
     <string name="competition_header">Please choose current competition</string>
 
+    <string name="comp_granite_state">Granite State</string>
+    <string name="comp_waterbury">Waterbury</string>
+    <string name="comp_uri">URI</string>
     <string name="comp_wpi">WPI</string>
     <string name="comp_uvm">UVM</string>
     <string name="comp_dcmp">District Championships</string>

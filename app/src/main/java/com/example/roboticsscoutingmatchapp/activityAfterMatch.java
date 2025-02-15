@@ -211,7 +211,7 @@ public class activityAfterMatch extends AppCompatActivity {
                     Log.d("Error thrown:", "+==========+Error Thrown+==========+");
                     Log.getStackTraceString(e);
                 }
-                this.startActivity(new Intent(this, activityPreMatch.class));
+                this.startActivity(new Intent(this, ActivityCompetitionSelection.class));
             }
 
             if(!response.isEmpty()){

@@ -18,6 +18,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:gravity="center"
+        android:divider="@drawable/vertical_padding_small"
         android:showDividers="middle"
         android:paddingTop="20dp"
         android:paddingHorizontal="20dp"
