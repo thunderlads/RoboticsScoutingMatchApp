@@ -67,6 +67,15 @@
     <string name="took_from_left">Taken from left human player station</string>
     <string name="took_from_right">Taken from left human player station</string>
 
+    <string name="level1">L1</string>
+    <string name="level2">L2</string>
+    <string name="level3">L3</string>
+    <string name="level4">L4</string>
+
+    <string name="attempted_coral">Attempted Coral</string>
+    <string name="scored_coral">Scored Coral</string>
+    <string name="algae">Algae</string>
+
     <string name="attempted_coral_lvl1">Attempted Coral Lvl 1</string>
     <string name="scored_coral_lvl1">Scored Coral Lvl 1</string>
 
@@ -82,7 +91,7 @@
     <string name="attempted_algae">Attempted Algae</string>
     <string name="scored_algae">Scored Algae</string>
     <string name="removed_algae">Removed Algae</string>
-    <string name="number_tried">Number</string>
+    <string name="number_tried">0</string>
     <string name="counter_up">+</string>
     <string name="counter_down">-</string>
 
