@@ -212,6 +212,12 @@
                     </LinearLayout>
                 </LinearLayout>
 
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/black"
+                    />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -380,10 +386,11 @@
                 </LinearLayout>
             </LinearLayout>
 
-            <!--        lvl 4 a -->
-
-
-            <!--        lvl 4 s-->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/black"
+                />
 
             <!--        algae process attempted -->
             <TextView
@@ -484,7 +491,6 @@
 
 
 <!--            algae barge attempted -->
-            <!--        lvl 4 s-->
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -530,7 +536,6 @@
             </LinearLayout>
 
 <!--            alage barge scored -->
-            <!--        lvl 4 s-->
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
