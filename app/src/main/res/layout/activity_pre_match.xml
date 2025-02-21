@@ -38,6 +38,9 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:divider="@drawable/horizontal_padding_small"
+            android:showDividers="middle"
             >
             <TextView
                 android:layout_width="wrap_content"
@@ -61,7 +64,10 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:divider="@drawable/horizontal_padding_small"
+            android:showDividers="middle"
+            >
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -84,6 +90,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
+            android:divider="@drawable/horizontal_padding_small"
+            android:showDividers="middle"
             >
             <TextView
                 android:layout_width="wrap_content"
@@ -106,6 +114,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
+            android:divider="@drawable/horizontal_padding_small"
+            android:showDividers="middle"
             >
             <TextView
                 android:layout_width="wrap_content"
@@ -119,6 +129,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:orientation="horizontal"
+                android:divider="@drawable/horizontal_padding_small"
                 android:showDividers="middle" >
                 <RadioButton
                     android:id="@+id/team_color_red"
@@ -157,7 +168,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="end"
-            android:divider="@drawable/horizontal_padding_small"
+            android:divider="@drawable/horizontal_padding_big"
             android:showDividers="middle">
             <Button
                 android:id="@+id/back_button"

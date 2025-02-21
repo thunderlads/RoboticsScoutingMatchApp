@@ -40,7 +40,9 @@
         <LinearLayout
             android:layout_width="372dp"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:divider="@drawable/horizontal_padding_small"
+            android:showDividers="middle">
 
             <TextView
                 android:layout_width="120dp"
@@ -55,6 +57,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:orientation="vertical"
+                android:divider="@drawable/vertical_padding_small"
                 android:showDividers="middle">
 
                 <RadioButton
@@ -83,6 +86,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:orientation="vertical"
+                android:divider="@drawable/vertical_padding_small"
                 android:showDividers="middle">
 
             <RadioButton
@@ -597,7 +601,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:divider="@drawable/horizontal_padding_small"
+            android:divider="@drawable/horizontal_padding_big"
             android:showDividers="middle"
             android:gravity="end">
             <Button

@@ -18,6 +18,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:gravity="center"
+            android:divider="@drawable/vertical_padding_small"
             android:showDividers="middle"
             android:paddingTop="20dp"
             android:paddingHorizontal="20dp"
@@ -656,6 +657,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:orientation="horizontal"
+                    android:divider="@drawable/horizontal_padding_small"
                     android:showDividers="middle" >
 
                     <RadioButton
@@ -683,6 +685,12 @@
                         android:id="@+id/ten"
                         android:textSize="22sp"
                         android:text="@string/ten"/>
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:id="@+id/zero"
+                        android:textSize="22sp"
+                        android:text="@string/number_tried"/>
                 </RadioGroup>
             </LinearLayout>
 
@@ -725,7 +733,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:divider="@drawable/horizontal_padding_small"
+            android:divider="@drawable/horizontal_padding_big"
             android:showDividers="middle"
             android:gravity="end">
         <Button

@@ -94,6 +94,7 @@ public class activityTeleOp extends AppCompatActivity {
         RadioButton twentyButton = findViewById(R.id.twenty);
         RadioButton fifteenButton = findViewById(R.id.fifteen);
         RadioButton tenButton = findViewById(R.id.ten);
+        RadioButton zeroButton = findViewById(R.id.zero);
         CheckBox algaeBox = findViewById(R.id.pickup_algae);
         CheckBox coralBox = findViewById(R.id.pickup_coral);
 
@@ -159,8 +160,13 @@ public class activityTeleOp extends AppCompatActivity {
                     break;
                 case "15":
                     fifteenButton.toggle();
+                    break;
                 case "10":
                     tenButton.toggle();
+                    break;
+                case "0":
+                    zeroButton.toggle();
+                    break;
             }
             teleOpSaveString = u.nextCommaOn(teleOpSaveString);
 
