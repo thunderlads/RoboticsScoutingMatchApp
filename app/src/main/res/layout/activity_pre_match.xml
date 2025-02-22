@@ -186,6 +186,9 @@
 
                 android:text="@string/button_next"/>
         </LinearLayout>
+            <View
+                android:layout_width="0dp"
+                android:layout_height="60dp"/>
 
         </LinearLayout>
 

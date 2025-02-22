@@ -128,9 +128,10 @@ public class activityAutonomous extends AppCompatActivity {
 
         if(!autoSaveString.isEmpty()){
             // Starting Position | Left starting Position | #ACL1 | #ACL2 | #ACL3 | #ACL4 |
-            // #SCL1 | #SCL2 | #SCL3 | #SCL4 | #attempted algae | #scored algae | #algae removed ||
+            // #SCL1 | #SCL2 | #SCL3 | #SCL4 | #Barge attempted | #barge scored |
+            // #processor attempted | #processor scored |#algae removed ||
             String position = u.untilNextComma(autoSaveString);
-            Log.d(position, position);
+//            Log.d(position, position);
             switch (position){
                 case "Position 1":
                     position1Button.toggle();
@@ -172,9 +173,13 @@ public class activityAutonomous extends AppCompatActivity {
             RC4Field.setText(u.untilNextComma(autoSaveString));
             autoSaveString = u.nextCommaOn(autoSaveString); // Remove #SCL4
             BAField.setText(u.untilNextComma(autoSaveString));
-            autoSaveString = u.nextCommaOn(autoSaveString); // Remove Attempted Algae
+            autoSaveString = u.nextCommaOn(autoSaveString); // Remove Attempted Barge
             BSField.setText(u.untilNextComma(autoSaveString));
-            autoSaveString = u.nextCommaOn(autoSaveString); // Remove Scored Algae
+            autoSaveString = u.nextCommaOn(autoSaveString); // Remove Scored Barge
+            PAField.setText(u.untilNextComma(autoSaveString));
+            autoSaveString = u.nextCommaOn(autoSaveString); // Remove Attempted Processor
+            PSField.setText(u.untilNextComma(autoSaveString));
+            autoSaveString = u.nextCommaOn(autoSaveString); // Remove Scored Processor
             REAField.setText(u.untilNextComma(autoSaveString));
             autoSaveString = u.nextCommaOn(autoSaveString); // Remove Algae removed
         }
@@ -323,6 +328,8 @@ public class activityAutonomous extends AppCompatActivity {
 
                 autoInfo += u.getData(BAField) + ",";
                 autoInfo += u.getData(BSField) + ",";
+                autoInfo += u.getData(PAField) + ",";
+                autoInfo += u.getData(PSField) + ",";
                 autoInfo += u.getData(REAField) + ","; // Algae end
 
                 Intent i = new Intent(this, activityTeleOp.class);

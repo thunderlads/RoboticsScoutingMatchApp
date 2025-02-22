@@ -758,6 +758,9 @@
             android:textSize="14sp"
             android:text="@string/button_next"/>
         </LinearLayout>
+            <View
+                android:layout_width="0dp"
+                android:layout_height="80dp"/>
         </LinearLayout>
     </ScrollView>
 

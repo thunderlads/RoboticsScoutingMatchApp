@@ -263,6 +263,9 @@
                 android:paddingVertical="8dp"
                 android:text="@string/button_save"/>
     </LinearLayout>
+        <View
+            android:layout_width="0dp"
+            android:layout_height="80dp"/>
     </LinearLayout>
 </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
