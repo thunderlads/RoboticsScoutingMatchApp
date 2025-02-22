@@ -14,7 +14,7 @@
     Worlds
     test
     -->
-    <string name="competition_header">Please choose current competition</string>
+    <string name="competition_header">Please Choose Current Competition</string>
 
     <string name="comp_granite_state">Granite State</string>
     <string name="comp_waterbury">Waterbury</string>
@@ -34,10 +34,10 @@
     <string name="prompt_match_number">Match Number</string>
     <string name="text_edit_match_number">Match</string>
 
-    <string name="prompt_team_number">Team number</string>
+    <string name="prompt_team_number">Team Number</string>
     <string name="text_edit_team_number">Team</string>
 
-    <string name="prompt_team_color">Team color</string>
+    <string name="prompt_team_color">Team Color</string>
     <string name="text_edit_team_color">color</string>
 
     <string name="color_red">Red</string>
@@ -117,7 +117,7 @@
     <string name="ten">10</string>
     <string name="five">5</string>
 
-    <string name="pieces_pickup">What pieces could the robot pickup </string>
+    <string name="pieces_pickup">What pieces could the robot pickup?</string>
     <string name="pickup_coral">Coral</string>/.
     <string name="pickup_algae">Algae</string>
 
@@ -138,12 +138,12 @@
     <string name="physically_broke">Physically Broke</string>
     <string name="not_stopped">Not stopped</string>
 
-    <string name="ranking_of_team">Where does your team rank out of the alliance?(talk amongst yourselfs)</string>
+    <string name="ranking_of_team">Team rank in alliance? (Talk amongst yourselfs)</string>
     <string name="rank1">Rank 1</string>
     <string name="rank2">Rank 2</string>
     <string name="rank3">Rank 3</string>
 
-    <string name="defense_received_title">How much defense did your robot receive throughout this match?</string>
+    <string name="defense_received_title">Defense received?</string>
     <string name="no_defense">No Defense</string>
     <string name="light_defense">Light Defense</string>
     <string name="heavy_defense">Heavy Defense</string>
@@ -157,5 +157,10 @@
     <string name="attempted_barge">Attempted Barge</string>
     <string name="scored_barge">Scored Barge</string>
     <string name="thrown_back">Thrown Back into Field</string>
+
+    <string name="attempted">Att.</string>
+    <string name="scored">Scor.</string>
+    <string name="barge">Barge</string>
+    <string name="processor">Processor</string>
 
 </resources>
