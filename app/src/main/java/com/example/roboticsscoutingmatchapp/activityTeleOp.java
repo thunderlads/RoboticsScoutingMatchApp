@@ -275,6 +275,18 @@ public class activityTeleOp extends AppCompatActivity {
                 response = "Please select an endgame position";
             else if(u.getData(endgameTimeGroup).isEmpty())
                 response = "Please select park time";
+            else if(Integer.parseInt(u.getData(AC1field)) < Integer.parseInt(u.getData(RC1field)))
+                response = "Attempted Coral L1 cannot be less than Scored Coral L1";
+            else if(Integer.parseInt(u.getData(AC2field)) < Integer.parseInt(u.getData(RC2field)))
+                response = "Attempted Coral L2 cannot be less than Scored Coral L2";
+            else if(Integer.parseInt(u.getData(AC3field)) < Integer.parseInt(u.getData(RC3field)))
+                response = "Attempted Coral L3 cannot be less than Scored Coral L3";
+            else if(Integer.parseInt(u.getData(AC4field)) < Integer.parseInt(u.getData(RC4field)))
+                response = "Attempted Coral L4 cannot be less than Scored Coral L4";
+            else if(Integer.parseInt(u.getData(APfield)) < Integer.parseInt(u.getData(SPfield)))
+                response = "Attempted Processor cannot be less than Scored Processor";
+            else if(Integer.parseInt(u.getData(ABfield)) < Integer.parseInt(u.getData(SBfield)))
+                response = "Attempted Barge cannot be less than Scored Barge";
             else{
                 String teleOpInfo = "";
 

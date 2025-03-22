@@ -303,6 +303,18 @@ public class activityAutonomous extends AppCompatActivity {
             }
             if((u.getData(positionGroup1).isEmpty()) && (u.getData(positionGroup2).isEmpty()))
                 response = "Please fill position";
+            else if(Integer.parseInt(u.getData(AC1Field)) < Integer.parseInt(u.getData(RC1Field)))
+                response = "Attempted Coral L1 cannot be less than Scored Coral L1";
+            else if(Integer.parseInt(u.getData(AC2Field)) < Integer.parseInt(u.getData(RC2Field)))
+                response = "Attempted Coral L2 cannot be less than Scored Coral L2";
+            else if(Integer.parseInt(u.getData(AC3Field)) < Integer.parseInt(u.getData(RC3Field)))
+                response = "Attempted Coral L3 cannot be less than Scored Coral L3";
+            else if(Integer.parseInt(u.getData(AC4Field)) < Integer.parseInt(u.getData(RC4Field)))
+                response = "Attempted Coral L4 cannot be less than Scored Coral L4";
+            else if(Integer.parseInt(u.getData(BAField)) < Integer.parseInt(u.getData(BSField)))
+                response = "Attempted Barge cannot be less than Scored Barge";
+            else if(Integer.parseInt(u.getData(PAField)) < Integer.parseInt(u.getData(PSField)))
+                response = "Attempted Processor cannot be less than Scored Processor";
             else{
 
                 String autoInfo = "";

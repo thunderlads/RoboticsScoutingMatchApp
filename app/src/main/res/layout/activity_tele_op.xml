@@ -61,12 +61,12 @@
                         android:showDividers="middle">
 
                         <Button
-                            android:id="@+id/up_count_button_ac1"
+                            android:id="@+id/down_count_button_ac1"
                             android:layout_width="48dp"
                             android:layout_height="48dp"
                             android:insetTop="2dp"
                             android:insetBottom="2dp"
-                            android:text="@string/counter_up"
+                            android:text="@string/counter_down"
                             />
                         <TextView
                             android:layout_width="wrap_content"
@@ -82,12 +82,12 @@
                             android:minWidth="32dp"
                             android:minHeight="48dp" />
                         <Button
-                            android:id="@+id/down_count_button_ac1"
+                            android:id="@+id/up_count_button_ac1"
                             android:layout_width="48dp"
                             android:layout_height="48dp"
                             android:insetTop="2dp"
                             android:insetBottom="2dp"
-                            android:text="@string/counter_down"
+                            android:text="@string/counter_up"
                             />
                     </LinearLayout>
                     <LinearLayout
@@ -98,13 +98,12 @@
                         android:divider="@drawable/horizontal_padding_small"
                         android:showDividers="middle">
                         <Button
-                            android:id="@+id/up_count_button_ac2"
+                            android:id="@+id/down_count_button_ac2"
                             android:layout_width="48dp"
                             android:layout_height="48dp"
                             android:insetTop="2dp"
                             android:insetBottom="2dp"
-                            android:text="@string/counter_up"
-
+                            android:text="@string/counter_down"
                             />
                         <TextView
                             android:layout_width="wrap_content"
@@ -120,12 +119,13 @@
                             android:minWidth="32dp"
                             android:minHeight="48dp" />
                         <Button
-                            android:id="@+id/down_count_button_ac2"
+                            android:id="@+id/up_count_button_ac2"
                             android:layout_width="48dp"
                             android:layout_height="48dp"
                             android:insetTop="2dp"
                             android:insetBottom="2dp"
-                            android:text="@string/counter_down"
+                            android:text="@string/counter_up"
+
                             />
                     </LinearLayout>
                 </LinearLayout>
@@ -145,12 +145,12 @@
                         android:divider="@drawable/horizontal_padding_small"
                         android:showDividers="middle">
                         <Button
-                            android:id="@+id/up_count_button_ac3"
+                            android:id="@+id/down_count_button_ac3"
                             android:layout_width="48dp"
                             android:layout_height="48dp"
                             android:insetTop="2dp"
                             android:insetBottom="2dp"
-                            android:text="@string/counter_up"
+                            android:text="@string/counter_down"
                             />
                         <TextView
                             android:layout_width="wrap_content"
@@ -166,12 +166,12 @@
                             android:minWidth="32dp"
                             android:minHeight="48dp" />
                         <Button
-                            android:id="@+id/down_count_button_ac3"
+                            android:id="@+id/up_count_button_ac3"
                             android:layout_width="48dp"
                             android:layout_height="48dp"
                             android:insetTop="2dp"
                             android:insetBottom="2dp"
-                            android:text="@string/counter_down"
+                            android:text="@string/counter_up"
                             />
                     </LinearLayout>
                     <LinearLayout
@@ -182,12 +182,12 @@
                         android:divider="@drawable/horizontal_padding_small"
                         android:showDividers="middle">
                         <Button
-                            android:id="@+id/up_count_button_ac4"
+                            android:id="@+id/down_count_button_ac4"
                             android:layout_width="48dp"
                             android:layout_height="48dp"
                             android:insetTop="2dp"
                             android:insetBottom="2dp"
-                            android:text="@string/counter_up"
+                            android:text="@string/counter_down"
                             />
                         <TextView
                             android:layout_width="wrap_content"
@@ -203,12 +203,12 @@
                             android:minWidth="32dp"
                             android:minHeight="48dp" />
                         <Button
-                            android:id="@+id/down_count_button_ac4"
+                            android:id="@+id/up_count_button_ac4"
                             android:layout_width="48dp"
                             android:layout_height="48dp"
                             android:insetTop="2dp"
                             android:insetBottom="2dp"
-                            android:text="@string/counter_down"
+                            android:text="@string/counter_up"
                             />
                     </LinearLayout>
                 </LinearLayout>
@@ -241,12 +241,13 @@
                         android:divider="@drawable/horizontal_padding_small"
                         android:showDividers="middle">
                         <Button
-                            android:id="@+id/up_count_button_rc1"
+                            android:id="@+id/down_count_button_rc1"
                             android:layout_width="48dp"
                             android:layout_height="48dp"
                             android:insetTop="2dp"
                             android:insetBottom="2dp"
-                            android:text="@string/counter_up"/>
+                            android:text="@string/counter_down"
+                            />
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -261,13 +262,12 @@
                             android:minWidth="32dp"
                             android:minHeight="48dp" />
                         <Button
-                            android:id="@+id/down_count_button_rc1"
+                            android:id="@+id/up_count_button_rc1"
                             android:layout_width="48dp"
                             android:layout_height="48dp"
                             android:insetTop="2dp"
                             android:insetBottom="2dp"
-                            android:text="@string/counter_down"
-                            />
+                            android:text="@string/counter_up"/>
                     </LinearLayout>
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -277,12 +277,13 @@
                         android:divider="@drawable/horizontal_padding_small"
                         android:showDividers="middle">
                         <Button
-                            android:id="@+id/up_count_button_rc2"
+                            android:id="@+id/down_count_button_rc2"
                             android:layout_width="48dp"
                             android:layout_height="48dp"
                             android:insetTop="2dp"
                             android:insetBottom="2dp"
-                            android:text="@string/counter_up" />
+                            android:text="@string/counter_down"
+                            />
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -297,13 +298,12 @@
                             android:minWidth="32dp"
                             android:minHeight="48dp" />
                         <Button
-                            android:id="@+id/down_count_button_rc2"
+                            android:id="@+id/up_count_button_rc2"
                             android:layout_width="48dp"
                             android:layout_height="48dp"
                             android:insetTop="2dp"
                             android:insetBottom="2dp"
-                            android:text="@string/counter_down"
-                            />
+                            android:text="@string/counter_up" />
                     </LinearLayout>
                 </LinearLayout>
 
@@ -322,12 +322,12 @@
                         android:divider="@drawable/horizontal_padding_small"
                         android:showDividers="middle">
                         <Button
-                            android:id="@+id/up_count_button_rc3"
+                            android:id="@+id/down_count_button_rc3"
                             android:layout_width="48dp"
                             android:layout_height="48dp"
                             android:insetTop="2dp"
                             android:insetBottom="2dp"
-                            android:text="@string/counter_up" />
+                            android:text="@string/counter_down" />
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -342,12 +342,12 @@
                             android:minWidth="32dp"
                             android:minHeight="48dp" />
                         <Button
-                            android:id="@+id/down_count_button_rc3"
+                            android:id="@+id/up_count_button_rc3"
                             android:layout_width="48dp"
                             android:layout_height="48dp"
                             android:insetTop="2dp"
                             android:insetBottom="2dp"
-                            android:text="@string/counter_down" />
+                            android:text="@string/counter_up" />
                     </LinearLayout>
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -357,12 +357,12 @@
                         android:divider="@drawable/horizontal_padding_small"
                         android:showDividers="middle">
                         <Button
-                            android:id="@+id/up_count_button_rc4"
+                            android:id="@+id/down_count_button_rc4"
                             android:layout_width="48dp"
                             android:layout_height="48dp"
                             android:insetTop="2dp"
                             android:insetBottom="2dp"
-                            android:text="@string/counter_up" />
+                            android:text="@string/counter_down" />
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -377,12 +377,12 @@
                             android:minWidth="32dp"
                             android:minHeight="48dp" />
                         <Button
-                            android:id="@+id/down_count_button_rc4"
+                            android:id="@+id/up_count_button_rc4"
                             android:layout_width="48dp"
                             android:layout_height="48dp"
                             android:insetTop="2dp"
                             android:insetBottom="2dp"
-                            android:text="@string/counter_down" />
+                            android:text="@string/counter_up" />
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
@@ -430,12 +430,12 @@
                         android:divider="@drawable/horizontal_padding_small"
                         android:showDividers="middle">
                         <Button
-                            android:id="@+id/up_count_button_pa"
+                            android:id="@+id/down_count_button_pa"
                             android:layout_width="48dp"
                             android:layout_height="48dp"
                             android:insetTop="2dp"
                             android:insetBottom="2dp"
-                            android:text="@string/counter_up" />
+                            android:text="@string/counter_down" />
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -450,12 +450,12 @@
                             android:minWidth="32dp"
                             android:minHeight="48dp" />
                         <Button
-                            android:id="@+id/down_count_button_pa"
+                            android:id="@+id/up_count_button_pa"
                             android:layout_width="48dp"
                             android:layout_height="48dp"
                             android:insetTop="2dp"
                             android:insetBottom="2dp"
-                            android:text="@string/counter_down" />
+                            android:text="@string/counter_up" />
                     </LinearLayout>
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -465,12 +465,12 @@
                         android:divider="@drawable/horizontal_padding_small"
                         android:showDividers="middle">
                         <Button
-                            android:id="@+id/up_count_button_ps"
+                            android:id="@+id/down_count_button_ps"
                             android:layout_width="48dp"
                             android:layout_height="48dp"
                             android:insetTop="2dp"
                             android:insetBottom="2dp"
-                            android:text="@string/counter_up" />
+                            android:text="@string/counter_down" />
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -485,12 +485,12 @@
                             android:minWidth="32dp"
                             android:minHeight="48dp" />
                         <Button
-                            android:id="@+id/down_count_button_ps"
+                            android:id="@+id/up_count_button_ps"
                             android:layout_width="48dp"
                             android:layout_height="48dp"
                             android:insetTop="2dp"
                             android:insetBottom="2dp"
-                            android:text="@string/counter_down" />
+                            android:text="@string/counter_up" />
                     </LinearLayout>
                 </LinearLayout>
                 <LinearLayout
@@ -513,12 +513,12 @@
                         android:divider="@drawable/horizontal_padding_small"
                         android:showDividers="middle">
                         <Button
-                            android:id="@+id/up_count_button_ba"
+                            android:id="@+id/down_count_button_ba"
                             android:layout_width="48dp"
                             android:layout_height="48dp"
                             android:insetTop="2dp"
                             android:insetBottom="2dp"
-                            android:text="@string/counter_up" />
+                            android:text="@string/counter_down" />
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -533,12 +533,12 @@
                             android:minWidth="32dp"
                             android:minHeight="48dp" />
                         <Button
-                            android:id="@+id/down_count_button_ba"
+                            android:id="@+id/up_count_button_ba"
                             android:layout_width="48dp"
                             android:layout_height="48dp"
                             android:insetTop="2dp"
                             android:insetBottom="2dp"
-                            android:text="@string/counter_down" />
+                            android:text="@string/counter_up" />
                     </LinearLayout>
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -548,12 +548,12 @@
                         android:divider="@drawable/horizontal_padding_small"
                         android:showDividers="middle">
                         <Button
-                            android:id="@+id/up_count_button_bs"
+                            android:id="@+id/down_count_button_bs"
                             android:layout_width="48dp"
                             android:layout_height="48dp"
                             android:insetTop="2dp"
                             android:insetBottom="2dp"
-                            android:text="@string/counter_up" />
+                            android:text="@string/counter_down" />
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -568,12 +568,12 @@
                             android:minWidth="32dp"
                             android:minHeight="48dp" />
                         <Button
-                            android:id="@+id/down_count_button_bs"
+                            android:id="@+id/up_count_button_bs"
                             android:layout_width="48dp"
                             android:layout_height="48dp"
                             android:insetTop="2dp"
                             android:insetBottom="2dp"
-                            android:text="@string/counter_down" />
+                            android:text="@string/counter_up" />
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
@@ -694,6 +694,12 @@
                         android:id="@+id/ten"
                         android:textSize="22sp"
                         android:text="@string/ten"/>
+                    <RadioButton
+                        android:id="@+id/five"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textSize="22sp"
+                        android:text="@string/five"/>
                     <RadioButton
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"

@@ -48,10 +48,15 @@ public class ActivityCompetitionSelection extends AppCompatActivity {
         Toast unfilledMessage = new Toast(this);
         unfilledMessage.setDuration(Toast.LENGTH_SHORT);
 
+
+        String scoutName;
         boolean changeCompetition = false;
         Bundle extras = getIntent().getExtras();
         if(extras != null){
+            scoutName = extras.getString("scoutName", "");
             changeCompetition = extras.getBoolean("chooseNewCompetition", false);
+        } else {
+            scoutName = "";
         }
 
         final String FILENAME = "matchAndDate";
@@ -82,6 +87,7 @@ public class ActivityCompetitionSelection extends AppCompatActivity {
                 if (fileDate.equals(currentDate)) {
                     Intent i = new Intent(this, activityPreMatch.class);
                     i.putExtra("competition", u.nextCommaOn(dateAndMatchString));
+                    i.putExtra("scoutName", scoutName);
                     this.startActivity(i);
                 }
             }
@@ -103,6 +109,7 @@ public class ActivityCompetitionSelection extends AppCompatActivity {
                 }
                 Intent i = new Intent(this, activityPreMatch.class);
                 i.putExtra("competition", u.getData(competitionRadioGroup));
+                i.putExtra("scoutName", scoutName);
                 this.startActivity(i);
             }
             if(!response.isEmpty()){

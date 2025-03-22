@@ -27,7 +27,7 @@ public class activityPreMatch extends AppCompatActivity {
          activity, save strings will be compiled and saved as csv in final activity page
          */
         String preMatchSaveString, autoSaveString,
-                teleOpSaveString, postMatchSaveString, competitionString;
+                teleOpSaveString, postMatchSaveString, competitionString, scoutNameString;
         Bundle extras = getIntent().getExtras();
         if(extras != null){
             preMatchSaveString = extras.getString("preMatch", "");
@@ -35,12 +35,14 @@ public class activityPreMatch extends AppCompatActivity {
             teleOpSaveString = extras.getString("teleOp", "");
             postMatchSaveString = extras.getString("postMatch", "");
             competitionString = extras.getString("competition", "Test");
+            scoutNameString = extras.getString("scoutName", "");
         } else {
             preMatchSaveString = "";
             autoSaveString = "";
             teleOpSaveString = "";
             postMatchSaveString = "";
             competitionString = "Test";
+            scoutNameString = "";
         }
 
         // Checks for insets changing (screen rotation) -- Auto-generated
@@ -61,6 +63,9 @@ public class activityPreMatch extends AppCompatActivity {
         Button saveButton = findViewById(R.id.save_button);
         CheckBox preloadedCoral = findViewById(R.id.checkBox_preloaded_coral);
         Button backButton = findViewById(R.id.back_button);
+        if(!scoutNameString.isEmpty()){
+            scoutName.setText(scoutNameString);
+        }
 
         if(!preMatchSaveString.isEmpty()){
             competitionString = u.untilNextComma(preMatchSaveString);

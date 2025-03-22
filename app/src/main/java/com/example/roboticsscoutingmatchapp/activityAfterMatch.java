@@ -180,6 +180,7 @@ public class activityAfterMatch extends AppCompatActivity {
                 String teamNumber = u.untilNextComma(u.nextCommaOn(u.nextCommaOn(u.nextCommaOn(preMatchSaveString))));
                 String matchNumber = u.untilNextComma(u.nextCommaOn(u.nextCommaOn(u.nextCommaOn(u.nextCommaOn(u.nextCommaOn(preMatchSaveString))))));
                 String competitionLocation = u.untilNextComma(preMatchSaveString);
+                String scoutName = u.untilNextComma(u.nextCommaOn(u.nextCommaOn(preMatchSaveString)));
                 String fileName = "match_scouting_"+ competitionLocation + "_" + teamNumber + "_" + matchNumber + ".csv";
                 Log.d("File Name: ", fileName);
 
@@ -211,7 +212,9 @@ public class activityAfterMatch extends AppCompatActivity {
                     Log.d("Error thrown:", "+==========+Error Thrown+==========+");
                     Log.getStackTraceString(e);
                 }
-                this.startActivity(new Intent(this, ActivityCompetitionSelection.class));
+                Intent i = new Intent(this, ActivityCompetitionSelection.class);
+                i.putExtra("scoutName", scoutName);
+                this.startActivity(i);
             }
 
             if(!response.isEmpty()){
