@@ -6,13 +6,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activityAfterMatch">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:orientation="vertical">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/header4"
+        android:textSize="24sp"
+        android:textColor="@color/black"
+        android:gravity="center"
+        />
 <ScrollView
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:layout_constraintBottom_toTopOf="parent"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintLeft_toLeftOf="parent"
-    app:layout_constraintRight_toRightOf="parent">
+    >
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -23,14 +36,6 @@
         android:paddingTop="20dp"
         android:paddingHorizontal="20dp"
         >
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/header4"
-        android:textSize="24sp"
-        android:textColor="@color/black"
-        android:gravity="center"/>
 
 <!--        what pieces can robot manipulate -->
         <LinearLayout
@@ -268,4 +273,5 @@
             android:layout_height="80dp"/>
     </LinearLayout>
 </ScrollView>
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

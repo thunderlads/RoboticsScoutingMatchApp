@@ -26,16 +26,18 @@ public class activityAfterMatch extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+        super.onCreate(savedInstanceState); // Default code start
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_after_match);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
-        });
+        }); // Default code end
 
-        U u = new U();
+        U u = new U(); // defines new utilities object to be used
+
+        // *---Defines all the components on the current page as variables---*
 
         CheckBox floorIntake = findViewById(R.id.floor_intake);
         CheckBox humanPlayerStation = findViewById(R.id.human_player_intake);
@@ -60,30 +62,30 @@ public class activityAfterMatch extends AppCompatActivity {
         EditText finalText = findViewById(R.id.End_of_app_text);
         Button saveButton = findViewById(R.id.save_button);
         Button backButton = findViewById(R.id.back_button);
-        Toast unfilledMessage = new Toast(this);
-        unfilledMessage.setDuration(Toast.LENGTH_SHORT);
+        Toast unfilledMessage = new Toast(this); // Creates a Toast (pop-up message object)
+        unfilledMessage.setDuration(Toast.LENGTH_SHORT); // Sets it to only be angry a short while
 
-        String preMatchSaveString, autoSaveString,  // Gets all savestrings from wherever coming in from
+        String preMatchSaveString, autoSaveString,  // Define savestring String objects
                 teleOpSaveString, postMatchSaveString;
-        Bundle extras = getIntent().getExtras();
-        if(extras != null){
+        Bundle extras = getIntent().getExtras(); // Gets the savestrings and stores them to extras
+        if(extras != null){ // If savestrings exist, set individual strings to values
             preMatchSaveString = extras.getString("preMatch", "");
             autoSaveString = extras.getString("auto", "");
             teleOpSaveString = extras.getString("teleOp", "");
             postMatchSaveString = extras.getString("postMatch", "");
-        } else {
+        } else { // If savestrings don't exist, no value
             preMatchSaveString = "";
             autoSaveString = "";
             teleOpSaveString = "";
             postMatchSaveString = "";
         }
 
-        if(!postMatchSaveString.isEmpty()){
+        if(!postMatchSaveString.isEmpty()){ // Sets all the components to the values within the savestring
             // Coral floor pickup able | Coral Source pickup able | Defense received |
             // Stop reason | team rank among alliance | other comments questions or concerns ||
-            floorIntake.setChecked(Boolean.parseBoolean(u.untilNextComma(postMatchSaveString)));
-            postMatchSaveString = u.nextCommaOn(postMatchSaveString);
-
+            floorIntake.setChecked(Boolean.parseBoolean(u.untilNextComma(postMatchSaveString))); // Sets the value to the parsed value in the savestring
+            postMatchSaveString = u.nextCommaOn(postMatchSaveString); // removes the value from the savestring
+            // So on an so forth
             humanPlayerStation.setChecked(Boolean.parseBoolean(u.untilNextComma(postMatchSaveString)));
             postMatchSaveString = u.nextCommaOn(postMatchSaveString);
 
@@ -134,7 +136,8 @@ public class activityAfterMatch extends AppCompatActivity {
             postMatchSaveString = u.nextCommaOn(postMatchSaveString);
         }
 
-        backButton.setOnClickListener((l)->{
+        backButton.setOnClickListener((l)->{ // Sets current savestring to current values of components
+            // Because it's the back button, these values can have no value
             // Coral floor pickup able | Coral Source pickup able | Defense received |
             // Stop reason | team rank among alliance | other comments questions or concerns ||
             String afterMatchInfo = "";
@@ -144,7 +147,7 @@ public class activityAfterMatch extends AppCompatActivity {
             afterMatchInfo += u.getData(defenseReceivedGroup) + ",";
             afterMatchInfo += u.getData(stopReasonGroup) + ",";
             afterMatchInfo += u.getData(rankGroup) + ",";
-            afterMatchInfo += u.stripText(finalText.getText().toString(), u.DELIMITER) + ",";
+            afterMatchInfo += u.stripText(finalText.getText().toString(), U.DELIMITER) + ",";
 
             Intent i = new Intent(this, activityTeleOp.class);
             i.putExtra("preMatch", preMatchSaveString);
@@ -155,15 +158,16 @@ public class activityAfterMatch extends AppCompatActivity {
             this.startActivity(i);
         });
 
-        saveButton.setOnClickListener((l)->{
+        saveButton.setOnClickListener((l)->{ // Sets current savestring to current component values
+            // Checks that components that need to be filled in are filled in
             String response = "";
-            if(u.getData(defenseReceivedGroup).isEmpty())
-                response = "Please fill in defense received";
+            if(u.getData(defenseReceivedGroup).isEmpty()) // If a component is not filled in
+                response = "Please fill in defense received"; // Sets the toast message to error message
             else if(u.getData(rankGroup).isEmpty())
                 response = "Please fill in rank";
             else if(u.getData(stopReasonGroup).isEmpty())
                 response = "Please fill in stop reason";
-            else{
+            else{ // If nothing is wrong, keep filling everything in
                 // Coral floor pickup able | Coral Source pickup able | Defense received |
                 // Stop reason | team rank among alliance | other comments questions or concerns ||
                 String postMatchInfo = "";

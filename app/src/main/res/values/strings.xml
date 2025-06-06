@@ -14,8 +14,18 @@
     Worlds
     test
     -->
+    <!-- Off-seasons
+    Mayhem
+    Battlecry
+    NERD
+    BOB
+    -->
     <string name="competition_header">Please Choose Current Competition</string>
 
+    <string name="comp_mayhem">Mayhem</string>
+    <string name="comp_battlecry">Battlecry</string>
+    <string name="comp_nerd">NERD</string>
+    <string name="comp_bay_battle">BOB</string>
     <string name="comp_granite_state">Granite State</string>
     <string name="comp_waterbury">Waterbury</string>
     <string name="comp_uri">URI</string>
@@ -150,7 +160,7 @@
 
     <string name="button_save">Save</string>
 
-<!--  human player  -->
+    <!--  human player  -->
     <string name="human_player_title">Human Player Page!</string>
 
 
@@ -162,5 +172,7 @@
     <string name="scored">Scor.</string>
     <string name="barge">Barge</string>
     <string name="processor">Processor</string>
+
+    <string name="data">Data</string>
 
 </resources>
