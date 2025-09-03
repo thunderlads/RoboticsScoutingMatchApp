@@ -35,10 +35,10 @@ public class activityAfterMatch extends AppCompatActivity {
             return insets;
         }); // Default code end
 
-        U u = new U(); // defines new utilities object to be used
+        // defines new utilities object to be used
+        U u = new U();
 
         // *---Defines all the components on the current page as variables---*
-
         CheckBox floorIntake = findViewById(R.id.floor_intake);
         CheckBox humanPlayerStation = findViewById(R.id.human_player_intake);
 
@@ -62,33 +62,45 @@ public class activityAfterMatch extends AppCompatActivity {
         EditText finalText = findViewById(R.id.End_of_app_text);
         Button saveButton = findViewById(R.id.save_button);
         Button backButton = findViewById(R.id.back_button);
-        Toast unfilledMessage = new Toast(this); // Creates a Toast (pop-up message object)
-        unfilledMessage.setDuration(Toast.LENGTH_SHORT); // Sets it to only be angry a short while
+        // Creates a Toast (pop-up message object)
+        Toast unfilledMessage = new Toast(this);
+        // Sets it to only be angry a short while
+        unfilledMessage.setDuration(Toast.LENGTH_SHORT);
 
-        String preMatchSaveString, autoSaveString,  // Define savestring String objects
+        // Define savestring String objects
+        String preMatchSaveString, autoSaveString,
                 teleOpSaveString, postMatchSaveString;
-        Bundle extras = getIntent().getExtras(); // Gets the savestrings and stores them to extras
-        if(extras != null){ // If savestrings exist, set individual strings to values
+        // Gets the savestrings and stores them to extras
+        Bundle extras = getIntent().getExtras();
+        // If savestrings exist, set individual strings to values
+        if(extras != null){
             preMatchSaveString = extras.getString("preMatch", "");
             autoSaveString = extras.getString("auto", "");
             teleOpSaveString = extras.getString("teleOp", "");
             postMatchSaveString = extras.getString("postMatch", "");
-        } else { // If savestrings don't exist, no value
+        // If savestrings don't exist, no value
+        } else {
             preMatchSaveString = "";
             autoSaveString = "";
             teleOpSaveString = "";
             postMatchSaveString = "";
         }
 
-        if(!postMatchSaveString.isEmpty()){ // Sets all the components to the values within the savestring
+        // Sets all the components to the values within the savestring
+        // if the savestring is not empty, upon opening the page
+        if(!postMatchSaveString.isEmpty()){
             // Coral floor pickup able | Coral Source pickup able | Defense received |
             // Stop reason | team rank among alliance | other comments questions or concerns ||
-            floorIntake.setChecked(Boolean.parseBoolean(u.untilNextComma(postMatchSaveString))); // Sets the value to the parsed value in the savestring
-            postMatchSaveString = u.nextCommaOn(postMatchSaveString); // removes the value from the savestring
+
+            // Sets the value to the parsed value in the savestring
+            floorIntake.setChecked(Boolean.parseBoolean(u.untilNextComma(postMatchSaveString)));
+            // removes the value from the savestring
+            postMatchSaveString = u.nextCommaOn(postMatchSaveString);
             // So on an so forth
             humanPlayerStation.setChecked(Boolean.parseBoolean(u.untilNextComma(postMatchSaveString)));
             postMatchSaveString = u.nextCommaOn(postMatchSaveString);
 
+            // Basically a switch-case for which radio button to toggle with the savestring value
             if(u.untilNextComma(postMatchSaveString).equals("No Defense")){
                 noDefenseButton.toggle();
             }else if(u.untilNextComma(postMatchSaveString).equals("Light Defense")){
@@ -98,6 +110,7 @@ public class activityAfterMatch extends AppCompatActivity {
             }
             postMatchSaveString = u.nextCommaOn(postMatchSaveString);
 
+            // Actual switch-case for radio button togle
             String stopReasonString = u.untilNextComma(postMatchSaveString);
             switch (stopReasonString) {
                 case "Died":
@@ -118,6 +131,7 @@ public class activityAfterMatch extends AppCompatActivity {
             }
             postMatchSaveString = u.nextCommaOn(postMatchSaveString);
 
+            // etc. etc. etc.
             String teamRank = u.untilNextComma(postMatchSaveString);
             switch(teamRank){
                 case "Rank 1":
@@ -133,15 +147,21 @@ public class activityAfterMatch extends AppCompatActivity {
             postMatchSaveString = u.nextCommaOn(postMatchSaveString);
 
             finalText.setText(u.untilNextComma(postMatchSaveString));
+            // Should in theory be removing everything from the savestring
             postMatchSaveString = u.nextCommaOn(postMatchSaveString);
+
         }
 
-        backButton.setOnClickListener((l)->{ // Sets current savestring to current values of components
-            // Because it's the back button, these values can have no value
+        // Sets current savestring to current values of components
+        // Because it's the back button, these values can have no value
+        backButton.setOnClickListener((l)->{
             // Coral floor pickup able | Coral Source pickup able | Defense received |
             // Stop reason | team rank among alliance | other comments questions or concerns ||
             String afterMatchInfo = "";
 
+            // Here, just keeps appending the necessary info to the savestring
+            // IN A SPECIFIC ORDER!!
+            // TODO: Make a dynamic list that doesn't need to be in a specific order (like dictionary)
             afterMatchInfo += u.getData(floorIntake) + ",";
             afterMatchInfo += u.getData(humanPlayerStation) + ",";
             afterMatchInfo += u.getData(defenseReceivedGroup) + ",";
@@ -149,28 +169,42 @@ public class activityAfterMatch extends AppCompatActivity {
             afterMatchInfo += u.getData(rankGroup) + ",";
             afterMatchInfo += u.stripText(finalText.getText().toString(), U.DELIMITER) + ",";
 
+            // Creates an "Intent" which is initialized with the current page, and the page to go to
+            // then, "extras", or key:value pairs with the savestrings are put into the intent
             Intent i = new Intent(this, activityTeleOp.class);
             i.putExtra("preMatch", preMatchSaveString);
             i.putExtra("auto", autoSaveString);
             i.putExtra("teleOp", teleOpSaveString);
             i.putExtra("postMatch", afterMatchInfo);
 
+            // The intent then gets sent along and starts the new page
             this.startActivity(i);
         });
 
-        saveButton.setOnClickListener((l)->{ // Sets current savestring to current component values
+        saveButton.setOnClickListener((l)->{
+            // Sets current savestring to current component values
             // Checks that components that need to be filled in are filled in
+
+            // Creates a string that will be used in the Toast (pop-up message)
             String response = "";
-            if(u.getData(defenseReceivedGroup).isEmpty()) // If a component is not filled in
-                response = "Please fill in defense received"; // Sets the toast message to error message
+
+            // If a NECESSARY component is not filled in
+            if(u.getData(defenseReceivedGroup).isEmpty())
+                // Sets the Toast message to error message
+                response = "Please fill in defense received";
             else if(u.getData(rankGroup).isEmpty())
                 response = "Please fill in rank";
             else if(u.getData(stopReasonGroup).isEmpty())
                 response = "Please fill in stop reason";
-            else{ // If nothing is wrong, keep filling everything in
+            else{
+                // Only once nothing is wrong can the savestring be made
                 // Coral floor pickup able | Coral Source pickup able | Defense received |
                 // Stop reason | team rank among alliance | other comments questions or concerns ||
+
+                // Initializes post-match savestring
                 String postMatchInfo = "";
+                // Utilizes the handy utilities file to scrape data from all necessary sources
+                // IN ORDER
                 postMatchInfo += u.getData(floorIntake) + ",";
                 postMatchInfo += u.getData(humanPlayerStation) + ",";
                 postMatchInfo += u.getData(defenseReceivedGroup) + ",";
@@ -181,17 +215,28 @@ public class activityAfterMatch extends AppCompatActivity {
                 // Competition Location | Save Version | Scout Name | Team # | Team Color |
                 // Match Number | Preloaded coral ||
                 // Filename format: "match_scouting_" + [team_number] + [match number]
+
+                // Since this is the final page, gets all the necessary vars for the file name
                 String teamNumber = u.untilNextComma(u.nextCommaOn(u.nextCommaOn(u.nextCommaOn(preMatchSaveString))));
                 String matchNumber = u.untilNextComma(u.nextCommaOn(u.nextCommaOn(u.nextCommaOn(u.nextCommaOn(u.nextCommaOn(preMatchSaveString))))));
                 String competitionLocation = u.untilNextComma(preMatchSaveString);
                 String scoutName = u.untilNextComma(u.nextCommaOn(u.nextCommaOn(preMatchSaveString)));
+
+                // Compounds the name of the file
                 String fileName = "match_scouting_"+ competitionLocation + "_" + teamNumber + "_" + matchNumber + ".csv";
                 Log.d("File Name: ", fileName);
 
+                // Oh phooey heres where it gets kinda clamplicated
+                // Tries to make a new file
                 try {
+                    // Creates a new "file" variable wherever the documents on the device are stored with the filename
                     File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS), fileName);
+                    // If the file doesn't exist (GOOD THING!!!)
                     if (!file.exists()) {
+
+                        // Create the "physical" file from the variable abstraction (returns true if it does)
                         boolean fileCreated = file.createNewFile();
+                        // Prints the output of whether or not the file has been created
                         if(!fileCreated) {
                             Toast.makeText(this, "File " + fileName + " has not been created", Toast.LENGTH_SHORT).show();
                             Log.d("File written: ", "File not created");
@@ -200,27 +245,43 @@ public class activityAfterMatch extends AppCompatActivity {
                             Log.d("File written: ", "File created");
                         }
                     }else{
+                        // Well if it did exist it already did exist. PRINT THAT!!!
                         Log.d("File already existed", "File already existed");
                     }
 
+                    // Create a new file writer for the "physical" file (not the variable)
                     FileWriter fw = new FileWriter(file.getAbsoluteFile());
+                    // Then make a buffered writer (safer? i think?) from the file writer
                     BufferedWriter bw = new BufferedWriter(fw);
 
+                    // Write the savestrings to the file
                     bw.write(preMatchSaveString);
                     bw.write(autoSaveString);
                     bw.write(teleOpSaveString);
                     bw.write(postMatchInfo);
+                    // Flushes any bits (etiquette?? and safer?? idk man thats what it looks like)
                     bw.flush();
+                    // Close the file
                     bw.close();
                 } catch (IOException e) {
+                    // This is why there's a try. If goes wrong, report the error in the log
                     Log.d("Error thrown:", "+==========+Error Thrown+==========+");
                     Log.getStackTraceString(e);
                 }
+
+                // Same thing with the intent from before....
+                // Creates an Intent referencing current activity page, and the page to go to
                 Intent i = new Intent(this, ActivityCompetitionSelection.class);
+                // Puts the scout name as an extra cuz people complained SO MUCH that they were
+                // annoyed that the scout name didn't save
                 i.putExtra("scoutName", scoutName);
+                // Starts the new page (which is actually competition selection!)
                 this.startActivity(i);
             }
 
+            // See this confused me a lil bit....
+            // But after that whole if-else statement, if there is an "error" for the toast,
+            // put it on the screen!!
             if(!response.isEmpty()){
                 unfilledMessage.setText(response);
                 unfilledMessage.show();
