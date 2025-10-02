@@ -22,6 +22,12 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
+// Fully Commented by your's truly
+// Any questions, contact Akash Ghoshroy at:
+//  -email: aghoshroy@wpi.edu :: please head emails with Scouting App: Topic!!
+//  -157's slack - Akash Ghoshroy
+//  -phone: +1(508)308-5080 :: i'd prefer you didn't this way tho....
+
 public class activityAfterMatch extends AppCompatActivity {
 
     @Override

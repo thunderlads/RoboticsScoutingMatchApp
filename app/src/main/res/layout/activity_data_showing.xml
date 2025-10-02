@@ -40,19 +40,16 @@
                         android:text="@string/color_red"
                         android:textColor="@color/black"
                         android:textSize="24sp"
-                        android:gravity="center"
-                        android:background=""/>
+                        android:gravity="center"/>
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:background="">
+                        android:orientation="horizontal">
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:textSize="18sp"
-                            android:id="@+id/red_teams"
-                            android:background=""/>
+                            android:id="@+id/red_teams"/>
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
