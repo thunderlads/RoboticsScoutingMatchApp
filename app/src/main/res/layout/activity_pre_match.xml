@@ -149,15 +149,44 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
-            <CheckBox
-                android:id="@+id/checkBox_preloaded_coral"
-                android:layout_width="match_parent"
+            <LinearLayout
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/preloaded_coral"
-                android:layout_marginTop="16dp"
-                android:textSize="16sp" />
+                android:orientation="horizontal"
+                app:layout_constraintWidth_percent="0.5"
+                android:divider="@drawable/horizontal_padding_small"
+                android:showDividers="middle">
+                <Button
+                    android:id="@+id/down_count_button_rc1"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:insetTop="2dp"
+                    android:insetBottom="2dp"
+                    android:text="@string/counter_down"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/artifacts" />
+                <EditText
+                    android:id="@+id/edit_text_rc1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autofillHints="username"
+                    android:hint="@string/number_tried"
+                    android:inputType="number"
+                    android:minWidth="32dp"
+                    android:minHeight="48dp" />
+                <Button
+                    android:id="@+id/up_count_button_rc1"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:insetTop="2dp"
+                    android:insetBottom="2dp"
+                    android:text="@string/counter_up"/>
+            </LinearLayout>
 
-<!--            <CheckBox-->
+            <!--            <CheckBox-->
 <!--                android:layout_width="match_parent"-->
 <!--                android:layout_height="wrap_content"-->
 <!--                android:id="@+id/checkBox_scouting_humanplayer"-->

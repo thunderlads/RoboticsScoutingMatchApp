@@ -56,7 +56,8 @@
     <string name="button_next">Next</string>
     <string name="button_back">Back</string>
 
-    <string name="preloaded_coral">Did they have a preloaded coral?</string>
+    <string name="preloaded_artifact">How many preloaded artifacts?</string>
+    <string name="artifacts">Artifacts</string>
     <string name="scouting_human_player">Are you scouting the human player?</string>
     <!--Auto -->
     <string name="header2">Autonomous</string>

@@ -61,7 +61,9 @@ public class activityPreMatch extends AppCompatActivity {
         EditText teamNumber = findViewById(R.id.team_number);
         RadioGroup teamColorRadioGroup = findViewById(R.id.team_color_radio_group);
         Button saveButton = findViewById(R.id.save_button);
-        CheckBox preloadedCoral = findViewById(R.id.checkBox_preloaded_coral);
+        Button AC1plus = findViewById(R.id.up_count_button_ac1); // Preloaded Artifacts
+        Button AC1minus = findViewById(R.id.down_count_button_ac1);
+        EditText AC1field = findViewById(R.id.edit_text_ac1);
         Button backButton = findViewById(R.id.back_button);
         if(!scoutNameString.isEmpty()){
             scoutName.setText(scoutNameString);
