@@ -112,6 +112,33 @@
                     android:layout_height="wrap_content"
                     android:text="@string/position6" />
             </RadioGroup>
+            <RadioGroup
+                android:id="@+id/staring_position_radio_group3"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:divider="@drawable/vertical_padding_small"
+                android:showDividers="middle">
+
+                <RadioButton
+                    android:id="@+id/position_7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/position7" />
+
+                <RadioButton
+                    android:id="@+id/position_8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/position8" />
+
+                <RadioButton
+                    android:id="@+id/position_9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/position9" />
+            </RadioGroup>
         </LinearLayout>
 
         <!--        left starting position button -->

@@ -74,6 +74,9 @@
     <string name="position4">Position 4</string>
     <string name="position5">Position 5</string>
     <string name="position6">Position 6</string>
+    <string name="position7">Position 7</string>
+    <string name="position8">Position 8</string>
+    <string name="position9">Position 9</string>
 
     <string name="took_from_left">Taken from left human player station</string>
     <string name="took_from_right">Taken from left human player station</string>
