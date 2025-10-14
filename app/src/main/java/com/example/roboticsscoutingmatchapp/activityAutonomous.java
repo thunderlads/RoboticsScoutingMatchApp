@@ -64,6 +64,7 @@ public class activityAutonomous extends AppCompatActivity {
         RadioButton position4Button = findViewById(R.id.position_4);
         RadioButton position5Button = findViewById(R.id.position_5);
         RadioButton position6Button = findViewById(R.id.position_6);
+        RadioButton position_7Button = findViewById(R.id.position_7);
 
         CheckBox leftStarting = findViewById(R.id.left_starting_area);
 
@@ -151,6 +152,7 @@ public class activityAutonomous extends AppCompatActivity {
                 case "Position 6":
                     position6Button.toggle();
                     break;
+
             }
             autoSaveString = u.nextCommaOn(autoSaveString); // Removes starting position
             if(u.untilNextComma(autoSaveString).equals("True"))
