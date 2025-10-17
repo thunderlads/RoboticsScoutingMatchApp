@@ -15,6 +15,11 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+// Any questions, contact Akash Ghoshroy at:
+//  -email: aghoshroy@wpi.edu :: please head emails with Scouting App: Topic!!
+//  -157's slack - Akash Ghoshroy
+//  -phone: +1(508)308-5080 :: i'd prefer you didn't this way tho....
+
 public class activityTeleOp extends AppCompatActivity {
 
     @Override
@@ -28,11 +33,14 @@ public class activityTeleOp extends AppCompatActivity {
             return insets;
         });
 
+        // Defines new utility object
         U u = new U();
 
-        String preMatchSaveString, autoSaveString,  // Gets all savestrings from wherever coming in from
+        // Gets all savestrings from wherever coming in from
+        String preMatchSaveString, autoSaveString,
                 teleOpSaveString, postMatchSaveString;
         Bundle extras = getIntent().getExtras();
+        // If they exist, set the vars to the values, else make 'em empty
         if(extras != null){
             preMatchSaveString = extras.getString("preMatch", "");
             autoSaveString = extras.getString("auto", "");
@@ -48,43 +56,56 @@ public class activityTeleOp extends AppCompatActivity {
         // Defining all the access-necessary components within the page
         Button backButton = findViewById(R.id.back_button);
         Button saveButton = findViewById(R.id.save_button);
-        Button AC1plus = findViewById(R.id.up_count_button_ac1); // Attempted Coral L1
+        // Attempted Coral L1
+        Button AC1plus = findViewById(R.id.up_count_button_ac1);
         Button AC1minus = findViewById(R.id.down_count_button_ac1);
         EditText AC1field = findViewById(R.id.edit_text_ac1);
-        Button RC1plus = findViewById(R.id.up_count_button_rc1); // Scored Coral L1
+        // Scored Coral L1
+        Button RC1plus = findViewById(R.id.up_count_button_rc1);
         Button RC1minus = findViewById(R.id.down_count_button_rc1);
         EditText RC1field = findViewById(R.id.edit_text_rc1);
-        Button AC2plus = findViewById(R.id.up_count_button_ac2); // Attempted Coral L2
+        // Attempted Coral L2
+        Button AC2plus = findViewById(R.id.up_count_button_ac2);
         Button AC2minus = findViewById(R.id.down_count_button_ac2);
         EditText AC2field = findViewById(R.id.edit_text_ac2);
-        Button RC2plus = findViewById(R.id.up_count_button_rc2); // Scored Coral L2
+        // Scored Coral L2
+        Button RC2plus = findViewById(R.id.up_count_button_rc2);
         Button RC2minus = findViewById(R.id.down_count_button_rc2);
         EditText RC2field = findViewById(R.id.edit_text_rc2);
-        Button AC3plus = findViewById(R.id.up_count_button_ac3); // Attempted Coral L3
+        // Attempted Coral L3
+        Button AC3plus = findViewById(R.id.up_count_button_ac3);
         Button AC3minus = findViewById(R.id.down_count_button_ac3);
         EditText AC3field = findViewById(R.id.edit_text_ac3);
-        Button RC3plus = findViewById(R.id.up_count_button_rc3); // Scored Coral L3
+        // Scored Coral L3
+        Button RC3plus = findViewById(R.id.up_count_button_rc3);
         Button RC3minus = findViewById(R.id.down_count_button_rc3);
         EditText RC3field = findViewById(R.id.edit_text_rc3);
-        Button AC4plus = findViewById(R.id.up_count_button_ac4); // Attempted Coral L4
+        // Attempted Coral L4
+        Button AC4plus = findViewById(R.id.up_count_button_ac4);
         Button AC4minus = findViewById(R.id.down_count_button_ac4);
         EditText AC4field = findViewById(R.id.edit_text_ac4);
-        Button RC4plus = findViewById(R.id.up_count_button_rc4); // Scored Coral L4
+        // Scored Coral L4
+        Button RC4plus = findViewById(R.id.up_count_button_rc4);
         Button RC4minus = findViewById(R.id.down_count_button_rc4);
         EditText RC4field = findViewById(R.id.edit_text_rc4);
-        Button APplus = findViewById(R.id.up_count_button_pa); // Attempted Processor
+        // Attempted Processor
+        Button APplus = findViewById(R.id.up_count_button_pa);
         Button APminus = findViewById(R.id.down_count_button_pa);
         EditText APfield = findViewById(R.id.edit_text_pa);
-        Button SPplus = findViewById(R.id.up_count_button_ps); // Scored Processor
+        // Scored Processor
+        Button SPplus = findViewById(R.id.up_count_button_ps);
         Button SPminus = findViewById(R.id.down_count_button_ps);
         EditText SPfield = findViewById(R.id.edit_text_ps);
-        Button ABplus = findViewById(R.id.up_count_button_ba); // Attempted Barge
+        // Attempted Barge
+        Button ABplus = findViewById(R.id.up_count_button_ba);
         Button ABminus = findViewById(R.id.down_count_button_ba);
         EditText ABfield = findViewById(R.id.edit_text_ba);
-        Button SBplus = findViewById(R.id.up_count_button_bs); // Scored Barge
+        // Scored Barge
+        Button SBplus = findViewById(R.id.up_count_button_bs);
         Button SBminus = findViewById(R.id.down_count_button_bs);
         EditText SBfield = findViewById(R.id.edit_text_bs);
-        RadioGroup parkRadioGroup = findViewById(R.id.endgame_location); // Endgame RadioGroup
+        // Endgame RadioGroup
+        RadioGroup parkRadioGroup = findViewById(R.id.endgame_location);
         RadioButton hangShallowButton = findViewById(R.id.hang_shallow);
         RadioButton hangDeepButton = findViewById(R.id.hang_deep);
         RadioButton parkButton = findViewById(R.id.park);
@@ -95,9 +116,11 @@ public class activityTeleOp extends AppCompatActivity {
         RadioButton fifteenButton = findViewById(R.id.fifteen);
         RadioButton tenButton = findViewById(R.id.ten);
         RadioButton zeroButton = findViewById(R.id.zero);
+        // Manipulate-ables
         CheckBox algaeBox = findViewById(R.id.pickup_algae);
         CheckBox coralBox = findViewById(R.id.pickup_coral);
 
+        // Creates the pop-up object and sets its showing length to short
         Toast unfilledMessage = new Toast(this);
         unfilledMessage.setDuration(Toast.LENGTH_SHORT);
 
@@ -106,6 +129,10 @@ public class activityTeleOp extends AppCompatActivity {
             // #ACL1 | #ACL2 | #ACL3 | #ACL4 | # SCL1 | #SCL2 | #SCL3 | #SCL4 |
             // #Attempted processor | #Scored Processor | #Attempted Barge | #Scored Barge |
             // Park/Shallow/Deep | Time to hang | Algae Pickup | Coral Pickup ||
+
+            // In essence, grabs the first data in the string through untilNextComma
+            // Then, iterates to the next data value by "deleting" the value stored between the
+            // beginning and the next comma in the string
             AC1field.setText(u.untilNextComma(teleOpSaveString));
             teleOpSaveString = u.nextCommaOn(teleOpSaveString);
             AC2field.setText(u.untilNextComma(teleOpSaveString));
@@ -134,6 +161,7 @@ public class activityTeleOp extends AppCompatActivity {
             teleOpSaveString  = u.nextCommaOn(teleOpSaveString);
 
             String currentButton = u.untilNextComma(teleOpSaveString);
+            // Here, since this button can only have so many values, switch between those values
             switch(currentButton){
                 case "Hang Shallow":
                     hangShallowButton.toggle();
@@ -151,6 +179,7 @@ public class activityTeleOp extends AppCompatActivity {
             teleOpSaveString = u.nextCommaOn(teleOpSaveString);
 
             String timeToHang = u.untilNextComma(teleOpSaveString);
+            // Same switch concept here. Note: they are not integer values, but strings
             switch(timeToHang){
                 case "25":
                     twentyFiveButton.toggle();
@@ -177,6 +206,8 @@ public class activityTeleOp extends AppCompatActivity {
         }
 
         // Setting increment and decrement listeners for all buttons
+        // Listeners are what let buttons be pressed multiple times, and each one calls the function
+        // incrementText, either to +1 or -1 it.
         AC1plus.setOnClickListener((l)->u.incrementText(AC1field));
         AC1minus.setOnClickListener((l)->u.incrementText(AC1field, -1));
         RC1plus.setOnClickListener((l)->u.incrementText(RC1field));
@@ -209,33 +240,42 @@ public class activityTeleOp extends AppCompatActivity {
 
 
         // Back button, which sends data backwards even if it's unfilled
+        // Uses an onClickLister with a lambda function to do so
         backButton.setOnClickListener((l)->{
             String teleOpInfo = "";
             // #ACL1 | #ACL2 | #ACL3 | #ACL4 | # SCL1 | #SCL2 | #SCL3 | #SCL4 |
             // #Attempted processor | #Scored Processor | #Attempted Barge | #Scored Barge |
             // Park/Shallow/Deep | Time to hang | Algae Pickup | Coral Pickup ||
 
+            // Gets data from each field in the order that it should be done !!WITHOUT!! checking
+            // whether or not they are empty, since you don't need all fields filled to go backwards
+            // Attempted Done
             teleOpInfo += u.getData(AC1field) + ",";
             teleOpInfo += u.getData(AC2field) + ",";
             teleOpInfo += u.getData(AC3field) + ",";
-            teleOpInfo += u.getData(AC4field) + ","; // Attempted Done
+            teleOpInfo += u.getData(AC4field) + ",";
 
+            // Scored Done
             teleOpInfo += u.getData(RC1field) + ",";
             teleOpInfo += u.getData(RC2field) + ",";
             teleOpInfo += u.getData(RC3field) + ",";
-            teleOpInfo += u.getData(RC4field) + ","; // Scored Done
+            teleOpInfo += u.getData(RC4field) + ",";
 
+            // Algae Done
             teleOpInfo += u.getData(APfield) + ",";
             teleOpInfo += u.getData(SPfield) + ",";
             teleOpInfo += u.getData(ABfield) + ",";
-            teleOpInfo += u.getData(SBfield) + ","; // Algae Done
+            teleOpInfo += u.getData(SBfield) + ",";
 
+            // Endgame radioGroups
             teleOpInfo += u.getData(parkRadioGroup) + ",";
             teleOpInfo += u.getData(endgameTimeGroup) + ",";
 
+            // Manipulate-ables
             teleOpInfo += u.getData(algaeBox) + ",";
             teleOpInfo += u.getData(coralBox) + ",";
 
+            // Puts all of the strings in a nice intent package and sends them off to the auto page
             Intent i = new Intent(this, activityAutonomous.class);
             i.putExtra("preMatch", preMatchSaveString);
             i.putExtra("auto", autoSaveString);
@@ -245,8 +285,13 @@ public class activityTeleOp extends AppCompatActivity {
             this.startActivity(i);
         });
 
+        // Uses a lambda function in the onClickListener to go to the next page
         saveButton.setOnClickListener((l) -> {
+            // Creates the empty string for what the pop-up should display should it need to
             String response = "";
+
+            // For every field that isn't "necessary" but fillable, like the amount scored and
+            // attempted, fill them in with 0 (or any other default value)
             if (u.getData(AC1field).isEmpty())
                 AC1field.setText("0");
             if(u.getData(RC1field).isEmpty())
@@ -271,6 +316,13 @@ public class activityTeleOp extends AppCompatActivity {
                 ABfield.setText("0");
             if(u.getData(SBfield).isEmpty())
                 SBfield.setText("0");
+
+            // Now, for necessary fields and conditions, check them all and if they fail, set string
+            // response equal to the error message that should be popped up.
+            // Notable conditions include:
+            //      - Attempted must be greater than or equal to scored (otherwise accuracy numbers)
+            //
+            // If all of the conditions pass, then allow the user to go to the next page
             if(u.getData(parkRadioGroup).isEmpty())
                 response = "Please select an endgame position";
             else if(u.getData(endgameTimeGroup).isEmpty())
@@ -288,29 +340,39 @@ public class activityTeleOp extends AppCompatActivity {
             else if(Integer.parseInt(u.getData(ABfield)) < Integer.parseInt(u.getData(SBfield)))
                 response = "Attempted Barge cannot be less than Scored Barge";
             else{
+                // Getting here assumes that all conditions have passed
+
                 String teleOpInfo = "";
 
+                // Gets all the data in the correct order and adds it to the savestring
+                // Attempted Done
                 teleOpInfo += u.getData(AC1field) + ",";
                 teleOpInfo += u.getData(AC2field) + ",";
                 teleOpInfo += u.getData(AC3field) + ",";
-                teleOpInfo += u.getData(AC4field) + ","; // Attempted Done
+                teleOpInfo += u.getData(AC4field) + ",";
 
+                // Scored Done
                 teleOpInfo += u.getData(RC1field) + ",";
                 teleOpInfo += u.getData(RC2field) + ",";
                 teleOpInfo += u.getData(RC3field) + ",";
-                teleOpInfo += u.getData(RC4field) + ","; // Scored Done
+                teleOpInfo += u.getData(RC4field) + ",";
 
+                // Algae Done
                 teleOpInfo += u.getData(APfield) + ",";
                 teleOpInfo += u.getData(SPfield) + ",";
                 teleOpInfo += u.getData(ABfield) + ",";
-                teleOpInfo += u.getData(SBfield) + ","; // Algae Done
+                teleOpInfo += u.getData(SBfield) + ",";
 
+                // Endgame radioGroups
                 teleOpInfo += u.getData(parkRadioGroup) + ",";
                 teleOpInfo += u.getData(endgameTimeGroup) + ",";
 
+                // Manipulate-ables
                 teleOpInfo += u.getData(algaeBox) + ",";
                 teleOpInfo += u.getData(coralBox) + ",";
 
+                // Packages all the savestrings up into the intent, which points to the afterMatch
+                // page, and send it off
                 Intent i = new Intent(this, activityAfterMatch.class);
                 i.putExtra("preMatch", preMatchSaveString);
                 i.putExtra("auto", autoSaveString);
@@ -319,6 +381,8 @@ public class activityTeleOp extends AppCompatActivity {
 
                 this.startActivity(i);
             }
+            // This runs only if there is an "error" message in String response, and pushes a
+            // pop-up to the user letting them know what they did wrong
             if(!response.isEmpty()){
                 unfilledMessage.setText(response);
                 unfilledMessage.show();

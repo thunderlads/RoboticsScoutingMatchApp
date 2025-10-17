@@ -24,7 +24,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Calendar;
 
-// Fully Commented by your's truly
 // Any questions, contact Akash Ghoshroy at:
 //  -email: aghoshroy@wpi.edu :: please head emails with Scouting App: Topic!!
 //  -157's slack - Akash Ghoshroy

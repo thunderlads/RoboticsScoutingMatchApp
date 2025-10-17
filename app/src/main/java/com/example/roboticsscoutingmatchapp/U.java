@@ -36,13 +36,18 @@ public class U extends AppCompatActivity{
      * @author Akash Ghoshroy
      */
     public static Object[] concatArrays(Object[] a1, Object[] a2){
+        // Gets the total length of the new array
         int l = a1.length+a2.length;
+        // Declares a new array of total length of both passed in arrays
         Object[] f = new Object[l];
+        // Iterator
         int i = 0;
+        // Goes through every object in array a1 and sets it to the new array
         for(Object o : a1){
             f[i] = o;
             i++;
         }
+        // DOESNT reset iterator and adds every object in a2 to the array
         for(Object o : a2){
             f[i] = o;
             i++;
@@ -87,7 +92,8 @@ public class U extends AppCompatActivity{
      * @author Akash Ghoshroy
      */
     public String getData(CheckBox field){
-        if(field.isChecked()){ // Kinda self explanatory if you ask me (at akashghoshroytl@gmail.com)
+        // If the checkbox is ticked then return true, else false yk
+        if(field.isChecked()){ // Kinda self explanatory if you ask me
             return "True";
         } else{
             return "False";
@@ -106,13 +112,17 @@ public class U extends AppCompatActivity{
      * @author Akash Ghoshroy
      */
     public String stripText(String text,  String[] stripType){
-        String response = text; // Sets the String to be returned to text
-        for(String s : stripType){ // Loops through all elements of stripType
-            while(response.contains(s)){ // Goes through every instance of each element of stripType and removes it
+        // Sets the String to be returned to text
+        String response = text;
+        // Loops through all elements of stripType
+        for(String s : stripType){
+            // Goes through every instance of each element of stripType and removes it
+            while(response.contains(s)){
                 response = response.substring(0, response.indexOf(s)) + response.substring(response.indexOf(s)+1);
             }
         }
-        return response; // Returns text after it has been modified
+        // Returns text after it has been modified
+        return response;
     }
     /**
      * Removes all appearances of {@link #DELIMITER_AND_WHITESPACE} in <code>text</code>.
@@ -122,13 +132,18 @@ public class U extends AppCompatActivity{
      * @author Akash Ghoshroy
      */
     public String stripText(String text){
-        String response = text; // Sets the String to be returned to text
-        for(String s : DELIMITER_AND_WHITESPACE){ // Loops through all elements of DELIMITER_AND_WHITESPACE
-            while(response.contains(s)){ // Goes through every instance of each element of stripType and removes it
+        // This one assumes you want to just strip both delimiter and whitespace since nothing was defined
+        // Sets the String to be returned to text
+        String response = text;
+        // Loops through all elements of DELIMITER_AND_WHITESPACE
+        for(String s : DELIMITER_AND_WHITESPACE){
+            // Goes through every instance of each element of stripType and removes it
+            while(response.contains(s)){
                 response = response.substring(0, response.indexOf(s)) + response.substring(response.indexOf(s)+1);
             }
         }
-        return response; // Returns text after it has been modified
+        // Returns text after it has been modified
+        return response;
     }
 
     /**
@@ -139,6 +154,7 @@ public class U extends AppCompatActivity{
      * @author Akash Ghoshroy
      */
     public String nextCommaOn(String text){
+        // One-liner, but returns everything from the first comma found until the end of text
         return text.substring(text.indexOf(",")+1);
     }
 
@@ -150,8 +166,14 @@ public class U extends AppCompatActivity{
      * @author Akash Ghoshroy
      */
     public String nextCommaOn(String text, int commaNum){
-        if(commaNum <= 1){ return text.substring(text.indexOf(",")+1);}
-        else{return nextCommaOn(text.substring(text.indexOf(",")+1), commaNum-1);}
+        // If its the first (or 0/negative), then return from the first comma on
+        if(commaNum <= 1){
+            return text.substring(text.indexOf(",")+1);
+        }
+        // Otherwise recurse with one less comma, while passing in from the next comma until the end of the string
+        else{
+            return nextCommaOn(text.substring(text.indexOf(",")+1), commaNum-1);
+        }
     }
 
     /**
@@ -162,6 +184,7 @@ public class U extends AppCompatActivity{
      * @author Akash Ghoshroy
      */
     public String untilNextComma(String text){
+        // returns the snippet of "text" from the beginning until the first comma
         return text.substring(0, text.indexOf(","));
     }
 
@@ -173,11 +196,15 @@ public class U extends AppCompatActivity{
      */
     public void incrementText(TextView field){
         if(field.getText().toString().isEmpty()){
-            field.setText("1"); // If the TextView is empty, it gets set to have a value of one
+            // If the TextView is empty, it gets set to have a value of one
+            field.setText("1");
         }else{
-            int currentNum = Integer.parseInt(field.getText().toString()); // Sets currentNum to the integer value within field
-            currentNum++; // Increments currentNum
-            field.setText(Integer.toString(currentNum)); // Sets the display value of field to currentNum
+            // Sets currentNum to the integer value within field
+            int currentNum = Integer.parseInt(field.getText().toString());
+            // Increments currentNum
+            currentNum++;
+            // Sets the display value of field to currentNum
+            field.setText(Integer.toString(currentNum));
         }
     }
 
@@ -190,9 +217,11 @@ public class U extends AppCompatActivity{
      */
     public void incrementText(TextView field, int incrementBy){
         if(field.getText().toString().isEmpty()){
-            field.setText(Integer.toString(incrementBy)); // If the TextView is empty, it gets set to have the value of incrementBy
+            // If the TextView is empty, it gets set to have the value of incrementBy
+            field.setText(Integer.toString(incrementBy));
         }else{
-            field.setText(Integer.toString(Integer.parseInt(field.getText().toString())+incrementBy)); // Sets the display value to the current display value + incrementBy
+            // Sets the display value to the current display value + incrementBy
+            field.setText(Integer.toString(Integer.parseInt(field.getText().toString())+incrementBy));
         }
     }
 
@@ -204,10 +233,13 @@ public class U extends AppCompatActivity{
      */
     public void incrementText(EditText field){
         if(field.getText().toString().isEmpty()){
-            field.setText("1"); // If the EditText is empty, it gets set to have a value of one
+            // If the EditText is empty, it gets set to have a value of one
+            field.setText("1");
         }else{
-            int currentNum = Integer.parseInt(field.getText().toString()); // Sets currentNum to the integer value within field
-            field.setText(Integer.toString(currentNum+1)); // Sets the display value to currentNum + one
+            // Sets currentNum to the integer value within field
+            int currentNum = Integer.parseInt(field.getText().toString());
+            // Sets the display value to currentNum + one
+            field.setText(Integer.toString(currentNum+1));
         }
     }
 
@@ -220,14 +252,19 @@ public class U extends AppCompatActivity{
      */
     public void incrementText(EditText field, int incrementBy){
         if(field.getText().toString().isEmpty()){
-            field.setText(Integer.toString(incrementBy)); // If the EditText is empty, it gets set to have the value of incrementBy
+            // If the EditText is empty, it gets set to have the value of incrementBy
+            field.setText(Integer.toString(incrementBy));
         }else{
-            int currentNum = Integer.parseInt(field.getText().toString()); // Sets currentNum to the integer value within field
-            field.setText(Integer.toString(currentNum+incrementBy)); // Sets the display value to currentNum + incrementBy
+            // Sets currentNum to the integer value within field
+            int currentNum = Integer.parseInt(field.getText().toString());
+            // Sets the display value to currentNum + incrementBy
+            field.setText(Integer.toString(currentNum+incrementBy));
         }
     }
 
     public int searchArrCol(ArrayList<Object[]> arr, int col, Object obj){
+        // Data searching stuff?
+        // Looks through each row of an array's column and compares to an object
         int i = 0;
         for(Object[] o: arr){
             if(o[col].equals(obj)){return i;}
