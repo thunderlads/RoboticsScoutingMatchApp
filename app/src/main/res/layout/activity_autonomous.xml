@@ -54,7 +54,8 @@
                 android:layout_height="wrap_content"
                 android:paddingTop="8sp"
                 android:text="@string/prompt_starting_position"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                android:textColor="@color/black"/>
 
             <RadioGroup
                 android:id="@+id/staring_position_radio_group1"
@@ -171,7 +172,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/level1" />
+                        android:text="@string/level1"
+                        android:textColor="@color/black"/>
                     <EditText
                         android:id="@+id/edit_text_ac1"
                         android:layout_width="match_parent"
@@ -179,7 +181,7 @@
                         android:autofillHints="username"
                         android:hint="@string/number_tried"
                         android:inputType="number"
-                        android:minWidth="32dp"
+                        android:minWidth="48dp"
                         android:minHeight="48dp" />
                     <Button
                         android:id="@+id/up_count_button_ac1"
@@ -206,7 +208,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/level2" />
+                        android:text="@string/level2"
+                        android:textColor="@color/black"/>
                     <EditText
                         android:id="@+id/edit_text_ac2"
                         android:layout_width="match_parent"
@@ -214,7 +217,7 @@
                         android:autofillHints="username"
                         android:hint="@string/number_tried"
                         android:inputType="number"
-                        android:minWidth="32dp"
+                        android:minWidth="48dp"
                         android:minHeight="48dp" />
                     <Button
                         android:id="@+id/up_count_button_ac2"
@@ -249,7 +252,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/level3" />
+                        android:text="@string/level3"
+                        android:textColor="@color/black"/>
                     <EditText
                         android:id="@+id/edit_text_ac3"
                         android:layout_width="match_parent"
@@ -257,7 +261,7 @@
                         android:autofillHints="username"
                         android:hint="@string/number_tried"
                         android:inputType="number"
-                        android:minWidth="32dp"
+                        android:minWidth="48dp"
                         android:minHeight="48dp" />
                     <Button
                         android:id="@+id/up_count_button_ac3"
@@ -284,7 +288,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/level4" />
+                        android:text="@string/level4"
+                        android:textColor="@color/black"/>
                     <EditText
                         android:id="@+id/edit_text_ac4"
                         android:layout_width="match_parent"
@@ -292,7 +297,7 @@
                         android:autofillHints="username"
                         android:hint="@string/number_tried"
                         android:inputType="number"
-                        android:minWidth="32dp"
+                        android:minWidth="48dp"
                         android:minHeight="48dp" />
                     <Button
                         android:id="@+id/up_count_button_ac4"
@@ -339,7 +344,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/level1" />
+                        android:text="@string/level1"
+                        android:textColor="@color/black"/>
                     <EditText
                         android:id="@+id/edit_text_rc1"
                         android:layout_width="match_parent"
@@ -347,7 +353,7 @@
                         android:autofillHints="username"
                         android:hint="@string/number_tried"
                         android:inputType="number"
-                        android:minWidth="32dp"
+                        android:minWidth="48dp"
                         android:minHeight="48dp" />
                     <Button
                         android:id="@+id/up_count_button_rc1"
@@ -374,7 +380,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/level2" />
+                        android:text="@string/level2"
+                        android:textColor="@color/black"/>
                     <EditText
                         android:id="@+id/edit_text_rc2"
                         android:layout_width="match_parent"
@@ -382,7 +389,7 @@
                         android:autofillHints="username"
                         android:hint="@string/number_tried"
                         android:inputType="number"
-                        android:minWidth="32dp"
+                        android:minWidth="48dp"
                         android:minHeight="48dp" />
                     <Button
                         android:id="@+id/up_count_button_rc2"

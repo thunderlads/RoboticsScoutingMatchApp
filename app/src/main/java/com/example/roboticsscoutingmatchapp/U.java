@@ -23,7 +23,7 @@ public class U extends AppCompatActivity{
     // Characters to strip in input fields for stripText method
     public static final String [] DELIMITER = {",", ";", ":", "|", "\n"};
     public static final String [] WHITESPACE = {" "};
-    public static final String [] DELIMITER_AND_WHITESPACE = (String[])concatArrays(DELIMITER, WHITESPACE);
+    public final String [] DELIMITER_AND_WHITESPACE = {",", ";", ":", "|", "\n", " "};
 
 
     // Returning data pulled from fields
