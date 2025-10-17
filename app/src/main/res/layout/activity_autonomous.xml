@@ -391,7 +391,7 @@
                         android:autofillHints="username"
                         android:hint="@string/number_tried"
                         android:inputType="number"
-                        android:minWidth="32dp"
+                        android:minWidth="48dp"
                         android:minHeight="48dp" />
                     <Button
                         android:id="@+id/up_count_button_rc1"
@@ -427,7 +427,7 @@
                         android:autofillHints="username"
                         android:hint="@string/number_tried"
                         android:inputType="number"
-                        android:minWidth="32dp"
+                        android:minWidth="48dp"
                         android:minHeight="48dp" />
                     <Button
                         android:id="@+id/up_count_button_rc2"
