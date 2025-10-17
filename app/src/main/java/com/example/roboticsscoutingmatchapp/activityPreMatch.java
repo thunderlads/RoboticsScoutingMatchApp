@@ -59,11 +59,12 @@ public class activityPreMatch extends AppCompatActivity {
         EditText scoutName = findViewById(R.id.scout_name);
         EditText matchNumber = findViewById(R.id.match_number);
         EditText teamNumber = findViewById(R.id.team_number);
+        EditText preloadedArtifact = findViewById(R.id.edit_text_rc1);
         RadioGroup teamColorRadioGroup = findViewById(R.id.team_color_radio_group);
         Button saveButton = findViewById(R.id.save_button);
-        Button AC1plus = findViewById(R.id.up_count_button_ac1); // Preloaded Artifacts
-        Button AC1minus = findViewById(R.id.down_count_button_ac1);
-        EditText AC1field = findViewById(R.id.edit_text_ac1);
+        Button AC1plus = findViewById(R.id.up_count_button_rc1); // Preloaded Artifacts
+        Button AC1minus = findViewById(R.id.down_count_button_rc1);
+//        EditText AC1field = findViewById(R.id.edit_text_rc1);
         Button backButton = findViewById(R.id.back_button);
         if(!scoutNameString.isEmpty()){
             scoutName.setText(scoutNameString);
@@ -85,7 +86,7 @@ public class activityPreMatch extends AppCompatActivity {
             preMatchSaveString = u.nextCommaOn(preMatchSaveString); // remove team color
             matchNumber.setText(u.untilNextComma(preMatchSaveString));
             preMatchSaveString = u.nextCommaOn(preMatchSaveString); // remove match number
-            preloadedCoral.setChecked(Boolean.parseBoolean(u.untilNextComma(preMatchSaveString)));
+            preloadedArtifact.setText(u.untilNextComma(preMatchSaveString));
             preMatchSaveString = u.nextCommaOn(preMatchSaveString); // Remove Checked
 
         }
@@ -118,7 +119,7 @@ public class activityPreMatch extends AppCompatActivity {
                 preMatchInfo += u.stripText(u.getData(teamNumber)) + ",";
                 preMatchInfo += u.stripText(u.getData(teamColorRadioGroup)) + ",";
                 preMatchInfo += u.stripText(u.getData(matchNumber)) + ",";
-                preMatchInfo += u.stripText(u.getData(preloadedCoral)) + ",";
+                preMatchInfo += u.stripText(u.getData(preloadedArtifact)) + ",";
 
                 i.putExtra("preMatch", preMatchInfo);
                 i.putExtra("auto", autoSaveString);

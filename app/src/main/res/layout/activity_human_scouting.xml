@@ -123,7 +123,8 @@
                 <TextView
                     android:layout_width="117dp"
                     android:layout_height="wrap_content"
-                    android:text="@string/thrown_back" />
+                    android:text="@string/thrown_back"
+                    android:textColor="@color/black"/>
 
                 <EditText
                     android:id="@+id/edit_text_rc1"
@@ -132,7 +133,7 @@
                     android:autofillHints="username"
                     android:hint="@string/number_tried"
                     android:inputType="number"
-                    android:minWidth="32dp"
+                    android:minWidth="48dp"
                     android:minHeight="48dp" />
 
             </LinearLayout>
@@ -164,7 +165,8 @@
                 <TextView
                     android:layout_width="117dp"
                     android:layout_height="wrap_content"
-                    android:text="@string/attempted_barge" />
+                    android:text="@string/attempted_barge"
+                    android:textColor="@color/black"/>
 
                 <EditText
                     android:id="@+id/edit_text_ac2"
@@ -173,7 +175,7 @@
                     android:autofillHints="username"
                     android:hint="@string/number_tried"
                     android:inputType="number"
-                    android:minWidth="32dp"
+                    android:minWidth="48dp"
                     android:minHeight="48dp" />
 
             </LinearLayout>
@@ -205,7 +207,8 @@
                 <TextView
                     android:layout_width="117dp"
                     android:layout_height="wrap_content"
-                    android:text="@string/scored_barge" />
+                    android:text="@string/scored_barge"
+                    android:textColor="@color/black"/>
 
                 <EditText
                     android:id="@+id/edit_text_rc2"
@@ -214,7 +217,7 @@
                     android:autofillHints="username"
                     android:hint="@string/number_tried"
                     android:inputType="number"
-                    android:minWidth="32dp"
+                    android:minWidth="48dp"
                     android:minHeight="48dp" />
 
             </LinearLayout>
@@ -227,7 +230,8 @@
             <TextView
                 android:layout_width="264dp"
                 android:layout_height="match_parent"
-                android:text="@string/endText" />
+                android:text="@string/endText"
+                android:textColor="@color/black"/>
 
         </LinearLayout>
         </LinearLayout>
