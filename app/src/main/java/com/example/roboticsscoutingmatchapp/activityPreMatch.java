@@ -59,12 +59,11 @@ public class activityPreMatch extends AppCompatActivity {
         EditText scoutName = findViewById(R.id.scout_name);
         EditText matchNumber = findViewById(R.id.match_number);
         EditText teamNumber = findViewById(R.id.team_number);
-        EditText preloadedArtifact = findViewById(R.id.edit_text_rc1);
         RadioGroup teamColorRadioGroup = findViewById(R.id.team_color_radio_group);
         Button saveButton = findViewById(R.id.save_button);
-        Button AC1plus = findViewById(R.id.up_count_button_rc1); // Preloaded Artifacts
-        Button AC1minus = findViewById(R.id.down_count_button_rc1);
-//        EditText AC1field = findViewById(R.id.edit_text_rc1);
+        Button preloadedArtifactPlus = findViewById(R.id.up_count_button_pa); // Preloaded Artifacts
+        Button preloadedArtifactMinus = findViewById(R.id.down_count_button_pa);
+        EditText preloadedArtifact = findViewById(R.id.edit_text_pa);
         Button backButton = findViewById(R.id.back_button);
         if(!scoutNameString.isEmpty()){
             scoutName.setText(scoutNameString);
@@ -109,6 +108,8 @@ public class activityPreMatch extends AppCompatActivity {
                 response = getResources().getString(R.string.prompt_team_number) + " " + getResources().getString(R.string.is_empty_identifier);
             }else if(u.getData(teamColorRadioGroup).isEmpty()){
                 response = "Please choose a team color";
+            }else if(Integer.parseInt(u.getData(preloadedArtifact))>3){
+                response = "Cannot preload more than 3 artifacts";
             }else{
                 // Utilizes "savestrings"
                 Intent i = new Intent(this, activityAutonomous.class);
@@ -119,7 +120,8 @@ public class activityPreMatch extends AppCompatActivity {
                 preMatchInfo += u.stripText(u.getData(teamNumber)) + ",";
                 preMatchInfo += u.stripText(u.getData(teamColorRadioGroup)) + ",";
                 preMatchInfo += u.stripText(u.getData(matchNumber)) + ",";
-                preMatchInfo += u.stripText(u.getData(preloadedArtifact)) + ",";
+
+                preMatchInfo += u.getData(preloadedArtifact) + ",";
 
                 i.putExtra("preMatch", preMatchInfo);
                 i.putExtra("auto", autoSaveString);
@@ -134,6 +136,8 @@ public class activityPreMatch extends AppCompatActivity {
                 unfilledMessage.show();
             }
         });
+        preloadedArtifactPlus.setOnClickListener((l)->u.incrementText(preloadedArtifact));
+        preloadedArtifactMinus.setOnClickListener((l)->u.incrementText(preloadedArtifact, -1));
 
         backButton.setOnClickListener((l)->{
            Intent i = new Intent(this, ActivityCompetitionSelection.class);

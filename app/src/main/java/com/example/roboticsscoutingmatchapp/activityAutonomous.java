@@ -18,10 +18,10 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class activityAutonomous extends AppCompatActivity {
 
-    public void clearGroup(RadioGroup field1, RadioGroup field2){
+    public void clearGroup(RadioGroup field1, RadioGroup field2, RadioGroup field3){
         field1.setOnCheckedChangeListener(null);
         field1.check(-1);
-        field1.setOnCheckedChangeListener((l,w)->clearGroup(field2, field1));
+        field1.setOnCheckedChangeListener((l,w)->clearGroup(field3, field2, field1));
     }
 
 
@@ -58,13 +58,16 @@ public class activityAutonomous extends AppCompatActivity {
 
         RadioGroup positionGroup1 = findViewById(R.id.staring_position_radio_group1);
         RadioGroup positionGroup2 = findViewById(R.id.staring_position_radio_group2);
+        RadioGroup positionGroup3 = findViewById(R.id.staring_position_radio_group3);
         RadioButton position1Button = findViewById(R.id.Position_1);
         RadioButton position2Button = findViewById(R.id.Position_2);
         RadioButton position3Button = findViewById(R.id.Position_3);
         RadioButton position4Button = findViewById(R.id.position_4);
         RadioButton position5Button = findViewById(R.id.position_5);
         RadioButton position6Button = findViewById(R.id.position_6);
-        RadioButton position_7Button = findViewById(R.id.position_7);
+        RadioButton position7Button = findViewById(R.id.position_7);
+        RadioButton position8Button = findViewById(R.id.position_8);
+        RadioButton position9Button = findViewById(R.id.position_9);
 
         CheckBox leftStarting = findViewById(R.id.left_starting_area);
 
@@ -152,6 +155,15 @@ public class activityAutonomous extends AppCompatActivity {
                 case "Position 6":
                     position6Button.toggle();
                     break;
+                case "Position 7":
+                    position7Button.toggle();
+                    break;
+                case "Position 8":
+                    position8Button.toggle();
+                    break;
+                case "Position 9":
+                    position9Button.toggle();
+                    break;
 
             }
             autoSaveString = u.nextCommaOn(autoSaveString); // Removes starting position
@@ -188,8 +200,9 @@ public class activityAutonomous extends AppCompatActivity {
 
 
 
-        positionGroup1.setOnCheckedChangeListener((l, w)->clearGroup(positionGroup2, positionGroup1));
-        positionGroup2.setOnCheckedChangeListener((l, w)->clearGroup(positionGroup1, positionGroup2));
+        positionGroup1.setOnCheckedChangeListener((l, w)->clearGroup(positionGroup2, positionGroup3, positionGroup1));
+        positionGroup2.setOnCheckedChangeListener((l, w)->clearGroup(positionGroup1, positionGroup2, positionGroup3));
+        positionGroup3.setOnCheckedChangeListener((l, w)->clearGroup(positionGroup1, positionGroup2, positionGroup3));
 
         // Sets all the buttons to either increment or decrement their respective buttons.
         // Can be simplified. Not now.

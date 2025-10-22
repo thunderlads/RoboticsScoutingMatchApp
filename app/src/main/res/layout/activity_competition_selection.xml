@@ -39,67 +39,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="24sp"
-                    android:text="@string/comp_mayhem"/>
+                    android:text="@string/comp_ryken"/>
                 <RadioButton
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="24sp"
-                    android:text="@string/comp_battlecry"/>
-                <RadioButton
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="24sp"
-                    android:text="@string/comp_nerd"/>
-                <RadioButton
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="24sp"
-                    android:text="@string/comp_bay_battle"/>
-                <RadioButton
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="24sp"
-                    android:text="@string/comp_granite_state"/>
-                <RadioButton
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="24sp"
-                    android:text="@string/comp_waterbury"/>
-                <RadioButton
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="24sp"
-                    android:text="@string/comp_uri"/>
-                <RadioButton
-                    android:id="@+id/comp_wpi_button"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="24sp"
-                    android:text="@string/comp_wpi"/>
-                <RadioButton
-                    android:id="@+id/comp_uvm_button"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="24sp"
-                    android:text="@string/comp_uvm"/>
-                <RadioButton
-                    android:id="@+id/comp_dcmp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="24sp"
-                    android:text="@string/comp_dcmp"/>
-                <RadioButton
-                    android:id="@+id/comp_worlds"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="24sp"
-                    android:text="@string/comp_worlds"/>
-                <RadioButton
-                    android:id="@+id/comp_test"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="24sp"
                     android:text="@string/comp_test"/>
+
             </RadioGroup>
             <LinearLayout
                 android:layout_width="match_parent"
