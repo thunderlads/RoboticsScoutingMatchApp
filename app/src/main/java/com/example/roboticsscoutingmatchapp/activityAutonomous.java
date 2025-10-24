@@ -201,7 +201,7 @@ public class activityAutonomous extends AppCompatActivity {
 
 
         positionGroup1.setOnCheckedChangeListener((l, w)->clearGroup(positionGroup2, positionGroup3, positionGroup1));
-        positionGroup2.setOnCheckedChangeListener((l, w)->clearGroup(positionGroup1, positionGroup2, positionGroup3));
+        positionGroup2.setOnCheckedChangeListener((l, w)->clearGroup(positionGroup3, positionGroup1, positionGroup2));
         positionGroup3.setOnCheckedChangeListener((l, w)->clearGroup(positionGroup1, positionGroup2, positionGroup3));
 
         // Sets all the buttons to either increment or decrement their respective buttons.
@@ -316,7 +316,7 @@ public class activityAutonomous extends AppCompatActivity {
             if(u.getData(REAField).isEmpty()) {
                 REAField.setText("0");
             }
-            if((u.getData(positionGroup1).isEmpty()) && (u.getData(positionGroup2).isEmpty()))
+            if((u.getData(positionGroup1).isEmpty()) && (u.getData(positionGroup2).isEmpty()) && (u.getData(positionGroup3).isEmpty()))
                 response = "Please fill position";
             else if(Integer.parseInt(u.getData(AC1Field)) < Integer.parseInt(u.getData(RC1Field)))
                 response = "Attempted Coral L1 cannot be less than Scored Coral L1";
