@@ -87,8 +87,8 @@
     <string name="level3">L3</string>
     <string name="level4">L4</string>
 
-    <string name="attempted_coral">Attempted Coral</string>
-    <string name="scored_coral">Scored Coral</string>
+    <string name="artifact">Artifacts</string>
+    <string name="motifs">Motifs</string>
     <string name="algae">Algae</string>
 
     <string name="attempted_coral_lvl1">Attempted Coral Lvl 1</string>
@@ -112,6 +112,9 @@
 
     <!--    tele op -->
     <string name="header3">Teleop</string>
+
+    <string name="classified_artifacts">Classified</string>
+    <string name="overflowed_artifacts">Overflow</string>
 
     <string name="algae_processor_attempted">Attempted Processor</string>
     <string name="algae_processor_scored">Scored Processor</string>

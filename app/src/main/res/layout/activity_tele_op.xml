@@ -43,7 +43,7 @@
                     android:layout_height="wrap_content"
                     android:textSize="20sp"
                     android:textColor="@color/black"
-                    android:text="@string/attempted_coral"/>
+                    android:text="@string/classified_artifacts"/>
 
                 <!-- Attempted L1 and L2-->
                 <LinearLayout
@@ -228,7 +228,7 @@
                     android:layout_height="wrap_content"
                     android:textSize="20sp"
                     android:textColor="@color/black"
-                    android:text="@string/scored_coral"/>
+                    android:text="@string/overflowed_artifacts"/>
 
                 <!-- Scored L1 and L2 -->
                 <LinearLayout

@@ -21,7 +21,10 @@ public class activityAutonomous extends AppCompatActivity {
     public void clearGroup(RadioGroup field1, RadioGroup field2, RadioGroup field3){
         field1.setOnCheckedChangeListener(null);
         field1.check(-1);
+        field2.setOnCheckedChangeListener(null);
+        field2.check(-1);
         field1.setOnCheckedChangeListener((l,w)->clearGroup(field3, field2, field1));
+        field2.setOnCheckedChangeListener((l,w)->clearGroup(field1, field3, field2));
     }
 
 
@@ -87,41 +90,7 @@ public class activityAutonomous extends AppCompatActivity {
         Button decrementRC2 = findViewById(R.id.down_count_button_rc2);
         EditText RC2Field = findViewById(R.id.edit_text_rc2);
 
-        Button incrementAC3 = findViewById(R.id.up_count_button_ac3);
-        Button decrementAC3 = findViewById(R.id.down_count_button_ac3);
-        EditText AC3Field = findViewById(R.id.edit_text_ac3);
 
-        Button incrementRC3 = findViewById(R.id.up_count_button_rc3);
-        Button decrementRC3 = findViewById(R.id.down_count_button_rc3);
-        EditText RC3Field = findViewById(R.id.edit_text_rc3);
-
-        Button incrementAC4 = findViewById(R.id.up_count_button_ac4);
-        Button decrementAC4 = findViewById(R.id.down_count_button_ac4);
-        EditText AC4Field = findViewById(R.id.edit_text_ac4);
-
-        Button incrementRC4 = findViewById(R.id.up_count_button_rc4);
-        Button decrementRC4 = findViewById(R.id.down_count_button_rc4);
-        EditText RC4Field = findViewById(R.id.edit_text_rc4);
-
-        Button incrementBA = findViewById(R.id.up_count_button_ba); // BA = Barge attempted
-        Button decrementBA = findViewById(R.id.down_count_button_ba);
-        EditText BAField = findViewById(R.id.edit_text_ba);
-
-        Button incrementBS = findViewById(R.id.up_count_button_bs); // BS = Barge scored
-        Button decrementBS = findViewById(R.id.down_count_button_bs);
-        EditText BSField = findViewById(R.id.edit_text_bs);
-        
-        Button incrementPA = findViewById(R.id.up_count_button_pa); // PA = Processor attempted
-        Button decrementPA = findViewById(R.id.down_count_button_pa);
-        EditText PAField = findViewById(R.id.edit_text_pa);
-        
-        Button incrementPS = findViewById(R.id.up_count_button_ps);
-        Button decrementPS = findViewById(R.id.down_count_button_ps);
-        EditText PSField = findViewById(R.id.edit_text_ps);
-
-        Button incrementREA = findViewById(R.id.up_count_button_rea); // REA = Algae Removed
-        Button decrementREA = findViewById(R.id.down_count_button_rea);
-        EditText REAField = findViewById(R.id.edit_text_rea);
 
         Button backButton = findViewById(R.id.back_button);
         Button saveButton = findViewById(R.id.save_button);
@@ -174,28 +143,11 @@ public class activityAutonomous extends AppCompatActivity {
             autoSaveString = u.nextCommaOn(autoSaveString); // Removes #ACL1
             AC2Field.setText(u.untilNextComma(autoSaveString));
             autoSaveString = u.nextCommaOn(autoSaveString); // Removes #ACL2
-            AC3Field.setText(u.untilNextComma(autoSaveString));
-            autoSaveString = u.nextCommaOn(autoSaveString); // Remove #ACL3
-            AC4Field.setText(u.untilNextComma(autoSaveString));
-            autoSaveString = u.nextCommaOn(autoSaveString); // Remove #ACL4
             RC1Field.setText(u.untilNextComma(autoSaveString));
             autoSaveString = u.nextCommaOn(autoSaveString); // Remove #SCL1
             RC2Field.setText(u.untilNextComma(autoSaveString));
             autoSaveString = u.nextCommaOn(autoSaveString); // Remove #SCL2
-            RC3Field.setText(u.untilNextComma(autoSaveString));
-            autoSaveString = u.nextCommaOn(autoSaveString); // Remove #SCL3
-            RC4Field.setText(u.untilNextComma(autoSaveString));
-            autoSaveString = u.nextCommaOn(autoSaveString); // Remove #SCL4
-            BAField.setText(u.untilNextComma(autoSaveString));
-            autoSaveString = u.nextCommaOn(autoSaveString); // Remove Attempted Barge
-            BSField.setText(u.untilNextComma(autoSaveString));
-            autoSaveString = u.nextCommaOn(autoSaveString); // Remove Scored Barge
-            PAField.setText(u.untilNextComma(autoSaveString));
-            autoSaveString = u.nextCommaOn(autoSaveString); // Remove Attempted Processor
-            PSField.setText(u.untilNextComma(autoSaveString));
-            autoSaveString = u.nextCommaOn(autoSaveString); // Remove Scored Processor
-            REAField.setText(u.untilNextComma(autoSaveString));
-            autoSaveString = u.nextCommaOn(autoSaveString); // Remove Algae removed
+
         }
 
 
@@ -214,24 +166,7 @@ public class activityAutonomous extends AppCompatActivity {
         decrementAC2.setOnClickListener((l)->u.incrementText(AC2Field, -1));
         incrementRC2.setOnClickListener((l)->u.incrementText(RC2Field));
         decrementRC2.setOnClickListener((l)->u.incrementText(RC2Field, -1));
-        incrementAC3.setOnClickListener((l)->u.incrementText(AC3Field));
-        decrementAC3.setOnClickListener((l)->u.incrementText(AC3Field, -1));
-        incrementRC3.setOnClickListener((l)->u.incrementText(RC3Field));
-        decrementRC3.setOnClickListener((l)->u.incrementText(RC3Field, -1));
-        incrementAC4.setOnClickListener((l)->u.incrementText(AC4Field));
-        decrementAC4.setOnClickListener((l)->u.incrementText(AC4Field, -1));
-        incrementRC4.setOnClickListener((l)->u.incrementText(RC4Field));
-        decrementRC4.setOnClickListener((l)->u.incrementText(RC4Field, -1));
-        incrementBA.setOnClickListener((l)->u.incrementText(BAField));
-        decrementBA.setOnClickListener((l)->u.incrementText(BAField, -1));
-        incrementBS.setOnClickListener((l)->u.incrementText(BSField));
-        decrementBS.setOnClickListener((l)->u.incrementText(BSField, -1));
-        incrementPA.setOnClickListener((l)->u.incrementText(PAField));
-        decrementPA.setOnClickListener((l)->u.incrementText(PAField, -1));
-        incrementPS.setOnClickListener((l)->u.incrementText(PSField));
-        decrementPS.setOnClickListener((l)->u.incrementText(PSField, -1));
-        incrementREA.setOnClickListener((l)->u.incrementText(REAField));
-        decrementREA.setOnClickListener((l)->u.incrementText(REAField, -1));
+
 
         backButton.setOnClickListener((l)-> {
             // Starting Position | Left starting Position | #ACL1 | #ACL2 | #ACL3 | #ACL4 |
@@ -239,11 +174,13 @@ public class activityAutonomous extends AppCompatActivity {
             // #processor attempted | #processor scored |#algae removed ||
             String autoInfo = "";
 
-            if (!u.getData(positionGroup1).isEmpty() || !u.getData(positionGroup2).isEmpty()) {
-                if (u.getData(positionGroup1).isEmpty()) {
+            if (!u.getData(positionGroup1).isEmpty() || !u.getData(positionGroup2).isEmpty() || !u.getData(positionGroup3).isEmpty()) {
+                if (!u.getData(positionGroup1).isEmpty()) {
+                    autoInfo += u.getData(positionGroup1);
+                } else if (!u.getData(positionGroup2).isEmpty()) {
                     autoInfo += u.getData(positionGroup2);
                 } else {
-                    autoInfo += u.getData(positionGroup1);
+                    autoInfo += u.getData(positionGroup3);
                 }
             }
             autoInfo += ","; // Starting position # end
@@ -251,19 +188,10 @@ public class activityAutonomous extends AppCompatActivity {
 
             autoInfo += u.getData(AC1Field) + ",";
             autoInfo += u.getData(AC2Field) + ",";
-            autoInfo += u.getData(AC3Field) + ",";
-            autoInfo += u.getData(AC4Field) + ","; // Attempted Coral end
 
             autoInfo += u.getData(RC1Field) + ",";
             autoInfo += u.getData(RC2Field) + ",";
-            autoInfo += u.getData(RC3Field) + ",";
-            autoInfo += u.getData(RC4Field) + ","; // Scored Coral End
 
-            autoInfo += u.getData(BAField) + ",";
-            autoInfo += u.getData(BSField) + ",";
-            autoInfo += u.getData(PAField) + ",";
-            autoInfo += u.getData(PSField) + ",";
-            autoInfo += u.getData(REAField) + ","; // Algae end
 
             Intent i = new Intent(this, activityPreMatch.class);
             i.putExtra("preMatch", preMatchSaveString);
@@ -289,75 +217,35 @@ public class activityAutonomous extends AppCompatActivity {
             if(u.getData(RC2Field).isEmpty()) {
                 RC2Field.setText("0");
             }
-            if(u.getData(AC3Field).isEmpty()) {
-                AC3Field.setText("0");
-            }
-            if(u.getData(RC3Field).isEmpty()) {
-                RC3Field.setText("0");
-            }
-            if(u.getData(AC4Field).isEmpty()) {
-                AC4Field.setText("0");
-            }
-            if(u.getData(RC4Field).isEmpty()) {
-                RC4Field.setText("0");
-            }
-            if(u.getData(BAField).isEmpty()) {
-                BAField.setText("0");
-            }
-            if(u.getData(BSField).isEmpty()) {
-                BSField.setText("0");
-            }
-            if(u.getData(PAField).isEmpty()) {
-                PAField.setText("0");
-            }
-            if(u.getData(PSField).isEmpty()) {
-                PSField.setText("0");
-            }
-            if(u.getData(REAField).isEmpty()) {
-                REAField.setText("0");
-            }
+
             if((u.getData(positionGroup1).isEmpty()) && (u.getData(positionGroup2).isEmpty()) && (u.getData(positionGroup3).isEmpty()))
                 response = "Please fill position";
             else if(Integer.parseInt(u.getData(AC1Field)) < Integer.parseInt(u.getData(RC1Field)))
                 response = "Attempted Coral L1 cannot be less than Scored Coral L1";
             else if(Integer.parseInt(u.getData(AC2Field)) < Integer.parseInt(u.getData(RC2Field)))
                 response = "Attempted Coral L2 cannot be less than Scored Coral L2";
-            else if(Integer.parseInt(u.getData(AC3Field)) < Integer.parseInt(u.getData(RC3Field)))
-                response = "Attempted Coral L3 cannot be less than Scored Coral L3";
-            else if(Integer.parseInt(u.getData(AC4Field)) < Integer.parseInt(u.getData(RC4Field)))
-                response = "Attempted Coral L4 cannot be less than Scored Coral L4";
-            else if(Integer.parseInt(u.getData(BAField)) < Integer.parseInt(u.getData(BSField)))
-                response = "Attempted Barge cannot be less than Scored Barge";
-            else if(Integer.parseInt(u.getData(PAField)) < Integer.parseInt(u.getData(PSField)))
-                response = "Attempted Processor cannot be less than Scored Processor";
-            else{
+            {
 
                 String autoInfo = "";
 
 
-                if (u.getData(positionGroup1).isEmpty()) {
+                if (!u.getData(positionGroup1).isEmpty()) {
+                    autoInfo += u.getData(positionGroup1);
+                } else if (!u.getData(positionGroup2).isEmpty()) {
                     autoInfo += u.getData(positionGroup2);
                 } else {
-                    autoInfo += u.getData(positionGroup1);
+                    autoInfo += u.getData(positionGroup3);
                 }
                 autoInfo += ","; // Starting position # end
                 autoInfo += u.getData(leftStarting) + ","; // Left starting end
 
                 autoInfo += u.getData(AC1Field) + ",";
                 autoInfo += u.getData(AC2Field) + ",";
-                autoInfo += u.getData(AC3Field) + ",";
-                autoInfo += u.getData(AC4Field) + ","; // Attempted Coral end
 
                 autoInfo += u.getData(RC1Field) + ",";
                 autoInfo += u.getData(RC2Field) + ",";
-                autoInfo += u.getData(RC3Field) + ",";
-                autoInfo += u.getData(RC4Field) + ","; // Scored Coral End
 
-                autoInfo += u.getData(BAField) + ",";
-                autoInfo += u.getData(BSField) + ",";
-                autoInfo += u.getData(PAField) + ",";
-                autoInfo += u.getData(PSField) + ",";
-                autoInfo += u.getData(REAField) + ","; // Algae end
+
 
                 Intent i = new Intent(this, activityTeleOp.class);
                 i.putExtra("preMatch", preMatchSaveString);
