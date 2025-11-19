@@ -47,7 +47,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/how_pick_ip_coral"
+                android:text="@string/how_pick_up_artifacts"
+                android:textColor="@color/black"
                 android:textSize="24sp" />
 
         </LinearLayout>
@@ -80,6 +81,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="@string/robot_stopped"
+                android:textColor="@color/black"
                 android:textSize="24sp" />
         </LinearLayout>
         <LinearLayout
@@ -142,6 +144,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="@string/defense_received_title"
+                android:textColor="@color/black"
                 android:textSize="24sp" />
         </LinearLayout>
         <LinearLayout
@@ -188,6 +191,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="@string/ranking_of_team"
+                android:textColor="@color/black"
                 android:textSize="24sp" />
         </LinearLayout>
         <LinearLayout
@@ -214,12 +218,6 @@
                     android:layout_height="match_parent"
                     android:text="@string/rank2"
                     android:textSize="22sp" />
-                <RadioButton
-                    android:id="@+id/rank3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:textSize="22sp"
-                    android:text="@string/rank3"/>
             </RadioGroup>
         </LinearLayout>
 
@@ -232,6 +230,7 @@
     <TextView
         android:layout_width="264dp"
         android:layout_height="match_parent"
+        android:textColor="@color/black"
         android:text="@string/endText" />
 
 </LinearLayout>

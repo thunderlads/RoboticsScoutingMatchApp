@@ -115,6 +115,7 @@
 
     <string name="classified_artifacts">Classified</string>
     <string name="overflowed_artifacts">Overflow</string>
+    <string name="depot_artifacts">Depot</string>
 
     <string name="algae_processor_attempted">Attempted Processor</string>
     <string name="algae_processor_scored">Scored Processor</string>
@@ -122,7 +123,7 @@
     <string name="algae_barge_attempted">Attempted Barge</string>
     <string name="algae_barge_scored">Scored Barge</string>
 
-    <string name="endgame_action">Did the team hang shallow or deep or park?</string>
+    <string name="endgame_action">How did the team park?</string>
     <string name="hang_shallow">Hang Shallow</string>
     <string name="hang_deep">Hang Deep</string>
     <string name="park">Park</string>
@@ -161,7 +162,7 @@
     <string name="rank2">Rank 2</string>
     <string name="rank3">Rank 3</string>
 
-    <string name="defense_received_title">Defense received?</string>
+    <string name="defense_received_title">Defense RECEIVED?</string>
     <string name="no_defense">No Defense</string>
     <string name="light_defense">Light Defense</string>
     <string name="heavy_defense">Heavy Defense</string>
@@ -176,11 +177,23 @@
     <string name="scored_barge">Scored Barge</string>
     <string name="thrown_back">Thrown Back into Field</string>
 
-    <string name="attempted">Att.</string>
-    <string name="scored">Scor.</string>
+    <string name="attempted">Att</string>
+    <string name="scored">Sco</string>
     <string name="barge">Barge</string>
     <string name="processor">Processor</string>
 
     <string name="data">Data</string>
+
+    <string name="no_park">Did Not Park</string>
+    <string name="partial_solo">Half Solo</string>
+    <string name="partial_duo">Half Duo</string>
+    <string name="full_solo">Full Solo</string>
+    <string name="full_above">Full Top</string>
+    <string name="full_below">Full Bottom</string>
+
+    <string name="preloaded_purple">Preloaded Purple Artifacts</string>
+    <string name="preloaded_green">Preloaded Green Artifacts</string>
+
+    <string name="how_pick_up_artifacts">How did the robot pick up artifacts?</string>
 
 </resources>

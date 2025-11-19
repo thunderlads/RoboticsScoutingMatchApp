@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activityAutonomous">
-<!--    TODO: Add coral counter-->
+    <!--    TODO: Add coral counter-->
     <ScrollView
         android:id="@+id/scroll_view"
         android:layout_width="match_parent"
@@ -28,126 +28,130 @@
             android:divider="@drawable/vertical_padding_small"
             >
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/header1"
-            android:textSize="24sp"
-            android:textColor="@color/black"
-            android:gravity="center"/>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:divider="@drawable/horizontal_padding_small"
-            android:showDividers="middle"
-            >
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="32sp"
-                android:text="@string/prompt_scout_name"
-                />
-            <EditText
-                android:id="@+id/scout_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="32sp"
-                android:autofillHints="username"
-                android:gravity="center"
-                android:inputType="textCapWords"
-                android:hint="@string/text_edit_scout_name"
-                />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:divider="@drawable/horizontal_padding_small"
-            android:showDividers="middle"
-            >
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="32sp"
-                android:text="@string/prompt_match_number"
-                />
-            <EditText
-                android:id="@+id/match_number"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="32sp"
-                android:autofillHints="username"
-                android:hint="@string/text_edit_match_number"
-                android:gravity="center"
-                android:inputType="number"
-                />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:divider="@drawable/horizontal_padding_small"
-            android:showDividers="middle"
-            >
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="32sp"
-                android:text="@string/prompt_team_number"
-            />
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/team_number"
-                android:textSize="32sp"
-                android:autofillHints="username"
-                android:gravity="center"
-                android:inputType="number"
-                android:hint="@string/text_edit_team_number"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:divider="@drawable/horizontal_padding_small"
-            android:showDividers="middle"
-            >
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="32sp"
-                android:text="@string/prompt_team_color"
-                />
-            <RadioGroup
-                android:id="@+id/team_color_radio_group"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="horizontal"
-                android:divider="@drawable/horizontal_padding_small"
-                android:showDividers="middle" >
-                <RadioButton
-                    android:id="@+id/team_color_red"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:textSize="24sp"
-                    android:text="@string/color_red"/>
-                <RadioButton
-                    android:id="@+id/team_color_blue"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:textSize="24sp"
-                    android:text="@string/color_blue"/>
-            </RadioGroup>
-        </LinearLayout>
+                android:text="@string/header1"
+                android:textSize="24sp"
+                android:textColor="@color/black"
+                android:gravity="center"/>
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:divider="@drawable/horizontal_padding_small"
+                android:showDividers="middle"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="32sp"
+                    android:textColor="@color/black"
+                    android:text="@string/prompt_scout_name"
+                    />
+                <EditText
+                    android:id="@+id/scout_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="32sp"
+                    android:textColor="@color/black"
+                    android:autofillHints="username"
+                    android:gravity="center"
+                    android:inputType="textCapWords"
+                    android:hint="@string/text_edit_scout_name"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:divider="@drawable/horizontal_padding_small"
+                android:showDividers="middle"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="32sp"
+                    android:textColor="@color/black"
+                    android:text="@string/prompt_match_number"
+                    />
+                <EditText
+                    android:id="@+id/match_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="32sp"
+                    android:autofillHints="username"
+                    android:hint="@string/text_edit_match_number"
+                    android:gravity="center"
+                    android:inputType="number"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:divider="@drawable/horizontal_padding_small"
+                android:showDividers="middle"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="32sp"
+                    android:textColor="@color/black"
+                    android:text="@string/prompt_team_number"
+                    />
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/team_number"
+                    android:textSize="32sp"
+                    android:autofillHints="username"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:hint="@string/text_edit_team_number"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:divider="@drawable/horizontal_padding_small"
+                android:showDividers="middle"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="32sp"
+                    android:textColor="@color/black"
+                    android:text="@string/prompt_team_color"
+                    />
+                <RadioGroup
+                    android:id="@+id/team_color_radio_group"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:divider="@drawable/horizontal_padding_small"
+                    android:showDividers="middle" >
+                    <RadioButton
+                        android:id="@+id/team_color_red"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textSize="24sp"
+                        android:textColor="@color/black"
+                        android:text="@string/color_red"/>
+                    <RadioButton
+                        android:id="@+id/team_color_blue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textSize="24sp"
+                        android:textColor="@color/black"
+                        android:text="@string/color_blue"/>
+                </RadioGroup>
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -157,7 +161,7 @@
                 android:divider="@drawable/horizontal_padding_small"
                 android:showDividers="middle">
                 <Button
-                    android:id="@+id/down_count_button_pa"
+                    android:id="@+id/down_count_button_ppa"
                     android:layout_width="48dp"
                     android:layout_height="48dp"
                     android:insetTop="2dp"
@@ -167,11 +171,11 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/artifacts"
+                    android:text="@string/preloaded_purple"
                     android:textColor="@color/black"/>
 
                 <EditText
-                    android:id="@+id/edit_text_pa"
+                    android:id="@+id/edit_text_ppa"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:autofillHints="username"
@@ -180,7 +184,46 @@
                     android:minWidth="48dp"
                     android:minHeight="48dp" />
                 <Button
-                    android:id="@+id/up_count_button_pa"
+                    android:id="@+id/up_count_button_ppa"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:insetTop="2dp"
+                    android:insetBottom="2dp"
+                    android:text="@string/counter_up"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintWidth_percent="0.5"
+                android:divider="@drawable/horizontal_padding_small"
+                android:showDividers="middle">
+                <Button
+                    android:id="@+id/down_count_button_pga"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:insetTop="2dp"
+                    android:insetBottom="2dp"
+                    android:text="@string/counter_down"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/preloaded_green"
+                    android:textColor="@color/black"/>
+
+                <EditText
+                    android:id="@+id/edit_text_pga"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autofillHints="username"
+                    android:hint="@string/number_tried"
+                    android:inputType="number"
+                    android:minWidth="48dp"
+                    android:minHeight="48dp" />
+                <Button
+                    android:id="@+id/up_count_button_pga"
                     android:layout_width="48dp"
                     android:layout_height="48dp"
                     android:insetTop="2dp"
@@ -189,34 +232,34 @@
             </LinearLayout>
 
             <!--            <CheckBox-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:id="@+id/checkBox_scouting_humanplayer"-->
-<!--                android:text="@string/scouting_human_player"/>-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:id="@+id/checkBox_scouting_humanplayer"-->
+            <!--                android:text="@string/scouting_human_player"/>-->
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="end"
-            android:divider="@drawable/horizontal_padding_big"
-            android:showDividers="middle">
-            <Button
-                android:id="@+id/back_button"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="24sp"
-                android:paddingVertical="8dp"
-                android:text="@string/button_back"/>
-            <Button
-                android:id="@+id/save_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="24sp"
-                android:paddingVertical="8dp"
+                android:orientation="horizontal"
+                android:gravity="end"
+                android:divider="@drawable/horizontal_padding_big"
+                android:showDividers="middle">
+                <Button
+                    android:id="@+id/back_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="24sp"
+                    android:paddingVertical="8dp"
+                    android:text="@string/button_back"/>
+                <Button
+                    android:id="@+id/save_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="24sp"
+                    android:paddingVertical="8dp"
 
-                android:text="@string/button_next"/>
-        </LinearLayout>
+                    android:text="@string/button_next"/>
+            </LinearLayout>
             <View
                 android:layout_width="0dp"
                 android:layout_height="60dp"/>

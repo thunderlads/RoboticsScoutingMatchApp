@@ -57,7 +57,6 @@ public class activityAfterMatch extends AppCompatActivity {
         RadioGroup rankGroup = findViewById(R.id.ranking_of_teams);
         RadioButton rank1Button = findViewById(R.id.rank1);
         RadioButton rank2Button = findViewById(R.id.rank2);
-        RadioButton rank3Button = findViewById(R.id.rank3);
 
         EditText finalText = findViewById(R.id.End_of_app_text);
         Button saveButton = findViewById(R.id.save_button);
@@ -125,9 +124,6 @@ public class activityAfterMatch extends AppCompatActivity {
                     break;
                 case "Rank 2":
                     rank2Button.toggle();
-                    break;
-                case "Rank 3":
-                    rank3Button.toggle();
                     break;
             }
             postMatchSaveString = u.nextCommaOn(postMatchSaveString);
