@@ -38,6 +38,9 @@ public class activityAfterMatch extends AppCompatActivity {
         U u = new U(); // defines new utilities object to be used
 
         // *---Defines all the components on the current page as variables---*
+        Button incrementSM = findViewById(R.id.up_count_button_sm);
+        Button decrementSM = findViewById(R.id.down_count_button_sm);
+        EditText SMField = findViewById(R.id.edit_text_sm);
 
         CheckBox floorIntake = findViewById(R.id.floor_intake);
         CheckBox humanPlayerStation = findViewById(R.id.human_player_intake);
@@ -87,6 +90,8 @@ public class activityAfterMatch extends AppCompatActivity {
             // So on an so forth
             humanPlayerStation.setChecked(Boolean.parseBoolean(u.untilNextComma(postMatchSaveString)));
             postMatchSaveString = u.nextCommaOn(postMatchSaveString);
+            postMatchSaveString = u.nextCommaOn(postMatchSaveString);
+            SMField.setText(u.untilNextComma(postMatchSaveString));
 
             if(u.untilNextComma(postMatchSaveString).equals("No Defense")){
                 noDefenseButton.toggle();
@@ -115,6 +120,7 @@ public class activityAfterMatch extends AppCompatActivity {
                     notStoppedButton.toggle();
                     break;
             }
+
             postMatchSaveString = u.nextCommaOn(postMatchSaveString);
 
             String teamRank = u.untilNextComma(postMatchSaveString);
@@ -132,12 +138,16 @@ public class activityAfterMatch extends AppCompatActivity {
             postMatchSaveString = u.nextCommaOn(postMatchSaveString);
         }
 
+        incrementSM.setOnClickListener((l)->u.incrementText(SMField));
+        decrementSM.setOnClickListener((l)->u.incrementText(SMField, -1));
+
         backButton.setOnClickListener((l)->{ // Sets current savestring to current values of components
             // Because it's the back button, these values can have no value
             // Coral floor pickup able | Coral Source pickup able | Defense received |
             // Stop reason | team rank among alliance | other comments questions or concerns ||
             String afterMatchInfo = "";
 
+            afterMatchInfo += u.getData(SMField) + ",";
             afterMatchInfo += u.getData(floorIntake) + ",";
             afterMatchInfo += u.getData(humanPlayerStation) + ",";
             afterMatchInfo += u.getData(defenseReceivedGroup) + ",";
@@ -167,12 +177,13 @@ public class activityAfterMatch extends AppCompatActivity {
                 // Coral floor pickup able | Coral Source pickup able | Defense received |
                 // Stop reason | team rank among alliance | other comments questions or concerns ||
                 String postMatchInfo = "";
+                postMatchInfo += u.getData(SMField) + ",";
                 postMatchInfo += u.getData(floorIntake) + ",";
                 postMatchInfo += u.getData(humanPlayerStation) + ",";
                 postMatchInfo += u.getData(defenseReceivedGroup) + ",";
                 postMatchInfo += u.getData(stopReasonGroup) + ",";
                 postMatchInfo += u.getData(rankGroup) + ",";
-                postMatchInfo += u.stripText(u.getData(finalText), u.DELIMITER) + ",";
+                postMatchInfo += u.stripText(u.getData(finalText), U.DELIMITER) + ",";
 
                 // Competition Location | Save Version | Scout Name | Team # | Team Color |
                 // Match Number | Preloaded coral ||

@@ -99,11 +99,22 @@ public class activityPreMatch extends AppCompatActivity {
         Toast unfilledMessage = new Toast(this);
         unfilledMessage.setDuration(Toast.LENGTH_SHORT);
 
+        preloadedPurpleArtifactPlus.setOnClickListener((l)->u.incrementText(preloadedPurpleArtifact));
+        preloadedPurpleArtifactMinus.setOnClickListener((l)->u.incrementText(preloadedPurpleArtifact, -1));
+
+        preloadedGreenArtifactPlus.setOnClickListener((l)->u.incrementText(preloadedGreenArtifact));
+        preloadedGreenArtifactMinus.setOnClickListener((l)->u.incrementText(preloadedGreenArtifact, -1));
+
+
         String finalCompetitionString = competitionString;
         saveButton.setOnClickListener((l) -> {
             // Check if all fields are full
 //            findViewById(R.id.scroll_view);
             String response = "";
+            if (u.getData(preloadedGreenArtifact).isEmpty())
+                preloadedGreenArtifact.setText("0");
+            if (u.getData(preloadedPurpleArtifact).isEmpty())
+                preloadedPurpleArtifact.setText("0");
             if(u.getData(scoutName).isEmpty()){
                 response = getResources().getString(R.string.prompt_scout_name) + " " + getResources().getString(R.string.is_empty_identifier);
             }else if(u.getData(matchNumber).isEmpty()){
@@ -112,10 +123,6 @@ public class activityPreMatch extends AppCompatActivity {
                 response = getResources().getString(R.string.prompt_team_number) + " " + getResources().getString(R.string.is_empty_identifier);
             }else if(u.getData(teamColorRadioGroup).isEmpty()){
                 response = "Please choose a team color";
-            }else if(u.getData(preloadedPurpleArtifact).isEmpty()) { //TODO: better data validation than this
-                response = "Please enter at least 0 for Preloaded Purple";
-            }else if(u.getData(preloadedGreenArtifact).isEmpty()) {
-                response = "Please enter at least 0 for Preloaded Green";
             }else if(Integer.parseInt(u.getData(preloadedPurpleArtifact))>3) {
                 response = "Cannot preload more than 3 purple artifacts";
             }else if(Integer.parseInt(u.getData(preloadedGreenArtifact))>3) {
@@ -142,17 +149,12 @@ public class activityPreMatch extends AppCompatActivity {
 
                 this.startActivity(i);
             }
-
             if(!response.isBlank()){
                 unfilledMessage.setText(response);
                 unfilledMessage.show();
             }
-        });
-        preloadedPurpleArtifactPlus.setOnClickListener((l)->u.incrementText(preloadedPurpleArtifact));
-        preloadedPurpleArtifactMinus.setOnClickListener((l)->u.incrementText(preloadedPurpleArtifact, -1));
 
-        preloadedGreenArtifactPlus.setOnClickListener((l)->u.incrementText(preloadedGreenArtifact));
-        preloadedGreenArtifactMinus.setOnClickListener((l)->u.incrementText(preloadedGreenArtifact, -1));
+        });
 
         backButton.setOnClickListener((l)->{
             Intent i = new Intent(this, ActivityCompetitionSelection.class);

@@ -146,7 +146,7 @@ public class activityAutonomous extends AppCompatActivity {
             RC1Field.setText(u.untilNextComma(autoSaveString));
             autoSaveString = u.nextCommaOn(autoSaveString); // Remove #SCL1
             RC2Field.setText(u.untilNextComma(autoSaveString));
-            autoSaveString = u.nextCommaOn(autoSaveString); // Remove #SCL2
+
 
         }
 

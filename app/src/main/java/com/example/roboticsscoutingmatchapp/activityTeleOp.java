@@ -211,15 +211,11 @@ public class activityTeleOp extends AppCompatActivity {
                 DAAfield.setText("0");
             if(u.getData(DASfield).isEmpty())
                 DASfield.setText("0");
-            if(u.getData(parkRadioGroup).isEmpty())
+            if(u.getData(parkRadioGroup).isEmpty()) {
                 response = "Please select an endgame position";
-            else if(u.getData(endgameTimeGroup).isEmpty())
+            }else if(u.getData(endgameTimeGroup).isEmpty()) {
                 response = "Please select park time";
-            else if(Integer.parseInt(u.getData(CAfield)) < Integer.parseInt(u.getData(AOfield)))
-                response = "Attempted Coral L1 cannot be less than Scored Coral L1";
-            else if(Integer.parseInt(u.getData(CSfield)) < Integer.parseInt(u.getData(SOfield)))
-                response = "Attempted Coral L2 cannot be less than Scored Coral L2";
-            else{
+            }else{
                 String teleOpInfo = "";
 
                 teleOpInfo += u.getData(CAfield) + ",";
